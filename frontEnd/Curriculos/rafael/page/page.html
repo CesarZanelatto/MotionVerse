@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Rafael Moralli, técnico em tecnologia com foco em desenvolvimento de software, infraestrutura e suporte de TI." data-i18n-content="home.meta.description">
+    <meta name="theme-color" content="#172972">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/page.css">
+    <script src="../js/main.js" defer></script>
+    <title>Rafael Moralli | Tecnologia e Desenvolvimento</title>
+</head>
+
+<body id="corpo" data-page="home">
+    <a class="skip-link" href="#main-content" data-i18n="skip.content">Pular para o conteúdo principal</a>
+
+    <header>
+        <nav class="navbar" data-i18n-aria-label="nav.label" aria-label="Navegação principal">
+            <ul class="nav-links">
+                <li><a href="./page.html" aria-current="page" data-i18n="nav.home">Home</a></li>
+                <li><a href="./portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+                <li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li>
+                <li><a href="./contact.html" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+
+            <div class="language-switcher">
+                <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="language-menu" data-i18n-aria-label="language.label" aria-label="Selecionar idioma. Idioma atual: Português do Brasil">
+                    <span class="fi fi-br current-flag" aria-hidden="true"></span>
+                    <span class="lang-current">PT-BR</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">arrow_drop_down</span>
+                </button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <button class="lang-option" type="button" data-lang="pt-BR" lang="pt-BR" aria-pressed="true">
+                        <span class="fi fi-br" aria-hidden="true"></span><span>PT-BR</span>
+                    </button>
+                    <button class="lang-option" type="button" data-lang="en" lang="en" aria-pressed="false">
+                        <span class="fi fi-us" aria-hidden="true"></span><span>EN</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="home-hero container" aria-labelledby="home-title" data-reveal>
+            <p class="eyebrow" data-i18n="home.hero.eyebrow">Portfólio profissional</p>
+            <h1 id="home-title">Rafael <span>Moralli</span></h1>
+            <p class="home-subtitle" data-i18n="home.hero.subtitle">Técnico em Tecnologia • Desenvolvimento de Software • Desenvolvimento Web</p>
+            <ul class="skill-list" data-i18n-aria-label="home.skills.label" aria-label="Tecnologias">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Git</li>
+                <li data-i18n="home.skill.database">Banco de Dados</li>
+            </ul>
+        </section>
+
+        <section class="home-cards container" data-i18n-aria-label="home.summary.label" aria-label="Resumo profissional">
+            <article class="home-card" data-reveal="left">
+                <span class="material-symbols-outlined" aria-hidden="true">person</span>
+                <h2 data-i18n="home.card.about.title">Sobre mim</h2>
+                <p data-i18n="home.card.about.text">Sou técnico e estudante de tecnologia e desenvolvimento de software. Busco oportunidades para aprimorar minhas habilidades e crescer profissionalmente.</p>
+            </article>
+            <article class="home-card" data-reveal>
+                <span class="material-symbols-outlined" aria-hidden="true">school</span>
+                <h2 data-i18n="home.card.education.title">Formação</h2>
+                <p data-i18n="home.card.education.text">Curso técnico em Tecnologia, com conhecimentos em manutenção de computadores e redes, HTML, CSS, banco de dados e lógica de programação.</p>
+            </article>
+            <article class="home-card" data-reveal="right">
+                <span class="material-symbols-outlined" aria-hidden="true">target</span>
+                <h2 data-i18n="home.card.goal.title">Objetivo</h2>
+                <p data-i18n="home.card.goal.text">Desenvolver soluções digitais, adquirir experiência prática e construir projetos que demonstrem minha evolução como profissional de tecnologia.</p>
+            </article>
+        </section>
+
+        <div class="home-cta" data-reveal>
+            <a class="button button-primary" href="./portfolio.html" data-i18n="home.cta">Ver portfólio</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <address class="footer-contact">
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">person</span><span>Rafael Moralli</span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">alternate_email</span><span><span data-i18n="footer.email">E-mail</span>: <a class="footer-link" href="mailto:rafaelmoralli561@gmail.com">rafaelmoralli561@gmail.com</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">call</span><span><span data-i18n="footer.phone">Telefone</span>: <a class="footer-link" href="tel:+5511991614481">+55 (11) 99161-4481</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">group</span><span><a class="footer-link" href="https://www.linkedin.com/in/rafaelmoralli/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a class="footer-link" href="https://github.com/RafaMoralli/" target="_blank" rel="noopener noreferrer">GitHub</a></span></div>
+            </address>
+            <nav class="footer-nav" data-i18n-aria-label="footer.label" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="./page.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="./portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+                    <li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li>
+                    <li><a href="./contact.html" data-i18n="nav.contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

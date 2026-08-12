@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projetos de Rafael Moralli em suporte de TI, automação, desenvolvimento e banco de dados." data-i18n-content="portfolio.meta.description">
+    <meta name="theme-color" content="#172972">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <script src="../js/main.js" defer></script>
+    <title>Projetos | Rafael Moralli</title>
+</head>
+
+<body id="corpo" data-page="portfolio">
+    <a class="skip-link" href="#main-content" data-i18n="skip.content">Pular para o conteúdo principal</a>
+
+    <header>
+        <nav class="navbar" data-i18n-aria-label="nav.label" aria-label="Navegação principal">
+            <ul class="nav-links">
+                <li><a href="./page.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="./portfolio.html" aria-current="page" data-i18n="nav.portfolio">Portfólio</a></li>
+                <li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li>
+                <li><a href="./contact.html" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="language-menu" data-i18n-aria-label="language.label" aria-label="Selecionar idioma. Idioma atual: Português do Brasil">
+                    <span class="fi fi-br current-flag" aria-hidden="true"></span><span class="lang-current">PT-BR</span><span class="material-symbols-outlined" aria-hidden="true">arrow_drop_down</span>
+                </button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <button class="lang-option" type="button" data-lang="pt-BR" lang="pt-BR" aria-pressed="true"><span class="fi fi-br" aria-hidden="true"></span><span>PT-BR</span></button>
+                    <button class="lang-option" type="button" data-lang="en" lang="en" aria-pressed="false"><span class="fi fi-us" aria-hidden="true"></span><span>EN</span></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" aria-labelledby="hero-title">
+            <div class="hero-content" data-reveal="hero">
+                <p class="eyebrow" data-i18n="portfolio.hero.eyebrow">Técnico em Tecnologia · Portfólio</p>
+                <h1 id="hero-title" data-i18n="portfolio.hero.title">Construindo soluções em TI, unindo infraestrutura, desenvolvimento de software e automação de processos.</h1>
+                <p class="hero-description" data-i18n="portfolio.hero.description">Sou Rafael Moralli, técnico em Tecnologia e atualmente atuo como Jovem Aprendiz em Suporte de TI Help Desk N1. Tenho interesse em desenvolvimento de software, infraestrutura, banco de dados e computação em nuvem, buscando sempre criar soluções organizadas, escaláveis e de impacto real.</p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#timeline" data-i18n="portfolio.hero.projects">Ver projetos</a>
+                    <a class="button button-secondary" href="#skills" data-i18n="portfolio.hero.technologies">Tecnologias</a>
+                </div>
+            </div>
+            <aside class="hero-panel" data-reveal="hero" data-i18n-aria-label="portfolio.panel.label" aria-label="Resumo profissional">
+                <div class="hero-panel-card">
+                    <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+                    <div><h2 data-i18n="portfolio.panel.learning.title">Aprendizado contínuo</h2><p data-i18n="portfolio.panel.learning.text">Sempre estudando novas tecnologias e aplicando boas práticas.</p></div>
+                </div>
+                <div class="hero-panel-card">
+                    <span class="material-symbols-outlined" aria-hidden="true">deployed_code</span>
+                    <div><h2 data-i18n="portfolio.panel.projects.title">Projetos reais</h2><p data-i18n="portfolio.panel.projects.text">Automação, banco de dados, sistemas desktop e desenvolvimento web.</p></div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="section-heading portfolio-heading" aria-labelledby="timeline-title" data-reveal>
+            <p class="eyebrow" data-i18n="portfolio.section.eyebrow">Seleção de projetos</p>
+            <h2 id="timeline-title" data-i18n="portfolio.section.title">Minha evolução profissional.</h2>
+            <p data-i18n="portfolio.section.text">Cada projeto representa um novo desafio, uma nova tecnologia aprendida e uma oportunidade de colocar conhecimento em prática.</p>
+        </section>
+
+        <section id="timeline" data-i18n-aria-label="portfolio.timeline.label" aria-label="Linha do tempo de projetos">
+            <article class="project project-left" data-reveal>
+                <div class="timeline-marker" aria-hidden="true"><span></span></div>
+                <div class="project-content">
+                    <p class="project-number">NetFixers</p>
+                    <h2 data-i18n="portfolio.netfixers.title">Projeto de Manutenção e Recuperação de Computadores</h2>
+                    <h3 data-i18n="portfolio.netfixers.subtitle">Manutenção preventiva e corretiva de computadores destinados à ação social.</h3>
+                    <p class="project-description" data-i18n="portfolio.netfixers.description">Atuei na análise dos equipamentos, instalação de sistemas operacionais, diagnóstico de falhas e recuperação de máquinas, contribuindo para aumentar a vida útil dos dispositivos e ampliar seu reaproveitamento.</p>
+                    <figure class="project-media">
+                        <video muted loop playsinline controls preload="metadata" data-i18n-aria-label="portfolio.netfixers.video" aria-label="Vídeo de apresentação do projeto NetFixers">
+                            <source src="../assets/portfolio/Netfixers.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <ul class="project-tech" data-i18n-aria-label="portfolio.project.skills.label" aria-label="Tecnologias e competências">
+                        <li>Hardware</li><li>Windows</li><li>Linux</li><li data-i18n="tech.diagnostics">Diagnóstico</li><li data-i18n="tech.maintenance">Manutenção</li><li data-i18n="tech.documentation">Documentação</li>
+                    </ul>
+                    <a class="button button-primary project-button" href="https://www.linkedin.com/posts/rafaelmoralli_manutenaexaeto-tecnologia-aaexaetosocial-activity-7391164979967848449-lZm5?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEVVevgBhLwgnXXVG-2Uxz-exozXGT0lLeI" target="_blank" rel="noopener noreferrer" data-i18n="portfolio.action.presentation">Ver apresentação</a>
+                </div>
+            </article>
+
+            <article class="project project-right" data-reveal>
+                <div class="timeline-marker" aria-hidden="true"><span></span></div>
+                <div class="project-content">
+                    <p class="project-number">Relsys</p>
+                    <h2 data-i18n="portfolio.relsys.title">Centralizando processos do setor de TI</h2>
+                    <h3 data-i18n="portfolio.relsys.subtitle">Projeto desenvolvido em equipe para automatizar atividades internas do setor de TI.</h3>
+                    <p class="project-description" data-i18n="portfolio.relsys.description">Contribuí para uma solução em Python voltada à centralização de demandas recorrentes, organização das rotinas e redução de tarefas manuais no suporte de TI.</p>
+                    <figure class="project-media">
+                        <a href="https://www.linkedin.com/posts/rafaelmoralli_ol%C3%A1-rede-espero-que-estejam-bem-%C3%A9-com-activity-7422701663075057665-ekUR?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEVVevgBhLwgnXXVG-2Uxz-exozXGT0lLeI" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/portfolio/relsys.jpg" width="800" height="658" loading="lazy" decoding="async" data-i18n-alt="portfolio.relsys.image" alt="Interface do projeto Relsys para automação de processos de TI">
+                        </a>
+                    </figure>
+                    <ul class="project-tech" data-i18n-aria-label="portfolio.project.skills.label" aria-label="Tecnologias e competências"><li>Git</li><li>GitHub</li><li>Python</li></ul>
+                    <a class="button button-primary project-button" href="https://www.linkedin.com/posts/rafaelmoralli_ol%C3%A1-rede-espero-que-estejam-bem-%C3%A9-com-activity-7422701663075057665-ekUR?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEVVevgBhLwgnXXVG-2Uxz-exozXGT0lLeI" target="_blank" rel="noopener noreferrer" data-i18n="portfolio.action.project">Ver projeto</a>
+                </div>
+            </article>
+
+            <article class="project project-left" data-reveal>
+                <div class="timeline-marker" aria-hidden="true"><span></span></div>
+                <div class="project-content">
+                    <p class="project-number" data-i18n="tech.database">Banco de Dados</p>
+                    <h2 data-i18n="portfolio.database.title">Sistema de Controle de Notebooks</h2>
+                    <h3 data-i18n="portfolio.database.subtitle">Gerenciamento de patrimônio corporativo com foco em segurança e organização.</h3>
+                    <p class="project-description" data-i18n="portfolio.database.description">Projeto desenvolvido para controlar notebooks corporativos, funcionários responsáveis e disponibilidade dos equipamentos. A solução foi estruturada com modelagem relacional, normalização, views, stored procedures, controle de usuários, permissões e rotinas de backup e restauração.</p>
+                    <figure class="project-media">
+                        <a href="https://www.linkedin.com/posts/kleber-amaro-b8109b263_mysql-database-bancodedados-share-7471904558034677760-Izk0/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEVVevgBhLwgnXXVG-2Uxz-exozXGT0lLeI" target="_blank" rel="noopener noreferrer">
+                            <img src="../assets/portfolio/bancodados.jpg" width="800" height="749" loading="lazy" decoding="async" data-i18n-alt="portfolio.database.image" alt="Representação do projeto de banco de dados para controle de notebooks">
+                        </a>
+                    </figure>
+                    <ul class="project-tech" data-i18n-aria-label="portfolio.project.skills.label" aria-label="Tecnologias e competências"><li>MySQL</li><li>SQL</li><li>UML</li><li>DER</li><li>Views</li><li>Stored Procedures</li><li>AES</li><li>Backup</li></ul>
+                    <a class="button button-primary project-button" href="https://www.linkedin.com/posts/kleber-amaro-b8109b263_mysql-database-bancodedados-share-7471904558034677760-Izk0/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAEVVevgBhLwgnXXVG-2Uxz-exozXGT0lLeI" target="_blank" rel="noopener noreferrer" data-i18n="portfolio.action.project">Ver projeto</a>
+                </div>
+            </article>
+        </section>
+
+        <section id="skills" class="container" aria-labelledby="skills-title" data-reveal>
+            <div class="section-heading">
+                <p class="eyebrow" data-i18n="portfolio.skills.eyebrow">Tecnologias</p>
+                <h2 id="skills-title" data-i18n="portfolio.skills.title">Tecnologias que fazem parte da minha jornada.</h2>
+            </div>
+            <ul class="skills-container">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>TypeScript</li><li>Python</li><li>SQL</li><li>SQLite</li><li>MySQL</li><li>Git</li><li>GitHub</li><li>React Native</li><li>Flet</li><li>Jira</li><li>VS Code</li><li>Windows</li><li>Linux</li>
+            </ul>
+        </section>
+
+        <section id="future" aria-labelledby="future-title" data-reveal>
+            <h2 id="future-title" data-i18n="portfolio.future.title">Esta é apenas uma parte da minha trajetória.</h2>
+            <p data-i18n="portfolio.future.text">Acredito que a evolução acontece por meio da prática, da curiosidade e do aprendizado contínuo. Este portfólio continuará crescendo conforme novos projetos, desafios e experiências fizerem parte da minha carreira em TI.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <address class="footer-contact">
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">person</span><span>Rafael Moralli</span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">alternate_email</span><span><span data-i18n="footer.email">E-mail</span>: <a class="footer-link" href="mailto:rafaelmoralli561@gmail.com">rafaelmoralli561@gmail.com</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">call</span><span><span data-i18n="footer.phone">Telefone</span>: <a class="footer-link" href="tel:+5511991614481">+55 (11) 99161-4481</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined" aria-hidden="true">group</span><span><a class="footer-link" href="https://www.linkedin.com/in/rafaelmoralli/" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a class="footer-link" href="https://github.com/RafaMoralli/" target="_blank" rel="noopener noreferrer">GitHub</a></span></div>
+            </address>
+            <nav class="footer-nav" data-i18n-aria-label="footer.label" aria-label="Navegação do rodapé"><ul><li><a href="./page.html" data-i18n="nav.home">Home</a></li><li><a href="./portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li><li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li><li><a href="./contact.html" data-i18n="nav.contact">Contato</a></li></ul></nav>
+        </div>
+    </footer>
+</body>
+
+</html>

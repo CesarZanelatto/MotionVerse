@@ -1,0 +1,910 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alice&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url(https://db.onlinewebfonts.com/c/f9fbc5a4ff13d5639079818db7ffea2a?family=adineue+PRO+Bold+Web+Regular);
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "AdihausDIN", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
+  /* font-family: "adineue PRO Bold Web Regular"; */
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+}
+body.claro {
+  background-color: #fff;
+}
+
+#logo {
+  margin: 15px;
+  position: fixed;
+  font-family: Bold;
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  z-index: 99;
+  font-family: "AdihausDIN", sans-serif;
+  opacity: 1;
+  transition:
+    color 1s ease,
+    transform 0.5s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #e93f76;
+    transform: scale(1.2);
+  }
+}
+
+#logo.claro {
+  color: #000;
+  transition:
+    color 1s ease,
+    transform 0.5s ease;
+}
+
+#logo.ativo2 {
+  color: black;
+
+  &:hover {
+    color: #e93f76;
+    transform: scale(1.2);
+  }
+}
+
+#div-botao {
+  position: fixed;
+  background-color: transparent;
+  width: 60px;
+  height: 30px;
+  z-index: 99;
+  right: 0;
+  margin: 15px;
+  border-radius: 50px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: border 1s ease;
+
+  #mudar-cor {
+    margin-left: 5px;
+    background-color: #fff;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transition:
+      transform 1s ease,
+      background 1s ease;
+  }
+}
+
+#div-botao.mudar {
+  border: 1px solid #000;
+  transition: border 1s ease;
+
+  #mudar-cor {
+    background-color: #000;
+    transition:
+      transform 1s ease,
+      background 1s ease;
+    transform: translateX(28px);
+  }
+}
+
+#banner1 {
+  position: relative;
+  background-color: black;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition:
+    height 1s ease,
+    background-color 1s ease;
+  overflow-y: hidden;
+
+  #textos-banner1 {
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    transition:
+      opacity 0.5s ease-in-out,
+      color 1s ease;
+    font-family: "AdihausDIN", sans-serif;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+#banner1.claro {
+  position: relative;
+  background-color: #fff;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition:
+    height 1s ease,
+    background-color 1s ease;
+  overflow-y: hidden;
+
+  #textos-banner1 {
+    position: absolute;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    transition:
+      opacity 0.5s ease-in-out,
+      color 0.5s ease;
+    font-family: "AdihausDIN", sans-serif;
+    font-family: "Inter", sans-serif;
+  }
+
+  #setinha1 {
+    color: #000;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: #e93f76;
+    }
+  }
+}
+
+.subtitulo {
+  font-size: 28px;
+  font-family: "adineue PRO Bold Web Regular";
+  font-weight: 600;
+  color: #e93f76;
+}
+
+#setinha1 {
+  color: white;
+  position: absolute;
+  bottom: 2.5%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition:
+    transform 1s ease,
+    color 0.5s ease;
+  z-index: 999;
+  &:hover {
+    color: rgb(238, 69, 148);
+  }
+}
+
+#banner1.ativo {
+  height: 650vh;
+  overflow-y: visible;
+
+  #textos-banner1 {
+    opacity: 0;
+  }
+
+  #setinha1 {
+    transform: rotate(180deg);
+  }
+
+  #cards,
+  .card,
+  #cursos,
+  #techs,
+  #projetos {
+    opacity: 1;
+  }
+}
+
+#banner2.inativo,
+#banner1.inativo {
+  display: none;
+}
+
+#banner2.ativo2 {
+  height: 100vh;
+
+  #logo2 {
+    opacity: 1;
+  }
+
+  #setinha2 {
+    transform: rotateX(0deg);
+  }
+}
+
+/* #cards:has(.card:hover) .texto-cards {
+  opacity: 1;
+} */
+
+#cursos {
+  position: absolute;
+  top: 8%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#cards {
+  text-align: center;
+  position: absolute;
+  top: 12%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px; /* Espaço para a primeira linha horizontal */
+
+  /* --- 1. A BOLINHA INICIAL DE INÍCIO (Topo Esquerda) --- */
+  &::before {
+    content: "2022"; /* Ano de início acima da bolinha */
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(238, 69, 148);
+    border-radius: 50%;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+    line-height: 0px;
+    text-indent: 18px;
+    /* Joga o texto 2022 para o lado da bolinha */
+  }
+
+  /* --- 2. LINHA HORIZONTAL SUPERIOR (Que sai da bolinha até o 1º Card) --- */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 35px; /* Começa no centro da bolinha */
+    width: 345px; /* Encaixa exatamente na borda do card à direita */
+    height: 193px; /* Altura exata até o topo do card */
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    opacity: 0;
+    background-color: rgb(30, 30, 30);
+    width: 230px;
+    height: 140px;
+    border: 1px rgb(135, 133, 133) solid;
+    margin-bottom: 60px; /* Aumentado espaço para dar lugar à linha que passa por baixo */
+    z-index: 2;
+    border-radius: 6px;
+    padding: 15px;
+    transition:
+      height 0.3s ease,
+      background 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .subtitulo {
+      font-size: 24px;
+      position: absolute;
+      transition: transform 0.3s ease;
+      align-self: center;
+    }
+
+    .texto-cards {
+      color: white;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+      text-align: justify;
+    }
+
+    &:hover {
+      height: 300px;
+
+      .subtitulo {
+        transform: translateY(-100px);
+      }
+
+      .texto-cards {
+        opacity: 1;
+      }
+    }
+
+    /* Exibe o ano configurado no HTML no topo de cada Card */
+    &::after {
+      content: attr(data-ano);
+      position: absolute;
+      top: -22px;
+      font-size: 13px;
+      font-weight: bold;
+      color: rgb(238, 69, 148);
+      font-family: "Inter", sans-serif;
+      pointer-events: none;
+    }
+  }
+
+  /* --- CARDS À DIREITA (1º, 3º, 5º...) --- */
+  .card:nth-child(odd of .card) {
+    align-self: flex-end;
+
+    &::after {
+      right: 15px;
+    }
+
+    &:hover::after {
+      content: "";
+      width: 1px;
+      top: 100.5%;
+      height: 28px;
+      background-color: white;
+      left: 48%;
+    }
+
+    &:last-child:hover::after {
+      content: "";
+      width: 100%;
+      top: 100.5%;
+      left: 0;
+      height: 200px;
+      background-color: black;
+    }
+
+    /* Linha que sai do fundo do card e vai para a ESQUERDA */
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -230px;
+      right: 52%;
+      width: 270px; /* Atravessa a tela até o próximo card */
+      height: 200.4px;
+      border-left: 1px solid white;
+      border-top: 1px solid white;
+      z-index: 0;
+      pointer-events: none;
+      transition: 0;
+    }
+  }
+
+  .card:nth-child(3 of .card) {
+    &::before {
+      height: 200.3px;
+    }
+  }
+
+  /* --- CARDS À ESQUERDA (2º, 4º, 6º...) --- */
+  .card:nth-child(even of .card) {
+    align-self: flex-start;
+
+    &::after {
+      left: 15px;
+    }
+
+    &:hover::after {
+      content: "";
+      width: 1px;
+      top: 100.5%;
+      height: 28px;
+      background-color: white;
+      left: 48%;
+    }
+
+    &:last-child:hover::after {
+      content: "";
+      width: 100%;
+      top: 100.6%;
+      left: 0;
+      height: 50px;
+      background-color: black;
+    }
+
+    /* Linha que sai do fundo do card e vai para a DIREITA */
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -230px;
+      left: 48%;
+      width: 270px; /* Atravessa a tela até o próximo card */
+      height: 200px;
+      border-right: 1px solid white;
+      border-top: 1px solid white;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+
+  /* O último card não precisa da linha descendo no final */
+  .card:last-child::before {
+    display: none;
+  }
+
+  .card:last-child::after {
+    content: "";
+    width: 100%;
+    top: 100.6%;
+    left: 0;
+    height: 50px;
+    background-color: black;
+  }
+}
+
+#cards.claro {
+  /* --- 1. A BOLINHA INICIAL DE INÍCIO (Topo Esquerda) --- */
+  &::before {
+    color: #000;
+    transition: color 1s ease;
+  }
+
+  /* --- 2. LINHA HORIZONTAL SUPERIOR (Que sai da bolinha até o 1º Card) --- */
+  &::after {
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    z-index: 0;
+    transition: border 1s ease;
+  }
+
+  .card {
+    background-color: rgb(208, 240, 193);
+    border: 1px rgb(31, 30, 30) solid;
+    transition:
+      height 0.3s ease,
+      border 1s ease,
+      background 1s ease;
+
+    .texto-cards {
+      color: #000;
+      transition:
+        opacity 0.3s ease,
+        color 1s ease;
+      opacity: 0;
+    }
+
+    &:hover {
+      height: 300px;
+
+      .subtitulo {
+        transform: translateY(-100px);
+      }
+
+      .texto-cards {
+        opacity: 1;
+      }
+    }
+
+    /* Exibe o ano configurado no HTML no topo de cada Card */
+    &::after {
+      content: attr(data-ano);
+      position: absolute;
+      top: -22px;
+      font-size: 13px;
+      font-weight: bold;
+      color: rgb(238, 69, 148);
+      font-family: "Inter", sans-serif;
+      pointer-events: none;
+    }
+  }
+
+  /* --- CARDS À DIREITA (1º, 3º, 5º...) --- */
+  .card:nth-child(odd of .card) {
+    align-self: flex-end;
+
+    &::after {
+      right: 15px;
+    }
+
+    &:hover::after {
+      content: "";
+      width: 1px;
+      top: 100.5%;
+      height: 28px;
+      background-color: #000;
+      left: 48%;
+      transition: background 1s ease;
+    }
+
+    &:last-child:hover::after {
+      content: "";
+      width: 100%;
+      top: 100.5%;
+      left: 0;
+      height: 200px;
+      background-color: #fff;
+    }
+
+    /* Linha que sai do fundo do card e vai para a ESQUERDA */
+    &::before {
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+      z-index: 0;
+      pointer-events: none;
+      transition: 0;
+    }
+  }
+
+  .card:nth-child(3 of .card) {
+    &::before {
+      height: 200.3px;
+    }
+  }
+
+  /* --- CARDS À ESQUERDA (2º, 4º, 6º...) --- */
+  .card:nth-child(even of .card) {
+    align-self: flex-start;
+
+    &::after {
+      left: 15px;
+    }
+
+    &:hover::after {
+      content: "";
+      width: 1px;
+      top: 100.5%;
+      height: 28px;
+      background-color: #000;
+      left: 48%;
+      transition: background 1s ease;
+    }
+
+    &:last-child:hover::after {
+      content: "";
+      width: 100%;
+      top: 100.6%;
+      left: 0;
+      height: 50px;
+      background-color: #fff;
+    }
+
+    /* Linha que sai do fundo do card e vai para a DIREITA */
+    &::before {
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+      z-index: 0;
+      pointer-events: none;
+      transition: border 1s ease;
+    }
+  }
+
+  /* O último card não precisa da linha descendo no final */
+  .card:last-child::before {
+    display: none;
+  }
+
+  .card:last-child::after {
+    content: "";
+    width: 100%;
+    top: 100.6%;
+    left: 0;
+    height: 50px;
+    background-color: #fff;
+  }
+}
+
+#techs {
+  margin-top: 1600px;
+  background-color: rgb(6, 6, 6);
+  height: 220px;
+  width: 100%;
+  padding: 30px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  #tech {
+    text-align: center;
+  }
+
+  #icones {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+  }
+
+  .icones img {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+}
+
+#techs.claro {
+  background-color: rgb(208, 240, 193);
+}
+
+#projetos {
+  margin-top: 600px;
+  width: 100%;
+  height: 800px;
+  opacity: 0;
+  transition: opacity 1s ease;
+
+  .subtitulo {
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  #cards-projetos {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .card-projeto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 350px;
+    height: 340px;
+    background-color: black;
+    border: 1px solid rgb(24, 6, 6);
+    justify-content: center;
+    align-items: center;
+    transition:
+      height 0.5s ease,
+      transform 0.5s ease;
+
+    .nome-projeto {
+      margin-top: 65px;
+    }
+
+    img {
+      margin-top: 5px;
+      width: 300px;
+      aspect-ratio: 1;
+    }
+
+    a {
+      opacity: 0;
+      transition:
+        opacity 0.5s ease,
+        color 1s ease;
+
+      &:hover {
+        color: violet;
+      }
+    }
+
+    &:hover {
+      height: 450px;
+
+      .subtitulo,
+      img {
+        transform: translateY(-50px);
+      }
+
+      .nome-projeto {
+        transform: translateY(-55px);
+      }
+
+      a {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+#projetos.claro {
+  .card-projeto {
+    background-color: rgb(208, 240, 193);
+
+    transition:
+      height 0.5s ease,
+      transform 0.5s ease,
+      background 1s ease;
+  }
+}
+
+#banner2 {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  transition:
+    height 1s ease,
+    background-color 1s ease;
+  z-index: 10;
+  overflow: hidden;
+}
+
+#banner2.ativo2 {
+  height: 100vh;
+  overflow-y: auto;
+
+  #textos-banner2 {
+    opacity: 0;
+  }
+}
+
+#banner2.escuro {
+  background-color: #000;
+}
+
+#setinha2 {
+  position: absolute;
+  top: 2.5%;
+  background-color: transparent;
+  transform: rotate(180deg);
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 1s ease,
+    color 0.5s ease;
+  color: #000;
+  z-index: 20;
+}
+
+#banner2.escuro {
+  #setinha2,
+  #textos-banner2 {
+    color: #fff;
+  }
+}
+
+#setinha2:hover {
+  color: #e93f76;
+}
+
+#conteudo-banner2 {
+  width: 100%;
+  max-width: 900px;
+  padding: 80px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease 0.2s,
+    transform 0.6s ease 0.2s;
+  margin: auto 0;
+}
+
+#banner2.ativo2 #conteudo-banner2 {
+  opacity: 1;
+  transform: translateY();
+}
+
+#sobre {
+  text-align: center;
+}
+
+#sobre p {
+  margin-top: 18px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #222;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Inter", sans-serif;
+}
+
+#banner2.escuro #sobre p {
+  color: #ddd;
+}
+
+#contato {
+  text-align: center;
+}
+
+.links-contato {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.link-contato {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  padding: 10px 22px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+#banner2.escuro .link-contato {
+  color: #fff;
+  border-color: #fff;
+}
+
+.link-contato:hover {
+  background-color: #e93f76;
+  border-color: #e93f76;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+#rodape {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#banner2.escuro #rodape {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+#rodape p {
+  font-size: 13px;
+  color: #666;
+  font-family: "Inter", sans-serif;
+}
+
+#banner2.escuro #rodape p {
+  color: #999;
+}
+
+#icones-rodape {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+
+  .icones-rodape img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+#textos-banner2 {
+  position: absolute;
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  transition:
+    opacity 0.5s ease-in-out,
+    color 1s ease;
+  font-family: "AdihausDIN", sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+#campo-zap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  span {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    transition:
+      opacity 0.5s ease-in-out,
+      color 1s ease;
+    font-family: "AdihausDIN", sans-serif;
+    font-family: "Inter", sans-serif;
+  }
+}
+
+#banner2.escuro #campo-zap {
+  span {
+    color: #fff;
+  }
+}

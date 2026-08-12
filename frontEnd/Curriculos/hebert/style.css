@@ -1,0 +1,205 @@
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+    width: 1100px;
+    margin: 40px auto;
+    display: flex;
+
+    background: rgba(255,255,255,0.95);
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+
+    transition: .5s;
+
+    animation: entrada 1s;
+}
+
+.container:hover{
+    transform: scale(1.01);
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+    width: 320px;
+    background: linear-gradient(180deg,#1f2937,#111827);
+    color: white;
+    padding: 30px;
+}
+
+.sidebar h1{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar h2{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.sidebar p{
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ==========================
+   FOTO
+========================== */
+
+.foto{
+    width: 180px;
+    height: 180px;
+
+    display: block;
+    margin: auto;
+
+    border-radius: 50%;
+    border: 5px solid rgb(29,46,202);
+
+    transition: .5s;
+}
+
+.foto:hover{
+    transform: scale(1.05);
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+.sidebar a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    margin: 15px 0;
+    padding: 10px;
+
+    border-radius: 8px;
+
+    transition: .4s;
+}
+
+.sidebar a:hover{
+    background: rgba(255,255,255,.15);
+    transform: translateX(8px);
+}
+
+.sidebar a i{
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+}
+
+/* ==========================
+   CONTEÚDO
+========================== */
+
+.conteudo{
+    flex: 1;
+    padding: 40px;
+}
+
+.conteudo h2{
+    color: #1f2937;
+    border-bottom: 2px solid #1f2937;
+    margin-bottom: 20px;
+}
+
+section{
+    margin-bottom: 35px;
+}
+
+/* ==========================
+   LISTAS
+========================== */
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    background: #f5f5f5;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+li:hover{
+    transform: translateX(8px);
+    background: #e5e7eb;
+}
+
+/* ==========================
+   BOTÃO
+========================== */
+
+.botao{
+    display: inline-block;
+    margin-top: 10px;
+
+    padding: 12px 20px;
+
+    background: #2563eb;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: .3s;
+}
+
+.botao:hover{
+    background: #1d4ed8;
+}
+
+/* ==========================
+   ANIMAÇÃO
+========================== */
+
+@keyframes entrada{
+
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}

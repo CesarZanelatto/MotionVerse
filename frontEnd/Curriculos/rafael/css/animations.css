@@ -1,0 +1,168 @@
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+        filter: blur(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@keyframes pageEnter{
+    0%{
+        opacity:0;
+        transform:translateY(25px) scale(.98);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+main{
+    animation:pageEnter .7s cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes heroFade{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeLeft{
+    from{
+        opacity:0;
+        transform:translateX(-80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fadeRight{
+    from{
+        opacity:0;
+        transform:translateX(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes growLine{
+    from{
+        height:0;
+    }
+
+    to{
+        height:100%;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.12);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes glow{
+    0%{
+        box-shadow:0 0 0 rgba(234,246,173,.2);
+    }
+
+    50%{
+        box-shadow:0 0 25px rgba(234,246,173,.8);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(234,246,173,.2);
+    }
+}
+
+@keyframes arrowDown{
+    0%{
+        transform:rotate(45deg) translate(0,0);
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        transform:rotate(45deg) translate(12px,12px);
+        opacity:0;
+    }
+}
+
+@keyframes floating{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}

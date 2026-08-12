@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilo/style.css">
+    <link rel="stylesheet" href="../estilo/animations.css">
+    <link rel="stylesheet" href="../estilo/responsive.css">
+</head>             
+
+<body>
+<div id="background">
+    <div id="particles"></div>
+</div>
+<div id="overlay"></div>
+<div class="curriculo">
+    <header>
+        <h1>Victor Jatobá Alcântara Batista</h1>
+        <h2>Desenvolvedor Full Stack</h2>
+    </header>
+    <section class="conteudo">
+        <div class="avatar">
+            <div class="nivel">
+                LV 22
+            </div>
+            <img
+                src="img/avatar.png"
+                id="avatar3d"
+                alt="Avatar">
+            <button id="btnAcenar">
+                👋 Acenar
+            </button>
+        </div>
+        <div class="informacoes">
+            <div class="card">
+                <h3>Sobre mim</h3>
+                <p>
+                    Sou apaixonado por tecnologia,
+                    desenvolvimento web, banco de dados
+                    e tenho um hobby em criação de jogos.
+
+                    Meu objetivo é transformar ideias em
+                    aplicações intuitivas e eficientes.
+                </p>
+            </div>
+            <div class="card">
+                <h3>Especialidades</h3>
+                <div class="skill">
+                    <span>HTML</span>
+                    <div class="barra">
+                        <div class="progresso html"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>CSS</span>
+                    <div class="barra">
+                        <div class="progresso css"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>JavaScript</span>
+                    <div class="barra">
+                        <div class="progresso js"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>Java</span>
+                    <div class="barra">
+                        <div class="progresso java"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <span>MySQL</span>
+                    <div class="barra">
+
+                        <div class="progresso mysql"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projetos">
+        <h2>
+            Projetos
+        </h2>
+        <div class="cards">
+            <div class="project-card" data-project="doce">
+                <video controls>
+                    <source src="../videos/DoceEncanto.mp4" type="video/mp4">
+                    <source src="../videos/DoceEncanto.webm" type="video/webm">
+                </video>
+                <h3>DoceEncanto</h3>
+                <p>
+                    Cardápio de uma doceria
+                </p>
+            </div>
+            <div class="project-card" data-project="uptickets">
+                <video controls>
+                    <source src="../videos/Spotify.mp4" type="video/mp4">
+                    <source src="../videos/Spotify.webm" type="video/webm">
+                </video>
+                <h3>UpTickets</h3>
+                <p>
+                    Sistema de Eventos
+                </p>
+            </div>
+            <div class="project-card" data-project="spotify">
+                <video controls>
+                    <source src="../videos/Spotify.mp4" type="video/mp4">
+                    <source src="../videos/Spotify.webm" type="video/webm">
+                </video>
+                <h3>Spotify</h3>
+                <p>
+                    Reprodução de um sistema
+                </p>
+            </div>
+            <div class="project-card" data-project="waygo">
+                <video controls>
+                    <source src="../videos/banco_dados.mp4" type="video/mp4">
+                    <source src="../videos/banco_dados.webm" type="video/webm">
+                </video>
+                <h3>WayGo</h3>
+                <p>
+                    Banco de Dados de um sistema para viagens B2B
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="contato">
+    <h2>Conecte-se Comigo</h2>
+    <div class="qr-container">
+        <div class="qr-card">
+            <img src="../imagens/git_hub.png">
+            <h3>GitHub</h3>
+            <p>Escaneie para acessar meus projetos.</p>
+        </div>
+        <div class="qr-card">
+            <img src="../imagens/linkedin (2).png">
+            <h3>LinkedIn</h3>
+            <p>Conheça minha trajetória profissional.</p>
+        </div>
+        <div class="qr-card">
+            <img src="../imagens/MeuCV.png">
+            <h3>Currículo</h3>
+            <p>Baixe meu currículo completo.</p>
+        </div>
+    </div>
+    </section>
+
+</div>
+<div id="dialogo">
+    <div class="caixaDialogo">
+        <h3>
+            Victor Jatobá Alcântara Batista
+        </h3>
+        <p id="textoDialogo">
+            Olá!
+        </p>
+    </div>
+</div>
+<div id="loading">
+    <div class="loading-box">
+        <h2>
+            Carregando Perfil...
+        </h2>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+</div>
+<script src="../movimentacao/part1.js"></script>
+</body>
+</html>

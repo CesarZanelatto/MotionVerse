@@ -1,0 +1,464 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration:none;
+    list-style:none;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+}
+
+/* Barra de rolagem */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#0ea5e9;
+}
+
+/* Cabeçalho */
+
+.pessoa{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+        linear-gradient(rgba(15,23,42,.75),
+        rgba(15,23,42,.75)),
+        url("../assets/curriculo/capa.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.perfil{
+    padding:30px;
+}
+
+.perfil img{
+    width:190px;
+    height:190px;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    object-fit:cover;
+    transition:
+        transform .4s,
+        box-shadow .4s;
+}
+
+.perfil img:hover{
+    transform:scale(1.08) rotate(2deg);
+    box-shadow:0 0 35px #38bdf8;
+}
+
+h1{
+    margin-top:20px;
+    font-size:3rem;
+    font-weight:bold;
+}
+
+#typing{
+    margin-top:12px;
+    color:#38bdf8;
+    min-height:40px;
+}
+
+/* Conteúdo */
+
+main{
+    width:90%;
+    max-width:950px;
+    margin:auto;
+    padding:60px 0;
+}
+
+/* Cards */
+
+.card{
+    background:rgba(30,41,59,.90);
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid rgba(56,189,248,.15);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+        transform .7s,
+        opacity .7s,
+        box-shadow .4s;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(56,189,248,.4);
+}
+
+.card h2{
+    color:#38bdf8;
+    margin-bottom:18px;
+}
+
+.card p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+.card a{
+    color:white;
+    transition:.3s;
+}
+
+.card a:hover{
+    color:#38bdf8;
+}
+
+.material-symbols-outlined,
+.fa-brands{
+    color:#38bdf8;
+    font-size:1.3rem;
+    transition:.3s;
+}
+
+.card p:hover i,
+.card p:hover span{
+    transform:scale(1.2);
+}
+
+/* Botão voltar ao topo */
+
+#topo{
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#38bdf8;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:999;
+
+    transition:.3s;
+}
+
+#topo:hover{
+    background:#0ea5e9;
+    transform:scale(1.15);
+}
+
+/* ==========================
+   DETAILS
+========================== */
+
+.expandir{
+    width:100%;
+}
+
+.expandir summary{
+    background:#0f172a;
+    border:2px solid #38bdf8;
+    border-radius:15px;
+
+    padding:18px;
+
+    font-size:1.3rem;
+    font-weight:bold;
+    text-align:center;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    list-style:none;
+
+    transition:
+        background .35,
+        color .35s,
+        transform .35s,
+        box-shadow .35s;
+}
+
+.expandir summary:hover{
+    background:#38bdf8;
+    color:#0f172a;
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 20px rgba(56,189,248,.5);
+}
+
+.expandir summary::-webkit-details-marker{
+    display:none;
+}
+
+.expandir summary::after{
+    content:"+";
+    float:right;
+    font-size:1.5rem;
+    transition:.4s;
+}
+
+.expandir[open] summary::after{
+    content:"−";
+    transform:rotate(180deg);
+}
+
+.expandir[open] summary{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+}
+
+/* ==========================
+   CONTEÚDO
+========================== */
+
+.conteudo{
+    background:#334155;
+
+    border:2px solid #38bdf8;
+    border-top:none;
+
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+
+    padding:25px;
+
+    animation:deslizar .5s ease;
+}
+
+.conteudo ul{
+    padding-left:20px;
+}
+
+.conteudo li{
+    margin:14px 0;
+    position:relative;
+    transition:.3s;
+}
+
+.conteudo li::before{
+    content:"▹";
+    color:#38bdf8;
+    margin-right:10px;
+}
+
+.conteudo li:hover{
+    transform:translateX(8px);
+    color:#38bdf8;
+}
+
+/* ==========================
+   SELEÇÃO
+========================== */
+
+::selection{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+/* ==========================
+   ANIMAÇÕES
+========================== */
+
+@keyframes deslizar{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(56,189,248,.6);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 30px rgba(56,189,248,.8);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(56,189,248,.6);
+
+    }
+
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media(max-width:768px){
+
+    .pessoa{
+
+        min-height:85vh;
+        background-attachment:scroll;
+
+    }
+
+    .perfil{
+
+        padding:20px;
+
+    }
+
+    .perfil img{
+
+        width:160px;
+        height:160px;
+
+    }
+
+    h1{
+
+        font-size:2.2rem;
+
+    }
+
+    #typing{
+
+        font-size:1rem;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .card p{
+
+        justify-content:center;
+        text-align:center;
+        flex-wrap:wrap;
+
+    }
+
+    .conteudo{
+
+        padding:18px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    h1{
+
+        font-size:1.8rem;
+
+    }
+
+    .perfil img{
+
+        width:140px;
+        height:140px;
+
+    }
+
+    .expandir summary{
+
+        font-size:1.1rem;
+
+    }
+
+    #topo{
+
+        width:45px;
+        height:45px;
+
+    }
+
+}

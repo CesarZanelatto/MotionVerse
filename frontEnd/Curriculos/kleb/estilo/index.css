@@ -1,0 +1,44 @@
+        *{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: url(../imagens/wallpapers-onepiece/backgrounds/PARTE_FRONTAL_SUNNY.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container{
+    display: grid;
+    grid-template-columns:minmax(150px, 1fr) minmax(200px, 1fr) minmax(150px, 1fr);
+    grid-template-rows: minmax(380px, 1fr) minmax(200px, 330px) minmax(200px, 380px);
+    height: 100%;
+    
+ 
+   
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    grid-column: 2/3;
+    grid-row: 2/-3;
+
+}
+
+.personagens{
+    padding: 10px;
+    height: 350px;
+    align-items: end;
+    transition:  height 0.5s ;
+}
+
+.personagens:hover{
+    
+    height: 500px;
+    cursor: pointer;
+}
+

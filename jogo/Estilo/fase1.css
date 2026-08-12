@@ -1,0 +1,211 @@
+:root {
+    --bg: #071522;
+    --senac-blue: #004A8D;
+    --senac-blue-deep: #00284a;
+    --panel: rgba(0,32,58,0.88);
+    --panel-solid: #0b2036;
+    --panel-2: rgba(0,42,74,0.9);
+    --senac-orange: #F7941D;
+    --senac-orange-light: #FDC180;
+    --pixel-shadow: #00101c;
+    --text: #eef3f8;
+    --text-dim: #9fb8d1;
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-body: 'Pixelify Sans', monospace;
+  }
+   
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+   
+  body {
+    height: 100vh;
+  overflow: hidden;
+  position: relative;
+  }
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 24px;
+}
+
+#telaRuntime,
+#tela1,
+#tela2,
+#tela3 {
+  display: block;
+  max-width: 100vw;
+  max-height: 100vh;
+  image-rendering: pixelated;
+}
+   
+  #fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: var(--scene-width, 1920px);
+    height: var(--scene-height, 1080px);
+    transform: translate(-50%, -50%);
+    object-fit: fill;
+    z-index: -1;
+    opacity: 0.9;
+  }
+   
+  #carro {
+  width: 128px; /* Largura de 1 único frame */
+  height: 128px; /* Altura do frame */
+  position: absolute;
+  top: 0;
+  right: 33.5%;
+  /* Caminho para a sua imagem */
+   
+  background-repeat: no-repeat;
+  background-size: 512px;
+   
+  /* Nome da animação | Duração total | Tipo de transição | Loop infinito */
+  animation: animarSprite 1s steps(4) infinite,
+    carroAndar 8s infinite ease-in-out;
+  z-index: -1;
+   
+  }
+   
+  #carro2 {
+  width: 128px; /* Largura de 1 único frame */
+  height: 128px; /* Altura do frame */
+  position: absolute;
+  top: 0;
+  right: 26.5%;
+  /* Caminho para a sua imagem */
+  background-image: url("../Imagem/cenario/assets/carro/carro-vermei-invertido.png");
+  background-repeat: no-repeat;
+  background-size: 512px;
+   
+  /* Nome da animação | Duração total | Tipo de transição | Loop infinito */
+  animation: animarSprite 1s steps(4) infinite, carroAndarDeRe 8s infinite;
+  z-index: -1;
+  transform: rotate(180deg);
+  }
+   
+  @keyframes animarSprite {
+  from {
+    background-position: 0px 0;
+  }
+  to {
+    /* Mova o equivalente à largura total da imagem para a esquerda */
+    background-position: -512px 0;
+  }
+  }
+   
+  @keyframes carroAndar {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(1000px);
+  }
+  }
+   
+  @keyframes carroAndarDeRe {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+  }
+   
+  #teto-inicio{
+    background: center/contain no-repeat url("../Imagem/cenario/teto-inicio.png");
+    width: 190px;
+    height: 400px;
+    position: fixed;
+    top: 33%;
+    right: 1078px;
+    opacity: 1;
+   
+  }
+   
+  h1 {
+    font-size: 4em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-family: var(--font-pixel);
+    color: var(--text);
+    text-shadow: 3px 5px 0px black;
+  }
+   
+  .accent {
+    color: var(--senac-orange);
+  }
+   
+  #titulo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    transition: left 2s ease, opacity 2s ease;
+  }
+   
+  #titulo.titulo-sai {
+    left: -50%;
+    opacity: 0;
+  }
+   
+  .oculto {
+    display: none;
+  }
+   
+  #caixa-dialogo {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--panel-solid);
+    color: var(--text);
+    padding: 16px 24px;
+    border-radius: 8px;
+    border: 2px solid var(--senac-orange);
+    max-width: 500px;
+    font-family: var(--font-body);
+    font-size: 1.1em;
+    z-index: 10;
+    text-align: center;
+  }
+   
+  #seta {
+    position: absolute;
+    left: 41.9%;
+    bottom: 39%;
+    transform: translateX(-50%);
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    animation: flutuar 1s ease-in-out infinite;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+  }
+   
+  @keyframes flutuar {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+   
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+   
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+  }

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotionVerse</title>
+<meta name="description" content="MotionVerse: uma aventura controlada por motion capture em tempo real, desenvolvida em turma no Senac.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="modelos/heroina.glb" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="modelos/Professor.glb" as="fetch" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css?v=8">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<div class="bg-video" id="bgVideo">
+<div class="bg-fireflies" id="fireflies" aria-hidden="true"></div>
+<div class="bg-overlay"></div>
+</div>
+
+<nav class="navbar">
+<a href="#home" class="logo tts-trigger" data-tts="Motion Verse. Ir para o início.">
+<span class="logo-mark" aria-hidden="true"></span>
+Motion<em>Verse</em>
+</a>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#home" class="tts-trigger" data-tts="Início.">Início</a></li>
+<li><a href="#mecanica" class="tts-trigger" data-tts="Como Jogar.">Como  Jogar</a></li>
+<li><a href="#demo" class="tts-trigger" data-tts="Demonstração.">Demonstração</a></li>
+<li><a href="#equipe" class="tts-trigger" data-tts="Equipe.">Equipe</a></li>
+</ul>
+
+<div class="nav-actions" id="navActions">
+<button id="btn-acessibilidade" class="access-btn tts-trigger" type="button" aria-pressed="false" aria-label="Ativar leitura por voz" data-tts="Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.">
+<span class="access-icon" aria-hidden="true">♿</span><span class="access-label">Acessibilidade</span>
+</button>
+<a href="Ranking/ranking.html" class="pixel-btn pixel-btn-blue tts-trigger" data-tts="Ranking.">🏆 Ranking</a>
+<a href="Cadastro/cadastro.html" class="pixel-btn pixel-btn-orange tts-trigger" data-tts="Cadastro.">Cadastro</a>
+<a href="../jogo/Marcacao/editor.html" class="pixel-btn pixel-btn-blue tts-trigger" data-tts="Editor de fases.">Editor</a>
+</div>
+
+<button class="nav-toggle tts-trigger" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" data-tts="Menu.">
+<span></span>
+</button>
+</nav>
+
+<header id="home" class="hero">
+<div class="hero-figure">
+<div class="computer-frame" aria-hidden="true">
+<div class="monitor-body">
+<div class="monitor-screen">
+<div class="screen-vortex"></div>
+<div class="screen-pulse-ring"></div>
+<div class="screen-scanlines"></div>
+<div class="screen-glare"></div>
+</div>
+<span class="monitor-led"></span>
+</div>
+<div class="monitor-stand-neck"></div>
+<div class="monitor-stand-base"></div>
+</div>
+<svg class="pull-fx" viewBox="0 0 300 300" aria-hidden="true">
+<defs>
+<filter id="pullGlow" x="-200%" y="-200%" width="500%" height="500%">
+<feGaussianBlur stdDeviation="1.6" result="blur"></feGaussianBlur>
+<feMerge>
+<feMergeNode in="blur"></feMergeNode>
+<feMergeNode in="SourceGraphic"></feMergeNode>
+</feMerge>
+</filter>
+</defs>
+<circle r="2.4" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="1.9s" begin="0s" repeatCount="indefinite" rotate="auto" path="M76,230 Q112,150 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="1.9s" begin="0s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="2.1s" begin="0.4s" repeatCount="indefinite" rotate="auto" path="M224,224 Q188,148 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.1s" begin="0.4s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2.6" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="2.3s" begin="0.9s" repeatCount="indefinite" rotate="auto" path="M96,260 Q118,170 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.3s" begin="0.9s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="1.8" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="1.7s" begin="1.2s" repeatCount="indefinite" rotate="auto" path="M204,258 Q184,168 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="1.7s" begin="1.2s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2.2" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="2s" begin="0.15s" repeatCount="indefinite" rotate="auto" path="M60,190 Q104,140 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2s" begin="0.15s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="1.9" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="2.2s" begin="0.65s" repeatCount="indefinite" rotate="auto" path="M240,182 Q196,138 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.2s" begin="0.65s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2.1" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="1.85s" begin="1.55s" repeatCount="indefinite" rotate="auto" path="M52,140 Q96,116 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="1.85s" begin="1.55s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="1.7" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="2.05s" begin="0.3s" repeatCount="indefinite" rotate="auto" path="M250,138 Q204,114 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.05s" begin="0.3s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2.3" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="2.4s" begin="1.05s" repeatCount="indefinite" rotate="auto" path="M70,278 Q100,190 150,100"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.4s" begin="1.05s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="1.8" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="1.75s" begin="1.8s" repeatCount="indefinite" rotate="auto" path="M228,270 Q192,186 150,100"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="1.75s" begin="1.8s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="2" fill="#FDC180" filter="url(#pullGlow)">
+<animateMotion dur="1.95s" begin="0.5s" repeatCount="indefinite" rotate="auto" path="M40,210 Q90,168 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="1.95s" begin="0.5s" repeatCount="indefinite"></animate>
+</circle>
+<circle r="1.6" fill="#00A3FF" filter="url(#pullGlow)">
+<animateMotion dur="2.15s" begin="1.35s" repeatCount="indefinite" rotate="auto" path="M262,206 Q210,166 150,96"></animateMotion>
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.72;1" dur="2.15s" begin="1.35s" repeatCount="indefinite"></animate>
+</circle>
+</svg>
+<div class="hero-model-wrap" id="heroModelWrap">
+<model-viewer id="heroModel" src="modelos/heroina.glb" alt="Clara, a heroína do jogo" auto-rotate rotation-per-second="10deg" camera-controls disable-zoom disable-pan min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" shadow-intensity="0" exposure="1.1" power-preference="high-performance"></model-viewer>
+<div class="avatar-fallback" id="heroFallback"><div class="ring"></div><div class="initials">C</div><small>modelo 3D da Clara pendente</small></div>
+</div>
+</div>
+
+<div class="hero-content reveal-zoom tts-trigger" data-tts="Motion Verse. Puxada para dentro do computador, Clara ficou presa em um mundo 2D. Agora, ela precisa desvendar seus mistérios para voltar ao mundo dela.">
+<span class="hero-tag"><span class="dot" aria-hidden="true"></span> A lenda desperta</span>
+<h1>Motion<span class="accent">Verse</span></h1>
+<p>Puxada para dentro do computador, Clara ficou presa em um mundo 2D. Agora, ela precisa desvendar seus mistérios para voltar ao mundo dela.</p>
+<div class="hero-actions">
+<a href="#demo" class="pixel-btn pixel-btn-orange tts-trigger" data-tts="Ver Demonstração.">Ver Demonstração</a>
+<a href="#equipe" class="pixel-btn pixel-btn-ghost tts-trigger" data-tts="Conhecer a Equipe.">Conhecer a Equipe</a>
+</div>
+</div>
+
+<div class="scroll-cue">Role</div>
+</header>
+
+<section id="mecanica">
+<div class="center reveal tts-trigger" data-tts="Como Jogar. Quatro gestos simples controlam a aventura.">
+<span class="section-label">A Magia por Trás</span>
+<h2 class="section-title">Como Jogar</h2>
+<p class="section-desc">Quatro gestos simples controlam a aventura.</p>
+<img src="assets/2D.png" alt="Personagem 2D" class="personagem-mecanica" loading="lazy" decoding="async">
+</div>
+
+<div class="mechanics-grid">
+<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 1: Mão Aberta. Move para cima.">
+<span class="mechanic-step">Gesto 01</span>
+<div class="mechanic-media">
+  <div class="sprite-hand sprite-static" role="img" aria-label="Mão Aberta"></div>
+</div>
+<h3>Mão Aberta</h3>
+<p>Move para cima.</p>
+</div>
+<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 2: Fechar Mão. Move para baixo.">
+<span class="mechanic-step">Gesto 02</span>
+<div class="mechanic-media">
+  <div class="sprite-hand sprite-anim" role="img" aria-label="Fechar Mão"></div>
+</div>
+<h3>Fechar Mão</h3>
+<p>Move para baixo.</p>
+</div>
+<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 3: Mão para a Direita. Move para a direita.">
+<span class="mechanic-step">Gesto 03</span>
+<div class="mechanic-media">
+<img src="assets\mao-direita.png" alt="Mão para a Direita" class="mechanic-img" loading="lazy" decoding="async">
+</div>
+<h3>Mão para a Direita</h3>
+<p>Move para a Direita.</p>
+</div>
+<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 4: Mão para a Esquerda. Move para a esquerda.">
+<span class="mechanic-step">Gesto 04</span>
+<div class="mechanic-media">
+<img src="assets\mao-esquerda.png" alt="Mão para a Esquerda" class="mechanic-img" loading="lazy" decoding="async">
+</div>
+<h3>Mão para a Esquerda</h3>
+<p>Move para a Esquerda.</p>
+</div>
+</div>
+</section>
+
+<section id="demo">
+<div class="center reveal tts-trigger" data-tts="Gameplay. Ação em Tempo Real. Assista ao vídeo tutorial para entender como a aventura de Clara funcionará.">
+<span class="section-label">Gameplay</span>
+<h2 class="section-title">Ação em Tempo Real</h2>
+<p class="section-desc">Assista ao video tutorial para entender como a aventura de Clara funcionará.</p>
+</div>
+
+<div class="trailer-frame pixel-panel reveal-zoom tts-trigger" id="trailerFrame" role="button" tabindex="0" aria-label="Assistir demonstração" data-tts="Vídeo demonstrativo de como jogar MotionVerse.">
+<span class="trailer-tag"><span class="rec-dot" aria-hidden="true"></span>Preview</span>
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="Cena de gameplay do MotionVerse" loading="lazy" decoding="async">
+<span class="play-btn" aria-hidden="true">▶</span>
+</div>
+</section>
+
+<div class="modal-overlay" id="trailerModal">
+<div class="modal-box">
+<button class="modal-close tts-trigger" id="modalClose" aria-label="Fechar vídeo" data-tts="Fechar vídeo.">✕</button>
+<p>Vídeo de demonstração ainda não foi adicionado. Troque este bloco por um vídeo ou iframe real em script.js.</p>
+</div>
+</div>
+
+<section id="equipe">
+    <div class="center reveal tts-trigger" data-tts="Sobre Nós. O professor e treze alunos deram vida a este mundo.">
+    <span class="section-label">A Companhia</span>
+    <h2 class="section-title">Sobre Nos</h2>
+    <p class="section-desc">O professor e treze alunos deram vida a este mundo.</p>
+    </div>
+    
+    <div class="select-wrap reveal-zoom">
+    
+    <div class="fighter-stage pixel-panel" id="fighterStage">
+    <div class="fighter-model" id="fighterModelWrap" style="background-image:url('fundos/professor.png')">
+    <model-viewer id="fighterModel" src="modelos/Professor.glb" alt="Avatar selecionado" auto-rotate rotation-per-second="18deg" camera-controls disable-zoom disable-pan min-camera-orbit="auto 75deg auto" max-camera-orbit="auto 105deg auto" shadow-intensity="0.3" exposure="1" power-preference="high-performance"></model-viewer>
+    <div class="avatar-fallback" id="fighterFallback"><div class="ring"></div><div class="initials">M</div><small>modelo 3D pendente</small></div>
+    </div>
+    
+    <div class="fighter-info">
+    <span class="fighter-index" id="fighterIndex">Integrante 01</span>
+    <span class="fighter-badge" id="fighterBadge" hidden>Mestre</span>
+    <h3 id="fighterName">Professor</h3>
+    <span class="fighter-role" id="fighterRole">Mestre do Projeto</span>
+    <a href="curriculos/professor/index.html" class="pixel-btn pixel-btn-orange" id="fighterEnter" target="_blank"
+    rel="noopener noreferrer">Ver Perfil</a>
+    </div>
+    </div>
+    
+    <p class="select-hint">Use <kbd>←</kbd> <kbd>→</kbd> para navegar e <kbd>Enter</kbd> para confirmar</p>
+    
+    <div class="roster" id="roster" role="listbox" aria-label="Selecionar integrante da equipe">
+    
+      <button class="roster-item is-active" type="button" data-index="0"
+        data-name="Rogerio" data-role="Rogerio Sobral" data-badge="Mestre"
+        data-model="modelos/Professor.glb" data-page="curriculos/professor/index.html"
+        data-bg="fundos/professor.png"
+        role="option" aria-selected="true">
+        <span class="roster-master" aria-hidden="true"></span>
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Professor.glb" alt="Avatar do Professor" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">M</span>
+        </span>
+        <span class="roster-name">Rogerio</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="1"
+        data-name="Cesar" data-role="CESAR DE OLIVEIRA ZANELATTO" data-badge="Back-End"
+        data-model="modelos/cesar.glb" data-page="..\curriculos\cesar\curriculo\cesar.html"
+        data-bg="fundos/cesar.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/cesar.glb" alt="Avatar de Aluno 01" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">01</span>
+        </span>
+        <span class="roster-name">Cesar</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="2"
+        data-name="Daiane" data-role="DAIANE DUARTE DOS SANYOS" data-badge="Front-End"
+        data-model="modelos/Dai.glb" data-page="..\curriculos/daiane/daiane.html"
+        data-bg="fundos/daiane.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Dai.glb" alt="Avatar de Aluno 02" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">02</span>
+        </span>
+        <span class="roster-name">Daiane</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="3"
+        data-name="Erik" data-role="ERIK MAURICIO SILVA" data-badge="Front-End"
+        data-model="modelos/erik.glb" data-page="Curriculos\Erik-Mauricio\index.html"
+        data-bg="fundos/erik.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/erik.glb" alt="Avatar de Aluno 03" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">03</span>
+        </span>
+        <span class="roster-name">Erik</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="4"
+        data-name="Gabriel" data-role="GABRIEL ROBERTO ROSSI" data-badge="Front-End"
+        data-model="modelos/Gabriel.glb" data-page="..\curriculos/gabriel/gabriel.html"
+        data-bg="fundos/gabriel.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Gabriel.glb" alt="Avatar de Aluno 04" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">04</span>
+        </span>
+        <span class="roster-name">Gabriel</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="5"
+        data-name="Hebert" data-role="HEBERT CRISTIAN SILVA DA CRUZ" data-badge="Front-End"
+        data-model="modelos/heber.glb" data-page="curriculos/hebert/index.html"
+        data-bg="fundos/hebert.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/heber.glb" alt="Avatar de Aluno 05" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">05</span>
+        </span>
+        <span class="roster-name">Hebert</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="6"
+        data-name="Kleber" data-role="KLEBER AMARO DA SILVA" data-badge="Back-End"
+        data-model="modelos/kleber.glb" data-page="..\curriculos\kleb\pages\kleber.html"
+        data-bg="fundos/kleber.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/kleber.glb" alt="Avatar de Aluno 06" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">06</span>
+        </span>
+        <span class="roster-name">Kleber</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="7"
+        data-name="Leandro" data-role="LEANDRO CAVALCANTE CHAVES DA MATA" data-badge="Back-End"
+        data-model="modelos/leandro.glb" data-page="curriculos/leandro/index.html"
+        data-bg="fundos/leandro.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/leandro.glb" alt="Avatar de Aluno 07" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">07</span>
+        </span>
+        <span class="roster-name">Leandro</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="8"
+        data-name="Leonardo" data-role="LEONARDO DIAS DA SILVA" data-badge="Back-End"
+        data-model="modelos/Leo.glb" data-page="curriculos/leonardo/index.html"
+        data-bg="fundos/leonardo.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Leo.glb" alt="Avatar de Aluno 08" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">08</span>
+        </span>
+        <span class="roster-name">Leonardo</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="9"
+        data-name="Lyss" data-role="LYSS KEURY GOMES BELLO DA MOTTA" data-badge="Front-End"
+        data-model="modelos/Lyss.glb" data-page="Curriculos\lyss\assets\index.html"
+        data-bg="fundos/lyss.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Lyss.glb" alt="Avatar de Aluno 09" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">09</span>
+        </span>
+        <span class="roster-name">Lyss</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="10"
+        data-name="Rafael Gomes" data-role="RAFAEL SILVA GOMES" data-badge="Front-End"
+        data-model="modelos/Rafael Gomes.glb" data-page="..\curriculos\rafael-gomes\curriculo.html"
+        data-bg="fundos/rafael-gomes.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Rafael Gomes.glb" alt="Avatar de Aluno 10" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">10</span>
+        </span>
+        <span class="roster-name">Rafael Gomes</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="11"
+        data-name="Rafael Moralli" data-role="RAFAEL SPER MORALLI" data-badge="Front-End"
+        data-model="modelos/Rafael mora.glb" data-page="Curriculos\rafael\page\page.html"
+        data-bg="fundos/rafael-moralli.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Rafael mora.glb" alt="Avatar de Aluno 11" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">11</span>
+        </span>
+        <span class="roster-name">Rafael Moralli</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="12"
+        data-name="Raissa" data-role="RAISSA MICHELY GUTIERREZ QUISPE" data-badge="Front-End"
+        data-model="modelos/Raissa.glb" data-page="curriculos/raissa/index.html"
+        data-bg="fundos/raissa.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Raissa.glb" alt="Avatar de Aluno 12" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">12</span>
+        </span>
+        <span class="roster-name">Raissa</span>
+      </button>
+    
+      <button class="roster-item" type="button" data-index="13"
+        data-name="Victor" data-role="VICTOR JATOBA ALCANTARA BATISTA" data-badge="Back-End"
+        data-model="modelos/Victor.glb" data-page="Curriculos\victor\marcacao\index.html"
+        data-bg="fundos/victor.png"
+        role="option" aria-selected="false">
+        <span class="roster-thumb">
+          <model-viewer src="modelos/Victor.glb" alt="Avatar de Aluno 13" loading="lazy" shadow-intensity="0"
+            disable-zoom disable-pan></model-viewer>
+          <span class="thumb-fallback">13</span>
+        </span>
+        <span class="roster-name">Victor</span>
+      </button>
+    </div>
+    
+    </div>
+    </section>
+
+<footer>
+<p>© 2026 Motion<span class="foot-accent">Verse</span></p>
+<p>Projeto desenvolvido no Senac</p>
+</footer>
+
+<script src="script.js?v=8" defer></script>
+</body>
+</html>

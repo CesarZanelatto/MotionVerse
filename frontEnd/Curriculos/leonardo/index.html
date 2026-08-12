@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo - Leonardo Dias</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#141E30,#243B55);
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:30px;
+}
+
+.left{
+    background:#1d2938;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    animation:slideLeft 1s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.right{
+    animation:slideRight 1s;
+}
+
+img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #00d9ff;
+    margin-bottom:20px;
+    transition:.4s;
+}
+
+img:hover{
+    transform:scale(1.08) rotate(5deg);
+}
+
+h1{
+    font-size:34px;
+    margin-bottom:5px;
+}
+
+h2{
+    color:#00d9ff;
+    margin-bottom:25px;
+}
+
+.info{
+    margin-top:25px;
+    text-align:left;
+}
+
+.info p{
+    margin:12px 0;
+}
+
+.card{
+    background:white;
+    color:#222;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#0f5ba7;
+    margin-bottom:15px;
+}
+
+.skill{
+    margin:18px 0;
+}
+
+.skill span{
+    font-weight:bold;
+}
+
+.bar{
+    height:10px;
+    background:#ddd;
+    border-radius:50px;
+    overflow:hidden;
+    margin-top:6px;
+}
+
+.progress{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#00d9ff,#006eff);
+    animation:fill 2s forwards;
+}
+
+.html{width:95%;}
+.css{width:90%;}
+.js{width:75%;}
+.python{width:85%;}
+
+.timeline{
+    border-left:4px solid #00d9ff;
+    padding-left:20px;
+}
+
+.timeline div{
+    margin-bottom:20px;
+    position:relative;
+}
+
+.timeline div::before{
+    content:"";
+    width:15px;
+    height:15px;
+    border-radius:50%;
+    background:#00d9ff;
+    position:absolute;
+    left:-29px;
+    top:5px;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    background:#00d9ff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+button:hover{
+    background:#0077ff;
+    transform:scale(1.05);
+}
+
+@keyframes slideLeft{
+    from{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes slideRight{
+    from{
+        opacity:0;
+        transform:translateX(100px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes fill{
+    from{
+        width:0;
+    }
+}
+
+.fade{
+    animation:fade 1.5s;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@media(max-width:800px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<img src="Reparou Bem.jpg" alt="Foto">
+
+<h1>Leonardo Dias</h1>
+
+<h2>desenvolvedor backend</h2>
+
+<p>
+Apaixonado por tecnologia, desenvolvimento web e criação de sistemas modernos.
+</p>
+
+<div class="info">
+
+<p>📧 diasleo0806@gmail.com</p>
+
+<p>📱 (11) 93939-3210</p>
+
+<p>📍 São Paulo - SP</p>
+
+<p>🌐 ld.slvrei</p>
+
+</div>
+
+<button onclick="baixar()">Baixar Currículo</button>
+
+</div>
+
+<div class="right">
+
+<div class="card fade">
+
+<h3>Sobre Mim</h3>
+
+<p>
+Sou desenvolvedor focado em criar aplicações modernas, intuitivas e de alta performance utilizando HTML, CSS, JavaScript, Python e bancos de dados SQL.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Habilidades</h3>
+
+<div class="skill">
+<span>HTML</span>
+<div class="bar">
+<div class="progress html"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>CSS</span>
+<div class="bar">
+<div class="progress css"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>JavaScript</span>
+<div class="bar">
+<div class="progress js"></div>
+</div>
+</div>
+
+<div class="skill">
+<span>Python</span>
+<div class="bar">
+<div class="progress python"></div>
+</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>sobre mim</h3>
+<p> Meu nome é Leonardo Dias, nasci em 08 de junho de 2008 e atualmente estou cursando o 3º ano do Ensino Médio. Paralelamente, realizo o curso de Técnico em Tecnologia da Informação (TI) no Senac Santana, onde venho desenvolvendo conhecimentos em programação, banco de dados, lógica computacional e outras áreas da tecnologia.
+
+    Tenho interesse em aprender constantemente, enfrentar novos desafios e adquirir experiência prática na área de TI. Busco oportunidades que me permitam colocar meus conhecimentos em prática, desenvolver minhas habilidades profissionais e crescer na área de tecnologia.. Gosto muito </p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Formação</h3>
+
+<p><strong>Análise e Desenvolvimento de Sistemas</strong></p>
+
+<p>Universidade Exemplo</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function baixar(){
+    window.print();
+}
+
+const cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+
+cards.forEach(card=>{
+
+const top=card.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+card.style.opacity=1;
+card.style.transform="translateY(0px)";
+
+}
+
+});
+
+});
+
+cards.forEach(card=>{
+card.style.opacity=0;
+card.style.transform="translateY(60px)";
+card.style.transition="1s";
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* =======================================================
+   IMPORTAÇÃO DAS FONTES
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+body{
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size: 18px;
+}
+
+.camada{
+    position:absolute;
+    inset:0;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+}
+
+/* =======================================================
+   CONTAINER
+======================================================= */
+
+.container{
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+.card{
+
+    width:100%;
+    max-width:650px;
+    background:var(--panel);
+    border:3px solid var(--senac-orange);
+    padding:35px;
+    box-shadow:
+        5px 5px 0 var(--pixel-shadow),
+        inset 0 0 0 3px var(--senac-blue-deep);
+}
+
+
+/* =======================================================
+   TÍTULO
+======================================================= */
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-family:var(--font-pixel);
+    font-size:2rem;
+    color:var(--senac-orange);
+    text-shadow:2px 3px 0 var(--pixel-shadow);
+}
+
+header p{
+    color:var(--text-dim);
+    font-family:var(--font-body);
+}
+
+/* =======================================================
+   FORMULÁRIO
+======================================================= */
+
+.grupo{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:18px;
+}
+
+.grupo label{
+    font-family:var(--font-pixel);
+    font-size: .55rem;
+    color:var(--text)
+}
+
+.grupo input{
+    background:var(--panel-solid);
+    border:3px solid var(--senac-blue);
+    color:var(--text);
+    padding:12px;
+    outline:none;
+    transition:.15s;
+}
+
+.grupo input:focus{
+    border-color: var(--senac-orange);
+    box-shadow: 4px 4px 0 var(--pixel-shadow);
+}
+
+/* =======================================================
+   BOTÕES
+======================================================= */
+
+.pixel-btn{
+    font-family:var(--font-pixel);
+    font-size:.62rem;
+
+    padding:12px 18px;
+
+    border:3px solid var(--pixel-shadow);
+
+    cursor:pointer;
+
+    box-shadow:4px 4px 0 var(--pixel-shadow);
+
+    transition:transform .1s, box-shadow .1s;
+}
+
+.pixel-btn:active{
+    transform:translate(4px,4px);
+    box-shadow:none;
+}
+
+.pixel-btn-orange{
+    background:var(--senac-orange);
+    color:#111;
+}
+
+.pixel-btn-blue{
+    background:var(--senac-blue);
+    color:var(--text);
+}
+
+.pixel-btn-ghost{
+    background:var(--panel-solid);
+    color:var(--senac-orange);
+    border:3px solid var(--senac-orange);
+}
+
+.bg-fireflies {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  
+  .firefly {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--senac-orange-light);
+    box-shadow: 0 0 6px 2px rgba(253,193,128,.8);
+    animation: drift linear infinite;
+    opacity: 0;
+  }
+
+  @keyframes drift {
+    0%   { transform: translate(0,0); opacity: 0; }
+    10%  { opacity: .9; }
+    90%  { opacity: .4; }
+    100% { transform: translate(var(--dx), var(--dy)); opacity: 0; }
+  }
+
+/* =======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media (max-width:860px){
+    .container{
+        padding:20px;
+    }
+
+    .card{
+        padding:24px;
+    }
+
+    .botoes{
+        flex-direction:column;
+    }
+
+    .pixel-btn{
+        width:100%;
+    }
+}
+
+/* =======================================================
+   MODAL
+======================================================= */
+
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.7);
+
+    z-index:999;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.modal-conteudo{
+
+    width:400px;
+
+    background:var(--panel);
+
+    border:3px solid var(--senac-orange);
+
+    padding:30px;
+
+    text-align:center;
+
+
+    box-shadow:
+    6px 6px 0 var(--pixel-shadow),
+    inset 0 0 0 3px var(--senac-blue-deep);
+
+
+    animation:abrirModal .2s ease;
+
+}
+
+
+
+.modal-conteudo h2{
+
+    font-family:var(--font-pixel);
+
+    font-size:.8rem;
+
+    color:var(--senac-orange);
+
+    margin-bottom:20px;
+
+}
+
+
+
+.modal-conteudo p{
+
+    color:var(--text);
+
+    margin-bottom:25px;
+
+}
+
+
+
+.modal-botoes{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+@keyframes abrirModal{
+
+    from{
+
+        transform:scale(.7);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    .modal-conteudo{
+
+        width:80%;
+
+    }
+
+
+    .modal-botoes{
+
+        flex-direction:column;
+
+    }
+
+}

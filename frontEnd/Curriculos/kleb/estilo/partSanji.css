@@ -1,0 +1,57 @@
+       *{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: url(../imagens/wallpapers-onepiece/backgrounds/partSanji.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+
+
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 100px;
+    margin-right: 200px;
+    background-color: rgba(0, 0, 0, 0.171);
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+h1{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: rgb(250, 238, 238);
+    font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#video{
+   margin-top: 50px;
+   align-self: center;
+   height: 200px;
+   width: 350px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   border-radius: 10px;
+}

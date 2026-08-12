@@ -1,0 +1,40 @@
+:root{
+    --fundo:
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: url(../imagens/wallpapers-onepiece/backgrounds/telainicialSunny.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    
+}
+
+
+
+#barco{
+    
+    height: 300px; 
+    transition: height 0.5s;
+    cursor: pointer;
+    
+}
+
+#barco:hover{
+    height: 400px;
+}

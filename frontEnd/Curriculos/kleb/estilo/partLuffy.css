@@ -1,0 +1,13 @@
+       *{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: url(../imagens/wallpapers-onepiece/backgrounds/parteLuffy.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

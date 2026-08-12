@@ -1,0 +1,227 @@
+:root {
+  --bg: #071522;
+  --senac-blue: #004a8d;
+  --senac-blue-deep: #00284a;
+  --panel: rgba(0, 32, 58, 0.88);
+  --panel-solid: #0b2036;
+  --panel-2: rgba(0, 42, 74, 0.9);
+  --senac-orange: #f7941d;
+  --senac-orange-light: #fdc180;
+  --pixel-shadow: #00101c;
+  --text: #eef3f8;
+  --text-dim: #9fb8d1;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "Pixelify Sans", monospace;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  height: 100vh;
+  overflow-y: hidden;
+}
+ 
+.center {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+ 
+img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.85;
+}
+ 
+#carro {
+  width: 128px; /* Largura de 1 único frame */
+  height: 128px; /* Altura do frame */
+  position: absolute;
+  top: 0;
+  right: 33.5%;
+  /* Caminho para a sua imagem */
+  background-repeat: no-repeat;
+  background-size: 512px;
+ 
+  /* Nome da animação | Duração total | Tipo de transição | Loop infinito */
+  animation: animarSprite 1s steps(4) infinite,
+    carroAndar 8s infinite ease-in-out;
+  z-index: -1;
+}
+ 
+#carro2 {
+  width: 128px; /* Largura de 1 único frame */
+  height: 128px; /* Altura do frame */
+  position: absolute;
+  top: 0;
+  right: 26.5%;
+  /* Caminho para a sua imagem */
+  background-image: url("../Imagem/cenario/assets/carro/carro-vermei-invertido.png");
+  background-repeat: no-repeat;
+  background-size: 512px;
+ 
+  /* Nome da animação | Duração total | Tipo de transição | Loop infinito */
+  animation: animarSprite 1s steps(4) infinite, carroAndarDeRe 8s infinite;
+  z-index: -1;
+  transform: rotate(180deg);
+}
+ 
+@keyframes animarSprite {
+  from {
+    background-position: 0px 0;
+  }
+  to {
+    /* Mova o equivalente à largura total da imagem para a esquerda */
+    background-position: -512px 0;
+  }
+}
+ 
+@keyframes carroAndar {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(1000px);
+  }
+}
+ 
+@keyframes carroAndarDeRe {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(-1200px);
+  }
+}
+ 
+h1 {
+  font-size: 4em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+  font-family: var(--font-pixel);
+  color: var(--text);
+  text-shadow: 3px 5px 0px black;
+}
+ 
+.accent {
+  color: var(--senac-orange);
+}
+ 
+p {
+  text-shadow: 3px 5px 0px black;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 2em;
+  cursor: pointer;
+  transition: color 0.2s linear, text-shadow 0.3s linear;
+}
+ 
+p:hover {
+  text-shadow: 3px 5px 0px black;
+  color: var(--text);
+}
+ 
+#titulo {
+  position: relative;
+  transition: all 0.8s ease;
+}
+ 
+#meuTexto {
+  transition: opacity 0.5s ease, transform 0.2s ease, color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+ 
+#meuTexto:hover {
+  transform: scale(1.05);
+  color: var(--text);
+  text-shadow: 0px 0px 0px var(--pixel-shadow);
+}
+ 
+#botoes {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+  transition: 0.8s ease;
+}
+ 
+#botoes button {
+  width: 280px;
+  padding: 16px 24px;
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.192);
+  color: rgb(14, 13, 13);
+  border: 3px solid var(--senac-orange);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .2s ease;
+  box-shadow:
+      0 6px 18px rgba(0,0,0,.25),
+      0 0 0 2px rgba(255,255,255,.25);
+}
+ 
+#botoes button:hover {
+  background: var(--senac-orange);
+  color: white;
+  transform: translateY(-4px);
+  box-shadow:
+      0 10px 25px rgba(247,148,29,.45);
+}
+ 
+#botoes button:active {
+  transform: translateY(1px);
+}
+ 
+ 
+/* Estado após pressionar uma tecla */
+ 
+#menu {
+  position: relative;
+}
+ 
+.menu-iniciado #titulo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+ 
+.menu-iniciado #meuTexto {
+  opacity: 0;
+}
+ 
+.menu-iniciado #botoes {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+ 
+#jogador {
+  height: 35px;
+  border: none;
+  text-align: center;
+  margin: 30px 8px;
+  border-radius: 8px;
+  background-color: rgb(255, 240, 221);
+}

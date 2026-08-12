@@ -1,0 +1,746 @@
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+
+
+:root {
+    --bg: #071522;
+
+    --senac-blue: #004A8D;
+    --senac-blue-deep: #00284a;
+
+    --panel: rgba(0,32,58,0.88);
+    --panel-solid: #0b2036;
+    --panel-2: rgba(0,42,74,0.9);
+
+    --senac-orange: #F7941D;
+    --senac-orange-light: #FDC180;
+
+    --pixel-shadow: #00101c;
+
+    --text: #eef3f8;
+    --text-dim: #9fb8d1;
+
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-body: 'Pixelify Sans', monospace;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: var(--font-body);
+
+    font-size: 18px;
+}
+
+
+.bg-video {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -3;
+
+    overflow: hidden;
+}
+
+
+.bg-video video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.bg-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(7, 21, 34, 0.72);
+}
+
+
+
+
+.bg-fireflies {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.firefly {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: var(--senac-orange-light);
+
+    box-shadow:
+        0 0 6px 2px rgba(253,193,128,.8);
+
+    animation: drift linear infinite;
+
+    opacity: 0;
+}
+
+
+@keyframes drift {
+
+    0% {
+        transform: translate(0,0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .9;
+    }
+
+    90% {
+        opacity: .4;
+    }
+
+    100% {
+        transform: translate(var(--dx), var(--dy));
+        opacity: 0;
+    }
+
+}
+
+
+
+h1 {
+    text-align: center;
+
+    margin: 35px 0 15px;
+
+    font-family: var(--font-pixel);
+
+    font-size: 1.7rem;
+
+    color: var(--senac-orange);
+
+    text-shadow:
+        2px 3px 0 var(--pixel-shadow);
+}
+
+
+#nomeEquipe {
+    text-align: center;
+
+    margin: 0 0 35px;
+
+    color: var(--text-dim);
+
+    font-family: var(--font-body);
+
+    font-size: 20px;
+}
+
+
+
+.cardJogador {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    padding: 22px 25px;
+
+    background: var(--panel);
+
+    border: 3px solid var(--senac-blue);
+
+    box-shadow:
+        5px 5px 0 var(--pixel-shadow),
+        inset 0 0 0 2px var(--senac-blue-deep);
+
+}
+
+
+
+.cardJogador h3 {
+
+    margin: 0 0 15px;
+
+    font-family: var(--font-pixel);
+
+    font-size: .7rem;
+
+    color: var(--senac-orange);
+
+}
+
+
+
+
+.cardJogador p {
+
+    margin: 0 0 15px;
+
+    color: var(--text);
+
+    font-family: var(--font-body);
+
+    font-size: 18px;
+
+}
+
+
+
+.cardJogador select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: var(--panel-solid);
+
+    border: 3px solid var(--senac-blue);
+
+    color: var(--text);
+
+    outline: none;
+
+    font-family: var(--font-body);
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .15s;
+
+}
+
+
+.cardJogador select:hover {
+
+    border-color: var(--senac-orange);
+
+}
+
+
+.cardJogador select:focus {
+
+    border-color: var(--senac-orange);
+
+    box-shadow:
+        4px 4px 0 var(--pixel-shadow);
+
+}
+
+
+
+.botoes {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 35px auto 50px;
+
+}
+
+
+
+.botoes button {
+
+    font-family: var(--font-pixel);
+
+    font-size: .62rem;
+
+    padding: 12px 18px;
+
+    border: 3px solid var(--pixel-shadow);
+
+    cursor: pointer;
+
+    box-shadow:
+        4px 4px 0 var(--pixel-shadow);
+
+    transition:
+        transform .1s,
+        box-shadow .1s;
+
+}
+
+
+.botoes button:active {
+
+    transform: translate(4px,4px);
+
+    box-shadow: none;
+
+}
+
+
+
+#btnVoltar {
+
+    background: var(--senac-blue);
+
+    color: var(--text);
+
+}
+
+
+
+
+#btnIniciar {
+
+    background: var(--senac-orange);
+
+    color: #111;
+
+}
+
+
+
+#btnVoltar:hover {
+
+    background: #0062b8;
+
+}
+
+
+#btnIniciar:hover {
+
+    background: var(--senac-orange-light);
+
+}
+
+
+
+.container {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 30px 20px 50px;
+
+}
+
+
+
+footer {
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: var(--text-dim);
+
+    font-family: var(--font-body);
+
+    font-size: 14px;
+
+}
+
+
+footer p {
+
+    margin: 5px;
+
+}
+
+
+.foot-accent {
+
+    color: var(--senac-orange);
+
+}
+
+
+
+
+@media (max-width: 860px) {
+
+    .container {
+
+        padding: 20px;
+
+    }
+
+    .cardJogador {
+
+        padding: 20px;
+
+    }
+
+    .botoes {
+
+        flex-direction: column;
+
+    }
+
+    .botoes button {
+
+        width: 100%;
+
+        max-width: 350px;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    h1 {
+
+        font-size: 1.1rem;
+
+        margin-top: 25px;
+
+    }
+
+    #nomeEquipe {
+
+        font-size: 17px;
+
+    }
+
+    .cardJogador h3 {
+
+        font-size: .6rem;
+
+    }
+
+    .cardJogador {
+
+        padding: 18px;
+
+    }
+
+}
+
+/* ==========================================
+   MODAIS
+========================================== */
+
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(4px);
+
+}
+
+
+
+/* Caixa do modal */
+
+.modal-box {
+
+
+    width: 90%;
+
+    max-width: 450px;
+
+
+    padding: 30px;
+
+
+    background: var(--panel-solid);
+
+
+    border: 4px solid var(--senac-blue);
+
+
+    box-shadow:
+
+        8px 8px 0 var(--pixel-shadow),
+
+        inset 0 0 0 3px var(--senac-blue-deep);
+
+
+    text-align: center;
+
+
+    animation: aparecerModal .25s ease;
+
+
+}
+
+
+
+
+.modal-box h2 {
+
+
+    margin-top: 0;
+
+
+    font-family: var(--font-pixel);
+
+
+    font-size: 1rem;
+
+
+    color: var(--senac-orange);
+
+
+    text-shadow:
+
+        2px 2px 0 var(--pixel-shadow);
+
+
+}
+
+
+
+
+.modal-box p {
+
+
+    color: var(--text);
+
+
+    font-size: 18px;
+
+
+    line-height: 1.5;
+
+
+    margin: 20px 0;
+
+
+}
+
+
+
+
+.modal-botoes {
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    gap: 20px;
+
+
+    margin-top: 25px;
+
+
+}
+
+
+
+
+
+.modal button {
+
+
+    padding: 12px 20px;
+
+
+    font-family: var(--font-pixel);
+
+
+    font-size: .55rem;
+
+
+    cursor: pointer;
+
+
+    border: 3px solid var(--pixel-shadow);
+
+
+    box-shadow:
+
+        4px 4px 0 var(--pixel-shadow);
+
+
+    transition: .15s;
+
+
+}
+
+
+
+
+.modal button:active {
+
+
+    transform: translate(4px,4px);
+
+
+    box-shadow:none;
+
+
+}
+
+
+
+
+#btnConfirmarModal {
+
+
+    background: var(--senac-orange);
+
+
+    color:#111;
+
+
+}
+
+
+
+
+
+#btnCancelarModal,
+
+#btnFecharErro {
+
+
+    background: var(--senac-blue);
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+#btnConfirmarModal:hover {
+
+
+    background: var(--senac-orange-light);
+
+
+}
+
+
+
+
+
+#btnCancelarModal:hover,
+
+#btnFecharErro:hover {
+
+
+    background:#0062b8;
+
+
+}
+
+
+
+
+
+@keyframes aparecerModal {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:scale(.8);
+
+
+    }
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:scale(1);
+
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:600px){
+
+
+    .modal-box {
+
+
+        padding:22px;
+
+
+    }
+
+
+
+    .modal-botoes {
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .modal button {
+
+
+        width:100%;
+
+
+    }
+
+
+}

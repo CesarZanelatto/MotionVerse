@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Entre em contato com Rafael Moralli para oportunidades, projetos e conexões profissionais."
+        data-i18n-content="contact.meta.description">
+    <meta name="theme-color" content="#172972">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <script src="../js/main.js" defer></script>
+    <title>Contato | Rafael Moralli</title>
+</head>
+
+<body id="corpo" data-page="contact">
+    <a class="skip-link" href="#main-content" data-i18n="skip.content">Pular para o conteúdo principal</a>
+
+    <header>
+        <nav class="navbar" data-i18n-aria-label="nav.label" aria-label="Navegação principal">
+            <ul class="nav-links">
+                <li><a href="./page.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="./portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+                <li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li>
+                <li><a href="./contact.html" aria-current="page" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-toggle" type="button" aria-expanded="false" aria-controls="language-menu"
+                    data-i18n-aria-label="language.label"
+                    aria-label="Selecionar idioma. Idioma atual: Português do Brasil">
+                    <span class="fi fi-br current-flag" aria-hidden="true"></span><span
+                        class="lang-current">PT-BR</span><span class="material-symbols-outlined"
+                        aria-hidden="true">arrow_drop_down</span>
+                </button>
+                <div class="language-menu" id="language-menu" hidden>
+                    <button class="lang-option" type="button" data-lang="pt-BR" lang="pt-BR" aria-pressed="true"><span
+                            class="fi fi-br" aria-hidden="true"></span><span>PT-BR</span></button>
+                    <button class="lang-option" type="button" data-lang="en" lang="en" aria-pressed="false"><span
+                            class="fi fi-us" aria-hidden="true"></span><span>EN</span></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    </section>
+
+    <main id="main-content">
+        <section class="contact-hero container" aria-labelledby="contact-title" data-reveal>
+            <p class="eyebrow" data-i18n="contact.hero.eyebrow">Contato</p>
+            <h1 id="contact-title" data-i18n="contact.hero.title">Boas conversas podem ser o começo de grandes projetos.
+            </h1>
+            <p data-i18n="contact.hero.text">Se você tem uma oportunidade, um projeto ou quer trocar ideias sobre
+                tecnologia, ficarei feliz em conversar.</p>
+        </section>
+        <section class="contact-cards container" data-i18n-aria-label="contact.channels.label"
+            aria-label="Canais de contato">
+            <article class="contact-card" data-reveal="left">
+                <span class="contact-icon material-symbols-outlined" aria-hidden="true">alternate_email</span>
+                <h2 data-i18n="contact.cards.email.title">E-mail</h2>
+                <p data-i18n="contact.cards.email.text">Para oportunidades e contatos profissionais</p>
+                <a href="mailto:rafaelmoralli561@gmail.com">rafaelmoralli561@gmail.com</a>
+            </article>
+            <article class="contact-card" data-reveal>
+                <span class="contact-icon material-symbols-outlined" aria-hidden="true">work</span>
+                <h2 data-i18n="contact.cards.linkedin.title">LinkedIn</h2>
+                <p data-i18n="contact.cards.linkedin.text">Experiência, projetos e conexões</p>
+
+                <section class="contact-actions">
+                    <a class="button button-secondary" href="https://www.linkedin.com/in/rafaelmoralli/" target="_blank"
+                        rel="noopener noreferrer" data-i18n="contact.cards.linkedin.action">Abrir LinkedIn</a>
+                </section>
+            </article>
+
+            <article class="contact-card" data-reveal>
+                <span class="contact-icon material-symbols-outlined" aria-hidden="true">code</span>
+                <h2 data-i18n="contact.cards.github.title">GitHub</h2>
+                <p data-i18n="contact.cards.github.text">Código, estudos e projetos em evolução</p>
+
+                <section class="contact-actions">
+                    <a class="button button-secondary" href="https://github.com/RafaMoralli/" target="_blank"
+                        rel="noopener noreferrer" data-i18n="contact.cards.github.action">Abrir GitHub</a>
+                </section>
+            </article>
+            <article class="contact-card" data-reveal="right">
+                <span class="contact-icon material-symbols-outlined" aria-hidden="true">location_on</span>
+                <h2 data-i18n="contact.cards.location.title">Localização</h2>
+                <p class="location-value" data-i18n="contact.cards.location.value">São Paulo, SP · Brasil</p>
+            </article>
+        </section>
+
+        <section class="contact-form-section container" aria-labelledby="form-title" data-reveal>
+            <div class="form-intro">
+                <p class="eyebrow" data-i18n="contact.form.eyebrow">Envie uma mensagem</p>
+                <h2 id="form-title" data-i18n="contact.form.title">Conte um pouco sobre o que você tem em mente.</h2>
+                <p data-i18n="contact.form.text">O formulário está preparado para uma futura integração de envio.
+                    Enquanto isso, você também pode falar comigo diretamente por e-mail.</p>
+            </div>
+
+            <form class="contact-form" data-contact-form data-emailjs-ready="true">
+                <div class="form-field">
+                    <label for="contact-name" data-i18n="contact.form.name">Nome</label>
+                    <input id="contact-name" name="name" type="text" autocomplete="name" required maxlength="100"
+                        data-i18n-placeholder="contact.form.name.placeholder" placeholder="Seu nome">
+                </div>
+                <div class="form-field">
+                    <label for="contact-email" data-i18n="contact.form.email">E-mail</label>
+                    <input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="160"
+                        data-i18n-placeholder="contact.form.email.placeholder" placeholder="voce@exemplo.com">
+                </div>
+                <div class="form-field form-field-full">
+                    <label for="contact-subject" data-i18n="contact.form.subject">Assunto</label>
+                    <input id="contact-subject" name="subject" type="text" required maxlength="160"
+                        data-i18n-placeholder="contact.form.subject.placeholder"
+                        placeholder="Sobre o que vamos conversar?">
+                </div>
+                <div class="form-field form-field-full">
+                    <label for="contact-message" data-i18n="contact.form.message">Mensagem</label>
+                    <textarea id="contact-message" name="message" rows="7" required minlength="10" maxlength="2000"
+                        data-i18n-placeholder="contact.form.message.placeholder"
+                        placeholder="Escreva sua mensagem"></textarea>
+                </div>
+                <div class="form-actions form-field-full">
+                    <button class="button button-primary" type="submit" data-i18n="contact.form.submit">Enviar</button>
+                    <p class="form-status" role="status" aria-live="polite" tabindex="-1" data-form-status
+                        data-i18n-aria-label="contact.form.status.label" aria-label="Status do formulário"></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <address class="footer-contact">
+                <div class="contact-line"><span class="material-symbols-outlined"
+                        aria-hidden="true">person</span><span>Rafael Moralli</span></div>
+                <div class="contact-line"><span class="material-symbols-outlined"
+                        aria-hidden="true">alternate_email</span><span><span data-i18n="footer.email">E-mail</span>: <a
+                            class="footer-link"
+                            href="mailto:rafaelmoralli561@gmail.com">rafaelmoralli561@gmail.com</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined"
+                        aria-hidden="true">call</span><span><span data-i18n="footer.phone">Telefone</span>: <a
+                            class="footer-link" href="tel:+5511991614481">+55 (11) 99161-4481</a></span></div>
+                <div class="contact-line"><span class="material-symbols-outlined"
+                        aria-hidden="true">group</span><span><a class="footer-link"
+                            href="https://www.linkedin.com/in/rafaelmoralli/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a> · <a class="footer-link"
+                            href="https://github.com/RafaMoralli/" target="_blank"
+                            rel="noopener noreferrer">GitHub</a></span></div>
+            </address>
+            <nav class="footer-nav" data-i18n-aria-label="footer.label" aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="./page.html" data-i18n="nav.home">Home</a></li>
+                    <li><a href="./portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+                    <li><a href="./about.html" data-i18n="nav.about">Quem sou eu</a></li>
+                    <li><a href="./contact.html" data-i18n="nav.contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

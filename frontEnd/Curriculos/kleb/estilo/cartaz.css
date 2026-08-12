@@ -1,0 +1,53 @@
+        *{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: url(../imagens/wallpapers-onepiece/backgrounds/cartazKleb.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+
+div{
+   
+    margin-bottom: 5%;
+    height: 40px;
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+img{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: 40px;
+}
+
+.redeSocial:hover{
+    height: 45px;
+
+}
+
+
+
+aside{
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}

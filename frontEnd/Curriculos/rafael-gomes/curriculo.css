@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #0f172a;
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.perfil{
+    padding-top: 20px;
+}
+ 
+.perfil img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #38bdf8;
+    object-fit: cover;
+    animation: quicar 1.5s ease-in-out;
+    transition: transform .3s ease;
+}
+ 
+.perfil img:hover{
+    transform: scale(1.08);
+}
+
+h1{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+li{
+
+    text-align: center;
+}
+
+ul .li{
+    text-align: center;
+}
+
+@keyframes quicar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+ 
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+ 
+@keyframes aparecerConteudo{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+

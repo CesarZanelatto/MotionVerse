@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+body {
+  background-color: blue;
+}
+
+/* O cenário ocupa a tela toda */
+.mapa-da-rede {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: #f0f2f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* O pacote 📦 */
+#pacote {
+    position: absolute;
+    font-size: 30px;
+    z-index: 10;
+    transition: all 1s ease-in-out; /* Velocidade da viagem */
+}
+
+/* Estilo comum para os pontos de parada */
+.ponto {
+    position: absolute;
+    padding: 10px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+
+/* Posicionando cada etapa no mapa */
+#pc-origem { left: 10%; top: 50%; }
+#roteador  { left: 45%; top: 20%; }
+#servidor  { left: 80%; top: 50%; }
+
+/* CLASSES DE MOVIMENTO (O JavaScript vai trocar estas classes) */
+.no-pc { left: 12%; top: 45%; }
+.no-roteador { left: 47%; top: 15%; }
+.no-servidor { left: 82%; top: 45%; }
+
+#status-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: 'Courier New', monospace;
+    border-radius: 5px;
+    min-height: 50px;
+    text-align: center;
+}
+
+/* Posicionando o novo ponto */
+#cabo-submarino { left: 60%; top: 75%; }
+
+/* Nova classe de posição para o pacote */
+.no-cabo { left: 62%; top: 70%; }

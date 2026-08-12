@@ -1,0 +1,497 @@
+.curriculo{
+
+    animation:fadeZoom .8s ease;
+
+}
+
+@keyframes fadeZoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.90);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+header h1{
+
+    animation:slideTop .8s ease;
+
+}
+
+header h2{
+
+    animation:slideTop 1s ease;
+
+}
+
+@keyframes slideTop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+#avatar3d{
+
+    animation:avatarEntrance 1.2s ease;
+
+}
+
+@keyframes avatarEntrance{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-80px) scale(.7);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0) scale(1);
+
+    }
+
+}
+
+.acenar{
+
+    animation:wave 1s ease;
+
+    transform-origin:bottom right;
+
+}
+
+@keyframes wave{
+
+    0%{transform:rotate(0deg);}
+
+    15%{transform:rotate(-15deg);}
+
+    30%{transform:rotate(20deg);}
+
+    45%{transform:rotate(-15deg);}
+
+    60%{transform:rotate(20deg);}
+
+    75%{transform:rotate(-10deg);}
+
+    100%{transform:rotate(0deg);}
+
+}
+
+.frase{
+
+    animation:slideRight .9s ease;
+
+}
+
+@keyframes slideRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+.card{
+
+    animation:cardFade .8s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.project-card{
+
+    animation:projectFade .8s ease;
+
+}
+
+@keyframes projectFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-10px) scale(1.04);
+
+}
+
+.project-card img{
+
+    transition:.4s;
+
+}
+
+.project-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+button{
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+button:active{
+
+    transform:scale(.95);
+
+}
+
+.itens button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.itens button::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    left:-120%;
+
+    top:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+    );
+
+}
+
+.itens button:hover::before{
+
+    animation:shine .8s;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:120%;
+
+    }
+
+}
+
+.progresso{
+
+    animation:fillBar 2s ease forwards;
+
+}
+
+@keyframes fillBar{
+
+    from{
+
+        width:0;
+
+    }
+
+}
+
+.html{
+
+    width:95%;
+
+}
+
+.css{
+
+    width:90%;
+
+}
+
+.js{
+
+    width:92%;
+
+}
+
+.java{
+
+    width:82%;
+
+}
+
+.mysql{
+
+    width:87%;
+
+}
+
+#modal{
+
+    animation:fadeModal .4s;
+
+}
+
+.janela{
+
+    animation:modalZoom .35s;
+
+}
+
+@keyframes fadeModal{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes modalZoom{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.caixaDialogo{
+
+    animation:dialogUp .6s ease;
+
+}
+
+@keyframes dialogUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+.loading-progress{
+
+    animation:loading 2.5s linear forwards;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+#background{
+
+    animation:backgroundMove 20s linear infinite;
+
+}
+
+@keyframes backgroundMove{
+
+    0%{
+
+        background-position:0 0;
+
+    }
+
+    100%{
+
+        background-position:1000px 0;
+
+    }
+
+}
+header h1{
+
+    animation:
+        slideTop .8s ease,
+        glow 3s infinite alternate;
+
+}
+
+#avatar3d{
+
+    animation:
+
+    avatarEntrance 1s ease,
+
+    floating 4s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#btnAcenar{
+
+    animation:pulse 2s infinite;
+
+}

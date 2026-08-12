@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotionVerse | Ranking</title>
+<meta name="description" content="Ranking das equipes cadastradas no MotionVerse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="ranking.css">
+</head>
+<body>
+
+<div class="bg-video" id="bgVideo">
+    <video id="heroVideo" autoplay muted loop playsinline poster="assets/video/floresta-poster.jpg">
+    <source src="assets/video/floresta-loop.mp4" type="video/mp4">
+    </video>
+    <div class="bg-fireflies" id="fireflies" aria-hidden="true"></div>
+    <div class="bg-overlay"></div>
+</div>
+
+<nav class="navbar scrolled">
+<a href="../index.html" class="logo">
+<span class="logo-mark" aria-hidden="true"></span>
+Motion<em>Verse</em>
+</a>
+<ul class="nav-links">
+<li><a href="../index.html#home">Início</a></li>
+<li><a href="../index.html#mecanica">Como Funciona</a></li>
+<li><a href="../index.html#demo">Demonstração</a></li>
+<li><a href="../index.html#equipe">Equipe</a></li>
+</ul>
+<div class="nav-actions">
+<a href="ranking.html" class="pixel-btn pixel-btn-blue" aria-current="page">🏆 Ranking</a>
+<a href="../Cadastro/cadastro.html" class="pixel-btn pixel-btn-orange">Cadastrar</a>
+</div>
+</nav>
+
+<main class="ranking-main">
+<div class="ranking-card pixel-panel reveal-zoom active">
+
+<div class="center">
+<span class="section-label">Placar da Companhia</span>
+<h1 class="section-title">Ranking das Equipes</h1>
+<p class="section-desc">Equipes cadastradas para o Motion Verse</p>
+</div>
+
+<div class="pesquisa">
+<input type="text" id="pesquisa" placeholder="Pesquisar por equipe ou ID">
+</div>
+
+<div class="tabela pixel-panel">
+<table>
+<thead>
+<tr>
+<th>Equipe</th>
+<th>Jogador 1</th>
+<th>Jogador 2</th>
+<th>Jogador 3</th>
+<th>Jogador 4</th>
+<th>Pontos</th>
+<th>Tempo</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody id="corpoTabela"></tbody>
+</table>
+</div>
+
+<div class="botoes">
+<a href="../Cadastro/cadastro.html" class="pixel-btn pixel-btn-orange">Novo Cadastro</a>
+<button class="pixel-btn pixel-btn-ghost" id="btnLimpar">Limpar Ranking</button>
+</div>
+
+</div>
+</main>
+
+<!-- ===================== -->
+<!-- MODAL SENHA -->
+<!-- ===================== -->
+
+<div id="modalSenha" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2>Área Restrita</h2>
+
+        <p id="mensagemSenha">
+            Digite a senha:
+        </p>
+
+        <input 
+        type="password" 
+        id="senhaModal"
+        placeholder="Senha">
+
+        <div class="modal-botoes">
+
+            <button 
+            id="btnCancelarSenha"
+            class="pixel-btn pixel-btn-blue">
+
+                Cancelar
+
+            </button>
+
+
+            <button 
+            id="btnConfirmarSenha"
+            class="pixel-btn pixel-btn-orange">
+
+                Confirmar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===================== -->
+<!-- MODAL CONFIRMAÇÃO -->
+<!-- ===================== -->
+
+<div id="modalConfirmar" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2>Confirmar</h2>
+
+        <p id="mensagemConfirmacao">
+            Deseja continuar?
+        </p>
+
+
+        <div class="modal-botoes">
+
+            <button
+            id="btnCancelarConfirmacao"
+            class="pixel-btn pixel-btn-blue">
+
+                Não
+
+            </button>
+
+
+            <button
+            id="btnConfirmarConfirmacao"
+            class="pixel-btn pixel-btn-orange">
+
+                Sim
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- MODAL MENSAGEM -->
+<!-- ===================== -->
+
+<div id="modalMensagem" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2 id="tituloMensagem">
+            Aviso
+        </h2>
+
+        <p id="textoMensagem"></p>
+
+
+        <button
+        id="btnFecharMensagem"
+        class="pixel-btn pixel-btn-orange">
+
+            OK
+
+        </button>
+
+    </div>
+
+</div>
+
+<footer>
+<p>© 2026 Motion<span class="foot-accent">Verse</span></p>
+<p>Projeto desenvolvido no Senac</p>
+</footer>
+
+<script src="ranking.js" defer></script>
+</body>
+</html>

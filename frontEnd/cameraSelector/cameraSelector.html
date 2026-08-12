@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="cameraSelector.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <title>Selecionar Câmeras</title>
+
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND VIDEO -->
+
+    <div class="bg-video">
+
+        <video autoplay muted loop playsinline>
+
+            <source
+                src="assets/video/floresta-loop.mp4"
+                type="video/mp4">
+
+        </video>
+
+
+        <div class="bg-fireflies"></div>
+
+
+        <div class="bg-overlay"></div>
+
+
+    </div>
+
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="container">
+
+
+        <h1>Selecionar Webcams</h1>
+
+
+        <h2 id="nomeEquipe"></h2>
+
+
+
+        <!-- JOGADOR 1 -->
+
+        <div class="cardJogador">
+
+
+            <h3>Jogador 1 - Frente</h3>
+
+
+            <p id="nomeJogador1"></p>
+
+
+            <select id="camera1">
+
+                <option>
+                    Carregando câmeras...
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+
+
+        <!-- JOGADOR 2 -->
+
+        <div class="cardJogador">
+
+
+            <h3>Jogador 2 - Trás</h3>
+
+
+            <p id="nomeJogador2"></p>
+
+
+            <select id="camera2">
+
+                <option>
+                    Carregando câmeras...
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+
+
+        <!-- JOGADOR 3 -->
+
+        <div class="cardJogador">
+
+
+            <h3>Jogador 3 - Baixo</h3>
+
+
+            <p id="nomeJogador3"></p>
+
+
+            <select id="camera3">
+
+                <option>
+                    Carregando câmeras...
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+
+
+        <!-- JOGADOR 4 -->
+
+        <div class="cardJogador">
+
+
+            <h3>Jogador 4 - Cima</h3>
+
+
+            <p id="nomeJogador4"></p>
+
+
+            <select id="camera4">
+
+                <option>
+                    Carregando câmeras...
+                </option>
+
+            </select>
+
+
+        </div>
+
+
+
+
+
+        <!-- BOTÕES -->
+
+        <div class="botoes">
+
+
+            <button
+                id="btnVoltar"
+                type="button">
+
+                Voltar
+
+            </button>
+
+
+
+
+            <button
+                id="btnIniciar"
+                type="button">
+
+                Iniciar Jogo
+
+            </button>
+
+            <button
+                id="btnTeclado"
+                type="button">
+
+                Jogar com Teclado
+
+            </button>
+
+
+
+        </div>
+
+
+
+    </main>
+
+
+<!-- MODAL CONFIRMAÇÃO -->
+
+<div id="modalConfirmacao" class="modal">
+
+    <div class="modal-box">
+
+        <h2>Equipe configurada!</h2>
+
+        <p>
+            Todas as webcams foram selecionadas.
+            Deseja iniciar o jogo?
+        </p>
+
+
+        <div class="modal-botoes">
+
+            <button id="btnCancelarModal">
+                Cancelar
+            </button>
+
+
+            <button id="btnConfirmarModal">
+                Iniciar Jogo
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<!-- MODAL ERRO -->
+
+<div id="modalErro" class="modal">
+
+
+    <div class="modal-box">
+
+
+        <h2>Erro</h2>
+
+
+        <p id="mensagemErro"></p>
+
+
+        <button id="btnFecharErro">
+            Fechar
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+
+        <p>
+            © 2026 Motion<span class="foot-accent">Verse</span>
+        </p>
+
+
+        <p>
+            Projeto desenvolvido no Senac
+        </p>
+
+
+    </footer>
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+
+
+    <script type="module" src="../handController/cameraManager.js"></script>
+
+    <script type="module" src="../handController/cameraSelector.js"></script>
+
+    <script type="module" src="../handController/controller.js"></script>
+
+    <script type="module" src="../handController/debug.js"></script>
+
+    <script type="module" src="../handController/gestureRecognizer.js"></script>
+
+    <script type="module" src="../handController/handTracker.js"></script>
+
+
+
+</body>
+
+</html>

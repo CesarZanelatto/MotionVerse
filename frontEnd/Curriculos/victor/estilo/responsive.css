@@ -1,0 +1,458 @@
+@media (max-width:1366px){
+
+    .curriculo{
+
+        width:95%;
+        height:95vh;
+        padding:25px;
+
+    }
+
+    .conteudo{
+
+        grid-template-columns:280px 1fr;
+
+    }
+
+    #avatar3d{
+
+        width:200px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+@media (max-width:1024px){
+
+    body{
+
+        overflow-y:auto;
+
+    }
+
+    .curriculo{
+
+        height:auto;
+        margin:20px auto;
+
+    }
+
+    .conteudo{
+
+        display:flex;
+        flex-direction:column;
+
+    }
+
+    .avatar{
+
+        width:100%;
+        margin:auto;
+
+    }
+
+    #avatar3d{
+
+        width:220px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .itens{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    header h1{
+
+        font-size:1.1rem;
+        line-height:1.6;
+
+    }
+
+    header h2{
+
+        font-size:.9rem;
+
+    }
+
+    .curriculo{
+
+        padding:20px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .project-card{
+
+        max-width:450px;
+        margin:auto;
+
+    }
+
+    #dialogo{
+
+        width:90%;
+
+    }
+
+    .janela{
+
+        width:90%;
+
+    }
+
+    .itens{
+
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+
+    }
+
+    .itens button{
+
+        width:100%;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    body{
+
+        overflow-y:auto;
+
+    }
+
+    .curriculo{
+
+        width:100%;
+        border-radius:0;
+        border:none;
+        padding:18px;
+
+    }
+
+    .avatar{
+
+        padding:20px;
+
+    }
+
+    #avatar3d{
+
+        width:180px;
+
+    }
+
+    .nivel{
+
+        top:15px;
+        left:15px;
+        font-size:.7rem;
+
+    }
+
+    .frase p{
+
+        font-size:.9rem;
+
+    }
+
+    .skill span{
+
+        font-size:.9rem;
+
+    }
+
+    .project-card img{
+
+        height:180px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    header{
+
+        gap:8px;
+
+    }
+
+    header h1{
+
+        font-size:.85rem;
+        line-height:1.7;
+
+    }
+
+    header h2{
+
+        font-size:.75rem;
+
+    }
+
+    .curriculo{
+
+        gap:20px;
+
+    }
+
+    .avatar{
+
+        padding:15px;
+
+    }
+
+    #avatar3d{
+
+        width:150px;
+
+    }
+
+    #btnAcenar{
+
+        width:100%;
+
+    }
+
+    .card{
+
+        padding:18px;
+
+    }
+
+    .card h3{
+
+        font-size:1rem;
+
+    }
+
+    .card p{
+
+        font-size:.85rem;
+
+    }
+
+    .barra{
+
+        height:12px;
+
+    }
+
+    .project-card{
+
+        padding:15px;
+
+    }
+
+    .project-card img{
+
+        height:140px;
+
+    }
+
+    .project-card h3{
+
+        font-size:1rem;
+
+    }
+
+    .project-card p{
+
+        font-size:.8rem;
+
+    }
+
+    .itens{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .itens button{
+
+        font-size:.9rem;
+
+    }
+
+    .janela{
+
+        padding:20px;
+
+    }
+
+    #imagemProjeto{
+
+        margin:15px 0;
+
+    }
+
+    #dialogo{
+
+        bottom:15px;
+        width:95%;
+
+    }
+
+    .caixaDialogo{
+
+        padding:15px;
+
+    }
+
+}
+
+@media (max-width:360px){
+
+    header h1{
+
+        font-size:.7rem;
+
+    }
+
+    header h2{
+
+        font-size:.65rem;
+
+    }
+
+    #avatar3d{
+
+        width:120px;
+
+    }
+
+    .project-card img{
+
+        height:120px;
+
+    }
+
+    .card{
+
+        padding:15px;
+
+    }
+
+    .card p{
+
+        font-size:.8rem;
+
+    }
+
+    .loading-box{
+
+        width:90%;
+
+    }
+
+}
+
+@media (min-width:1800px){
+
+    .curriculo{
+
+        max-width:1700px;
+
+    }
+
+    #avatar3d{
+
+        width:300px;
+
+    }
+
+    header h1{
+
+        font-size:2rem;
+
+    }
+
+    header h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .card{
+
+        padding:35px;
+
+    }
+
+    .project-card img{
+
+        height:220px;
+
+    }
+
+}
+
+
+@media print{
+
+    body{
+
+        background:white;
+        color:black;
+
+    }
+
+    #background,
+    #overlay,
+    #dialogo,
+    #loading,
+    #btnAcenar{
+
+        display:none !important;
+
+    }
+
+    .curriculo{
+
+        width:100%;
+        height:auto;
+        border:none;
+        box-shadow:none;
+        background:white;
+
+    }
+
+    .project-card{
+
+        border:1px solid #ccc;
+
+    }
+
+}

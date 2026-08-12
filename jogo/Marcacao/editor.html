@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motion Verse - Editor de Fases</title>
+    <link rel="stylesheet" href="../Estilo/editor.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="editor-layout">
+      <aside class="sidebar">
+        <div class="panel">
+          <h1>Editor de Fases</h1>
+          <p class="subtitle">Clique na grid para posicionar elementos.</p>
+        </div>
+
+        <div class="panel">
+          <label>ID da fase</label>
+          <input id="faseId" type="text" placeholder="fase04" />
+
+          <label>Nome</label>
+          <input id="faseNome" type="text" placeholder="Floresta Sombria" />
+
+          <label>Background</label>
+          <select id="faseBackground"></select>
+
+          <label>Pasta do background</label>
+          <input id="backgroundFolderPath" type="text" placeholder="../Imagem/cenario/fase1" />
+
+          <label>Arquivo do background</label>
+          <div class="row">
+            <input id="backgroundFileName" type="text" placeholder="fase1.png" />
+            <button id="btnAplicarBackgroundPath" type="button">Usar</button>
+          </div>
+
+          <label>Caminho completo do background</label>
+          <input id="backgroundCustomPath" type="text" placeholder="../Imagem/cenario/fase1/fase1.png" />
+
+          <div class="row">
+            <button id="btnEscolherBackgroundArquivo" type="button">Escolher arquivo</button>
+            <span id="backgroundArquivoLabel" class="file-label">Nenhum arquivo</span>
+          </div>
+
+          <label>Carregar fase existente</label>
+          <div class="row">
+            <select id="faseExistente"></select>
+            <button id="btnCarregarFase" type="button">Carregar</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <label>Ferramenta</label>
+          <select id="ferramenta">
+            <option value="plataforma">Sprite / tile</option>
+            <option value="colisao">Colisão</option>
+            <option value="animado">Elemento animado</option>
+            <option value="coletavel">Coletável</option>
+            <option value="texto">Mensagem</option>
+            <option value="porta">Porta / troca de fase</option>
+            <option value="senha">Campo de senha</option>
+            <option value="evento">Evento</option>
+            <option value="spawn">Início do personagem</option>
+            <option value="apagar">Apagar</option>
+          </select>
+
+          <label>Imagem do tile</label>
+          <select id="assetSelect"></select>
+
+          <label>Pasta dos tiles / sprites</label>
+          <input id="assetFolderPath" type="text" placeholder="../Imagem/cenario/assets/mesas" />
+
+          <label>Arquivo do tile</label>
+          <div class="row">
+            <input id="assetFileName" type="text" placeholder="mesa1.png" />
+            <button id="btnAplicarAssetPath" type="button">Usar</button>
+          </div>
+
+          <label>Caminho completo do tile</label>
+          <input id="assetCustomPath" type="text" placeholder="../Imagem/cenario/assets/mesas/mesa1.png" />
+
+          <div class="row">
+            <button id="btnEscolherTileArquivo" type="button">Escolher arquivo</button>
+            <span id="tileArquivoLabel" class="file-label">Nenhum arquivo</span>
+          </div>
+
+          <label>Tamanho do tile</label>
+          <div class="row tile-size-row">
+            <input id="tileWidth" type="number" value="64" readonly />
+            <input id="tileHeight" type="number" value="64" readonly />
+          </div>
+          <p class="field-note">Cada tile permanece fixo em `64x64px` (metadado: `72dpi`).</p>
+
+          <label>Fase destino</label>
+          <select id="destinoFase"></select>
+
+          <label>Texto / descrição</label>
+          <textarea id="interacaoTexto" rows="3" placeholder="Mensagem ou descrição do evento"></textarea>
+
+          <label>Pergunta da senha</label>
+          <input id="senhaPergunta" type="text" placeholder="Digite a senha para abrir a porta" />
+
+          <label>Resposta da senha</label>
+          <input id="senhaResposta" type="text" placeholder="1234" />
+
+          <label>Nome do evento</label>
+          <input id="eventoNome" type="text" placeholder="evento_porta_secreta" />
+
+          <label>ID do elemento animado</label>
+          <input id="animadoId" type="text" placeholder="carro_rua_1" />
+
+          <label>Frames do sprite</label>
+          <input id="animadoFrames" type="number" min="1" value="4" />
+
+          <label>Tempo por frame (ms)</label>
+          <input id="animadoFrameMs" type="number" min="1" value="120" />
+
+          <label>Duração do movimento (ms)</label>
+          <input id="animadoDuracaoMs" type="number" min="1" value="2000" />
+
+          <label>Repetições</label>
+          <input id="animadoRepeticoes" type="number" min="0" value="0" />
+          <p class="field-note">Use `0` para repetir infinitamente.</p>
+
+          <label>Largura do elemento</label>
+          <input id="animadoLargura" type="number" min="1" value="64" />
+
+          <label>Altura do elemento</label>
+          <input id="animadoAltura" type="number" min="1" value="64" />
+
+          <label class="checkbox-row">
+            <input id="animadoColisao" type="checkbox" />
+            <span>Elemento animado com colisão</span>
+          </label>
+
+          <p id="animadoMarcacaoStatus" class="field-note">Ferramenta animada: clique no início e depois no fim do movimento.</p>
+
+          <label>ID do coletável</label>
+          <input id="coletavelId" type="text" placeholder="chave_laboratorio" />
+
+          <label>Nome do coletável</label>
+          <input id="coletavelNome" type="text" placeholder="Chave do Laboratório" />
+
+          <label>Tipo do coletável</label>
+          <input id="coletavelTipo" type="text" placeholder="chave, poção, cristal..." />
+
+          <label class="checkbox-row">
+            <input id="coletavelUnico" type="checkbox" checked />
+            <span>Item único no inventário</span>
+          </label>
+        </div>
+
+        <div class="panel">
+          <div class="row buttons">
+            <button id="btnNovaFase" type="button">Nova fase</button>
+            <button id="btnSalvarFase" type="button">Salvar fase</button>
+          </div>
+          <div class="row buttons">
+            <button id="btnTestarFase" type="button">Testar fase</button>
+            <button id="btnLimparGrid" type="button">Limpar grid</button>
+          </div>
+          <p id="statusEditor" class="status">Pronto para editar.</p>
+        </div>
+
+        <div class="panel">
+          <h2>Itens da fase</h2>
+          <ul id="resumoItens" class="summary-list"></ul>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <div class="workspace-toolbar">
+          <span id="posicaoCursor">x: 0 | y: 0</span>
+          <span id="faseAtualLabel">Sem fase salva</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="editorCanvas" width="1920" height="1080"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <p id="pastaProjetoStatus" class="status" hidden></p>
+
+    <!-- File pickers (ocultos) -->
+    <input id="filePickerTile" type="file" accept="image/*" hidden />
+    <input id="filePickerBackground" type="file" accept="image/*" hidden />
+
+    <script type="module" src="../Script/editorFases.js"></script>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+#main-content {
+    padding-bottom: 5rem;
+}
+
+.about-hero {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.8fr);
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.about-intro h1 {
+    max-width: 850px;
+    margin-top: 1rem;
+    color: var(--color-primary);
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    line-height: 1.07;
+}
+
+.about-intro > p:last-of-type {
+    max-width: 720px;
+    margin-top: 1.4rem;
+    color: var(--color-text);
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.85;
+}
+
+.about-intro .button {
+    margin-top: 2rem;
+}
+
+.profile-card {
+    position: relative;
+    padding: clamp(1.5rem, 3vw, 2.2rem);
+    overflow: hidden;
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(18px);
+}
+
+.profile-card::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -4rem;
+    width: 11rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: rgba(142, 168, 255, 0.14);
+    filter: blur(6px);
+}
+
+.profile-monogram {
+    display: grid;
+    width: 72px;
+    height: 72px;
+    place-items: center;
+    border: 1px solid rgba(234, 246, 173, 0.45);
+    border-radius: 22px;
+    color: var(--color-background);
+    background: var(--color-primary);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card dl {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 0;
+    margin-top: 1.6rem;
+}
+
+.profile-card dl > div {
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-card dt {
+    color: var(--color-accent);
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.profile-card dd {
+    margin-top: 0.35rem;
+    color: var(--color-text);
+    line-height: 1.55;
+}
+
+.story-section {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(2rem, 5vw, 4rem);
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+}
+
+.story-heading h2 {
+    margin-top: 0.8rem;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+    line-height: 1.2;
+}
+
+.story-copy {
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+}
+
+.story-copy p {
+    color: var(--color-text);
+    line-height: 1.85;
+}
+
+.journey-section,
+.competencies-section {
+    padding-top: clamp(5rem, 9vw, 7rem);
+}
+
+.journey-list {
+    position: relative;
+    max-width: 880px;
+    margin: 3rem auto 0;
+    list-style: none;
+}
+
+.journey-list::before {
+    content: "";
+    position: absolute;
+    top: 1.25rem;
+    bottom: 1.25rem;
+    left: 2rem;
+    width: 1px;
+    background: linear-gradient(var(--color-primary), rgba(142, 168, 255, 0.3));
+}
+
+.journey-list li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+}
+
+.journey-index {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 4rem;
+    height: 4rem;
+    place-items: center;
+    border: 1px solid rgba(234, 246, 173, 0.4);
+    border-radius: 50%;
+    color: var(--color-primary);
+    background: var(--color-header);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.journey-list li > div {
+    padding: 1.25rem 1.5rem;
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.journey-list li > div:hover {
+    transform: translateX(5px);
+    border-color: rgba(234, 246, 173, 0.3);
+}
+
+.journey-label {
+    color: var(--color-accent);
+    font-size: 0.76rem;
+    font-weight: 650;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.journey-list h3 {
+    margin-top: 0.35rem;
+    color: var(--color-primary);
+    font-size: 1.25rem;
+}
+
+.journey-list li > div > p:last-child {
+    margin-top: 0.65rem;
+    color: var(--color-text);
+    line-height: 1.75;
+}
+
+.competency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+}
+
+.competency-grid article {
+    padding: 1.7rem;
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.competency-grid article:hover {
+    transform: translateY(-6px);
+    border-color: rgba(234, 246, 173, 0.35);
+}
+
+.competency-grid .material-symbols-outlined {
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--color-background);
+    background: var(--color-primary);
+}
+
+.competency-grid h3 {
+    margin-top: 1.1rem;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+}
+
+.competency-grid p {
+    margin-top: 0.75rem;
+    color: var(--color-text);
+    line-height: 1.75;
+}
+
+.about-goal {
+    margin-top: clamp(5rem, 9vw, 7rem);
+    padding: clamp(2.2rem, 6vw, 4rem);
+    border: var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(234, 246, 173, 0.1), rgba(142, 168, 255, 0.08));
+    text-align: center;
+}
+
+.about-goal h2 {
+    max-width: 820px;
+    margin: 0.8rem auto 0;
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    line-height: 1.2;
+}
+
+.about-goal > p:not(.eyebrow) {
+    max-width: 760px;
+    margin: 1rem auto 0;
+    color: var(--color-text);
+    line-height: 1.8;
+}
+
+.about-goal .button {
+    margin-top: 1.7rem;
+}
+
+@media (max-width: 900px) {
+    .about-hero,
+    .story-section {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        max-width: 680px;
+    }
+
+    .competency-grid {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+        margin-inline: auto;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .about-hero {
+        min-height: auto;
+        padding-block: 3.5rem;
+    }
+
+    .about-intro .button,
+    .about-goal .button {
+        width: 100%;
+    }
+
+    .story-section {
+        padding: 1.5rem;
+    }
+
+    .journey-list::before {
+        left: 1.35rem;
+    }
+
+    .journey-list li {
+        grid-template-columns: 2.7rem 1fr;
+        gap: 0.75rem;
+    }
+
+    .journey-index {
+        width: 2.7rem;
+        height: 2.7rem;
+        font-size: 0.72rem;
+    }
+
+    .journey-list li > div {
+        padding: 1rem;
+    }
+}

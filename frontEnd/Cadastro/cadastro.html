@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motion Verse|Cadastro de Equipe</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="cadastro.css">
+
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="bg-video" id="bgVideo">
+        <video id="heroVideo" autoplay muted loop playsinline poster="assets/video/floresta-poster.jpg">
+        <source src="assets/video/floresta-loop.mp4" type="video/mp4">
+        </video>
+        <div class="bg-fireflies" id="fireflies" aria-hidden="true"></div>
+        <div class="bg-overlay"></div>
+        </div>
+
+    <!-- ===================== -->
+    <!-- CONTAINER -->
+    <!-- ===================== -->
+
+    <main class="container">
+
+        <div class="card">
+
+            <header>
+
+                <h1>Motion Verse</h1>
+
+                <p>Cadastro da Equipe</p>
+
+            </header>
+
+            <form id="formCadastro">
+
+                <!-- Nome da Equipe -->
+
+                <div class="grupo">
+
+                    <label for="nomeEquipe">
+
+                        Nome da Equipe
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeEquipe"
+                        placeholder="Digite o nome da equipe"
+                        required>
+
+                </div>
+
+                <!-- Jogador 1 -->
+
+                <div class="grupo">
+
+                    <label for="jogador1">
+
+                        Jogador 1
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jogador1"
+                        placeholder="Nome do jogador"
+                        required>
+
+                </div>
+
+                <!-- Jogador 2 -->
+
+                <div class="grupo">
+
+                    <label for="jogador2">
+
+                        Jogador 2
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jogador2"
+                        placeholder="Nome do jogador"
+                        required>
+
+                </div>
+
+                <!-- Jogador 3 -->
+
+                <div class="grupo">
+
+                    <label for="jogador3">
+
+                        Jogador 3
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jogador3"
+                        placeholder="Nome do jogador"
+                        required>
+
+                </div>
+
+                <!-- Jogador 4 -->
+
+                <div class="grupo">
+
+                    <label for="jogador4">
+
+                        Jogador 4
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jogador4"
+                        placeholder="Nome do jogador"
+                        required>
+
+                </div>
+
+                <!-- ID -->
+
+                <div class="grupo">
+
+                    <label for="idEquipe"></label>
+
+                </div>
+
+                <!-- Botões -->
+
+                <div class="botoes">
+
+                    <button
+                    type="button"
+                    id="btnVoltar"
+                    class="pixel-btn pixel-btn-blue">
+
+                    Voltar
+
+                    </button>
+
+                    <button
+                    type="submit"
+                     class="pixel-btn pixel-btn-orange">
+
+                    Iniciar Jogo
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+<!-- ===================== -->
+<!-- MODAL -->
+<!-- ===================== -->
+
+<div id="modalConfirmacao" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2 id="modalTitulo">
+            Confirmar Cadastro
+        </h2>
+
+        <p id="modalMensagem">
+            Deseja salvar as informações da equipe?
+        </p>
+
+
+        <div class="modal-botoes">
+
+            <button 
+            id="btnCancelarModal"
+            class="pixel-btn pixel-btn-blue">
+
+                Cancelar
+
+            </button>
+
+
+            <button 
+            id="btnConfirmarModal"
+            class="pixel-btn pixel-btn-orange">
+
+                Confirmar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== -->
+<!-- MODAL SUCESSO -->
+<!-- ===================== -->
+
+<div id="modalSucesso" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2>
+            Cadastro Concluído
+        </h2>
+
+        <p>
+            Equipe cadastrada com sucesso!
+        </p>
+
+
+        <div class="modal-botoes">
+
+            <button 
+            id="btnFecharSucesso"
+            class="pixel-btn pixel-btn-orange">
+
+                OK
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ======================================================
+     MODAL EQUIPE EXISTENTE
+====================================================== -->
+
+<div id="modalEquipeExistente" class="modal">
+
+    <div class="modal-conteudo">
+
+        <h2>
+            Equipe já cadastrada!
+        </h2>
+
+
+        <p>
+            Essa equipe já está salva no ranking.
+        </p>
+
+
+        <div class="modal-botoes">
+
+            <button 
+            id="btnFecharEquipeExistente"
+            class="pixel-btn pixel-btn-orange">
+
+                OK
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</div>
+
+    <footer>
+        <p>© 2026 Motion<span class="foot-accent">Verse</span></p>
+        <p>Projeto desenvolvido no Senac</p>
+    </footer>
+
+    <script src="cadastro.js"></script>
+
+</body>
+
+</html> 
