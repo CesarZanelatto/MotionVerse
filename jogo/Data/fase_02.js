@@ -1427,7 +1427,7 @@ const Fase02 = {
       "y": -96,
       "width": 64,
       "height": 64,
-      "destino": "fase_inicio.html",
+      "destino": "fase3.html",
       "texto": ""
     }
   ],
