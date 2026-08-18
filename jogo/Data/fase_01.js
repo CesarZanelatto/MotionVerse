@@ -5,7 +5,6 @@ const Fase01 = {
   "sceneWidth": 1920,
   "sceneHeight": 1080,
   "tileSize": 64,
-  "dpi": 72,
   "gridCols": 30,
   "gridRows": 17,
   "width": 64,
@@ -16,7 +15,458 @@ const Fase01 = {
     "y": 986,
     "img": "../Imagem/personagens/clara.png"
   },
-  "plataforma1": [],
+  "plataforma1": [
+    {
+      "id": "tile_512_704",
+      "x": 512,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787063914966_mesa_reta1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_704",
+      "x": 576,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787063914970_mesa_reta2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_384",
+      "x": 1408,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343182_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_384",
+      "x": 1472,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343186_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_448",
+      "x": 1408,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343188_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_448",
+      "x": 1472,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343191_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1472,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343191_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_256",
+      "x": 1408,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343193_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_192",
+      "x": 1408,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343195_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_192",
+      "x": 1472,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343198_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1344_448",
+      "x": 1344,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064343200_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_448",
+      "x": 1280,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064410175_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_384",
+      "x": 1280,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064410178_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1344_384",
+      "x": 1344,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064410181_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_448",
+      "x": 1216,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782086_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_448",
+      "x": 1152,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782091_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_384",
+      "x": 1216,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782095_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_384",
+      "x": 1152,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782099_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1344_256",
+      "x": 1344,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782103_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_256",
+      "x": 1280,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782105_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1344_192",
+      "x": 1344,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782108_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_192",
+      "x": 1280,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782111_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_256",
+      "x": 1216,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782114_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_256",
+      "x": 1152,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782116_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1216,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782119_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1152,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782121_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_448",
+      "x": 704,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782124_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_448",
+      "x": 640,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782126_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_384",
+      "x": 704,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782129_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_384",
+      "x": 640,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782131_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_448",
+      "x": 576,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782134_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_448",
+      "x": 512,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782137_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_384",
+      "x": 576,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782140_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_384",
+      "x": 512,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782142_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_448",
+      "x": 448,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782145_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_448",
+      "x": 384,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782147_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_384",
+      "x": 448,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782150_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_384",
+      "x": 384,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782152_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_256",
+      "x": 384,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782155_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_256",
+      "x": 448,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782157_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_192",
+      "x": 384,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782160_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_192",
+      "x": 448,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782162_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_256",
+      "x": 512,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782165_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_256",
+      "x": 576,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782167_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_192",
+      "x": 576,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782170_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_192",
+      "x": 512,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782172_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_256",
+      "x": 640,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782175_servidor1c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_256",
+      "x": 704,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782177_servidor1d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_192",
+      "x": 640,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782180_servidor1a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_192",
+      "x": 704,
+      "y": 192,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787064782182_servidor1b.png",
+      "efeito": false
+    }
+  ],
   "paredes": [
     {
       "id": "parede_832_1024",
@@ -735,7 +1185,8 @@ const Fase01 = {
     "img": "",
     "status": true,
     "texto": ""
-  }
+  },
+  "dpi": 72
 };
 
 export default Fase01;
