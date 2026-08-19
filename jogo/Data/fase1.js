@@ -72,31 +72,28 @@ const Fase1 = {
       "img": "../Imagem/cenario/assets/armario/armario.png"
     }
   ],
-  "interacoes": [
+  interacoes: [
     {
-      "id": "placa1",
-      "tipo": "texto",
-      "x": 1152,
-      "y": 512,
-      "width": 64,
-      "height": 64,
-      "texto": "Você entrou na cidade!",
-      "duracao": 1000,
-      "destino": ""
+        id: "placa1",
+        tipo: "texto",
+        x: 1152,
+        y: 512,
+        width: 64,
+        height: 64,
+        texto: "Você entrou na cidade!",
+        duracao: 1000,
     }
-  ],
-  "elementosAnimados": [],
-  "coletaveis": [],
-  "caixa1": {
-    "id": "c1_1",
-    "x": 1179,
-    "y": 390,
-    "width": 10,
-    "height": 10,
-    "img": "",
-    "efeito": {
-      "status": true
-    }
+],
+  caixa1: {
+    id: "c1_1",
+    x: 1179,
+    y: 390,
+    width: 10,
+    height: 10  ,
+    img: "",
+    efeito: {
+      status: true,
+    },
   },
   "elemento1": {
     "id": "e1_1",
