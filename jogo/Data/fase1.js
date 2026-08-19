@@ -37,16 +37,6 @@ const Fase1 = {
     },
   ],
   interacoes: [
-    {
-        id: "placa1",
-        tipo: "texto",
-        x: 1152,
-        y: 512,
-        width: 64,
-        height: 64,
-        texto: "Você entrou na cidade!",
-        duracao: 1000,
-    }
 ],
   caixa1: {
     id: "c1_1",
