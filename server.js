@@ -135,12 +135,29 @@ function generateHtml({ id, nome, background, scriptFile }) {
 </html>`;
 }
 
-function generateScript({ dataImportName, dataFileName }) {
+function generateScript({ dataImportName, dataFileName, phaseId }) {
+  const musicaFase01 = phaseId === "fase_01"
+    ? `
+
+const audioFundo = new Audio("../som/fase1musicaFundo.mp3");
+audioFundo.loop = true;
+audioFundo.volume = 0.4;
+
+function iniciarMusica() {
+  audioFundo.play().catch((error) => {
+    console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
+  });
+}
+
+document.addEventListener("pointerdown", iniciarMusica, { once: true });
+document.addEventListener("keydown", iniciarMusica, { once: true });`
+    : "";
+
   return `import { iniciarFase } from "./faseEngine.js";
 import ${dataImportName} from "../Data/${dataFileName}";
 
 const fase = ${dataImportName};
-iniciarFase(fase);
+iniciarFase(fase);${musicaFase01}
 `;
 }
 
@@ -339,6 +356,7 @@ async function savePhase(payload) {
   const scriptContent = generateScript({
     dataImportName,
     dataFileName,
+    phaseId: id,
   });
 
   await fs.writeFile(path.join(ROOT, "jogo", "Data", dataFileName), dataContent, "utf-8");
