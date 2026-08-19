@@ -1,7 +1,7 @@
 const Fase01 = {
   "id": "fase_01",
   "nome": "Servidor",
-  "background": "../Imagem/editor_uploads/fase_01/1786371159926_fase1.png",
+  "background": "../Imagem/editor_uploads/fase_01/1787151003516_layoutfase1.2.png",
   "sceneWidth": 1920,
   "sceneHeight": 1080,
   "tileSize": 64,
@@ -16,24 +16,6 @@ const Fase01 = {
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
-    {
-      "id": "tile_512_704",
-      "x": 512,
-      "y": 704,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_01/1787063914966_mesa_reta1.png",
-      "efeito": false
-    },
-    {
-      "id": "tile_576_704",
-      "x": 576,
-      "y": 704,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_01/1787063914970_mesa_reta2.png",
-      "efeito": false
-    },
     {
       "id": "tile_1408_384",
       "x": 1408,
@@ -464,6 +446,330 @@ const Fase01 = {
       "width": 64,
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_01/1787064782182_servidor1b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_576",
+      "x": 64,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694215_mesa_cadeira3.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_576",
+      "x": 128,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694224_mesa_cadeira4.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_512",
+      "x": 64,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694228_mesa_cadeira1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_512",
+      "x": 128,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694231_mesa_cadeira2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_448",
+      "x": 128,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694235_lousa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_448",
+      "x": 192,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694235_lousa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_448",
+      "x": 256,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787140694235_lousa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1664_960",
+      "x": 1664,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787143319356_mesacadeira2-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_960",
+      "x": 1728,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787143319360_meesacadeira2-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1664_896",
+      "x": 1664,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787143319363_mesacadeira2-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_896",
+      "x": 1728,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787143319365_mesacadeira2-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_64",
+      "x": 448,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787146794444_eletrica1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_704",
+      "x": 64,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771421_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_704",
+      "x": 128,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771426_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_640",
+      "x": 64,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771429_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_640",
+      "x": 128,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771431_mesacomp-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_704",
+      "x": 192,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771435_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_640",
+      "x": 192,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771439_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_704",
+      "x": 256,
+      "y": 704,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771442_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_640",
+      "x": 256,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771445_mesacomp-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_768",
+      "x": 64,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771448_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_768",
+      "x": 128,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771451_mesacomp-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_832",
+      "x": 64,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771454_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_832",
+      "x": 128,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771457_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_832",
+      "x": 192,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771460_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_832",
+      "x": 256,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771463_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_768",
+      "x": 192,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771466_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_768",
+      "x": 256,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771469_mesacomp-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_896",
+      "x": 64,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771471_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_896",
+      "x": 128,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771474_mesacomp-b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_960",
+      "x": 64,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771476_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_960",
+      "x": 128,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771479_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_896",
+      "x": 192,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771481_mesacomp-a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_960",
+      "x": 192,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771483_mesacomp-c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_960",
+      "x": 256,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771485_mesacomp-d.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_896",
+      "x": 256,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787149771488_mesacomp-b.png",
       "efeito": false
     }
   ],
