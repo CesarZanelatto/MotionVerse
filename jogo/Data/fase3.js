@@ -11,11 +11,165 @@ const Fase3 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 896,
-    "y": 1024,
+    "x": 448,
+    "y": 640,
     "img": "../Imagem/personagens/clara.png"
   },
-  "plataforma1": [],
+  "plataforma1": [
+    {
+      "id": "tile_64_576",
+      "x": 50,
+      "y": 536,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631685_plantac.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_512",
+      "x": 50,
+      "y": 472,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631689_plantab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_448",
+      "x": 50,
+      "y": 408,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631692_plantaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_576",
+      "x": 128,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631694_estante-massagema.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_640",
+      "x": 128,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631697_estante-massagemb.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_640",
+      "x": 192,
+      "y": 640,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631699_estante-massagemd.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_576",
+      "x": 192,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631701_estante-massagemc.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_896",
+      "x": 50,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631703_cadeira4-massagem.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_832",
+      "x": 50,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631703_cadeira4-massagem.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_896",
+      "x": 192,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631706_mesadecentrob.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_832",
+      "x": 192,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631709_mesadecentroa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_512",
+      "x": 286,
+      "y": 462,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631711_bebedouroa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_256_576",
+      "x": 286,
+      "y": 526,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631713_bebedourob.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_128_448",
+      "x": 128,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631716_lousaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_192_448",
+      "x": 192,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631718_lousab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_704",
+      "x": 40,
+      "y": 738,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631722_solanum-licopersium1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_64_768",
+      "x": 40,
+      "y": 802,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787144631720_solanum-licopersium1.2.png",
+      "efeito": false
+    }
+  ],
   "paredes": [
     {
       "id": "parede_0_1000",
@@ -299,7 +453,7 @@ const Fase3 = {
     },
     {
       "id": "parede_0_768",
-      "x": -24,
+      "x": 6,
       "y": 768,
       "width": 64,
       "height": 64,
@@ -307,7 +461,7 @@ const Fase3 = {
     },
     {
       "id": "parede_0_832",
-      "x": -24,
+      "x": 30,
       "y": 832,
       "width": 64,
       "height": 64,
@@ -315,7 +469,7 @@ const Fase3 = {
     },
     {
       "id": "parede_0_896",
-      "x": -24,
+      "x": 30,
       "y": 896,
       "width": 64,
       "height": 64,
@@ -419,8 +573,8 @@ const Fase3 = {
     },
     {
       "id": "parede_64_448",
-      "x": 64,
-      "y": 448,
+      "x": 30,
+      "y": 470,
       "width": 64,
       "height": 64,
       "img": ""
@@ -443,9 +597,9 @@ const Fase3 = {
     },
     {
       "id": "parede_256_448",
-      "x": 280,
-      "y": 448,
-      "width": 64,
+      "x": 304,
+      "y": 470,
+      "width": 30,
       "height": 64,
       "img": ""
     },
@@ -816,7 +970,31 @@ const Fase3 = {
       "width": 32,
       "height": 64,
       "img": ""
-    }
+    },
+    {
+      "id": "parede_192_832",
+      "x": 208,
+      "y": 852,
+      "width": 32,
+      "height": 44,
+      "img": ""
+    },
+    {
+      "id": "parede_192_832",
+      "x": 148,
+      "y": 630,
+      "width": 92,
+      "height": 20,
+      "img": ""
+    },
+    {
+      "id": "parede_192_832",
+      "x": 174,
+      "y": 580,
+      "width": 1,
+      "height": 8,
+      "img": ""
+    },
   ],
   "interacoes": [
     {
