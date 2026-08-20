@@ -5,7 +5,6 @@ const Fase01 = {
   "sceneWidth": 1920,
   "sceneHeight": 1080,
   "tileSize": 64,
-  "dpi": 72,
   "gridCols": 30,
   "gridRows": 17,
   "width": 64,
@@ -16,7 +15,44 @@ const Fase01 = {
     "y": 986,
     "img": "../Imagem/personagens/clara.png"
   },
-  "plataforma1": [],
+  "plataforma1": [
+    {
+      "id": "tile_512_512",
+      "x": 512,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1786719404261_servidor1_a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_512",
+      "x": 576,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1786719404264_servidor1_b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_576",
+      "x": 512,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1786719404267_servidor1_c.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_576",
+      "x": 576,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1786719404269_servidor1_d.png",
+      "efeito": false
+    }
+  ],
   "paredes": [
     {
       "id": "parede_832_1024",
@@ -689,6 +725,38 @@ const Fase01 = {
       "width": 64,
       "height": 64,
       "img": ""
+    },
+    {
+      "id": "parede_512_512",
+      "x": 512,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_576_512",
+      "x": 576,
+      "y": 512,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_576_576",
+      "x": 576,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_512_576",
+      "x": 512,
+      "y": 576,
+      "width": 64,
+      "height": 64,
+      "img": ""
     }
   ],
   "interacoes": [
@@ -735,7 +803,8 @@ const Fase01 = {
     "img": "",
     "status": true,
     "texto": ""
-  }
+  },
+  "dpi": 72
 };
 
 export default Fase01;
