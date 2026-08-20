@@ -50,7 +50,7 @@ const FASES_PADRAO = {
   fase_01: {
     id: "fase_01",
     nome: "Servidor",
-    background: "../Imagem/editor_uploads/fase_01/1787151003516_layoutfase1.2.png",
+    background: "../Imagem/editor_uploads/fase_01/1787234154713_layoutfase1.2.png",
     htmlPath: "fase_01.html",
     data: Fase01,
     origem: "padrao",
