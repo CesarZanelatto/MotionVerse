@@ -11,8 +11,8 @@ const Fase3 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 1400,
-    "y": 640,
+    "x": 1300,
+    "y": 440,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -188,12 +188,12 @@ const Fase3 = {
       "efeito": false
     },
     {
-      "id": "tile_1536_512",
+      "id": "tile_1536_448",
       "x": 1556,
       "y": 450,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase3/1787225633800_estante-massagema.png",
+      "img": "../Imagem/editor_uploads/fase3/1787233500402_estante-massagema.png",
       "efeito": false
     },
     {
@@ -323,21 +323,183 @@ const Fase3 = {
       "efeito": false
     },
     {
-      "id": "tile_1344_960",
-      "x": 1344,
-      "y": 960,
+      "id": "tile_320_448",
+      "x": 336,
+      "y": 430,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase3/1787229583390_mesamasso2b.png",
+      "img": "../Imagem/editor_uploads/fase3/1787233500393_piaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_448",
+      "x": 400,
+      "y": 430,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787233500396_piab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_320_512",
+      "x": 336,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787233500398_piac.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_512",
+      "x": 400,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787233500400_piad.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_960",
+      "x": 1216,
+      "y": 934,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160392_mesamasso2a.png",
       "efeito": false
     },
     {
       "id": "tile_1280_960",
       "x": 1280,
-      "y": 960,
+      "y": 934,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase3/1787229583395_mesamasso2a.png",
+      "img": "../Imagem/editor_uploads/fase3/1787234160395_mesamasso2b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_960",
+      "x": 1152,
+      "y": 934,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160397_mesinhaagua.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_960",
+      "x": 640,
+      "y": 934,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160399_banheiradenane.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_960",
+      "x": 576,
+      "y": 958,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160401_fogao2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_896",
+      "x": 576,
+      "y": 894,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160403_forno.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_448",
+      "x": 1520,
+      "y": 430,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160405_piainvertidaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_448",
+      "x": 1456,
+      "y": 430,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160409_piainvertidab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_512",
+      "x": 1520,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160412_piainvertidac.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1408_512",
+      "x": 1456,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160414_piainvertidad.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_320_384",
+      "x": 344,
+      "y": 422,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160417_curcuma-longa1.3.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_320_320",
+      "x": 344,
+      "y": 358,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160419_curcuma-longa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_320_256",
+      "x": 344,
+      "y": 294,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160421_curcuma-longa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_384",
+      "x": 1510,
+      "y": 412,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160423_plantac.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1510,
+      "y": 348,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160425_plantab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1510,
+      "y": 284,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787234160428_plantaa.png",
       "efeito": false
     }
   ],
@@ -1172,6 +1334,38 @@ const Fase3 = {
       "y": 776,
       "width": 32,
       "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_320_384",
+      "x": 320,
+      "y": 344,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_320_448",
+      "x": 370,
+      "y": 452,
+      "width": 64,
+      "height": 50,
+      "img": ""
+    },
+    {
+      "id": "parede_320_384",
+      "x": 1530,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_320_448",
+      "x": 1480,
+      "y": 452,
+      "width": 64,
+      "height": 50,
       "img": ""
     }
   ],
