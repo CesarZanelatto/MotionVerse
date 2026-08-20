@@ -321,6 +321,24 @@ const Fase3 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase3/1787228124911_quadro-massagem.png",
       "efeito": false
+    },
+    {
+      "id": "tile_1344_960",
+      "x": 1344,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787229583390_mesamasso2b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_960",
+      "x": 1280,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787229583395_mesamasso2a.png",
+      "efeito": false
     }
   ],
   "paredes": [
