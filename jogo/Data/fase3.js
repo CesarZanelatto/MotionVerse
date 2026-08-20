@@ -11,7 +11,7 @@ const Fase3 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 448,
+    "x": 1400,
     "y": 640,
     "img": "../Imagem/personagens/clara.png"
   },
@@ -167,6 +167,177 @@ const Fase3 = {
       "width": 64,
       "height": 64,
       "img": "../Imagem/editor_uploads/fase3/1787144631720_solanum-licopersium1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1792_576",
+      "x": 1802,
+      "y": 534,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633794_estante3b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1792_512",
+      "x": 1802,
+      "y": 470,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633797_estante3a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_512",
+      "x": 1556,
+      "y": 450,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633800_estante-massagema.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1600_512",
+      "x": 1620,
+      "y": 450,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633802_estante-massagemb.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1664_512",
+      "x": 1684,
+      "y": 450,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633804_estante-massagemc.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_512",
+      "x": 1748,
+      "y": 450,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633806_estante-massagemd.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_576",
+      "x": 1556,
+      "y": 514,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633808_estante-massageme.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1600_576",
+      "x": 1620,
+      "y": 514,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633810_estante-massagemf.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1664_576",
+      "x": 1684,
+      "y": 514,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633812_estante-massagemg.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_576",
+      "x": 1748,
+      "y": 514,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633815_estante-massagemh.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1792_896",
+      "x": 1806,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633817_cadeira5-massagem.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1792_832",
+      "x": 1806,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633817_cadeira5-massagem.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_960",
+      "x": 1816,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633819_monstera-deliciosa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1728_896",
+      "x": 1816,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633820_monstera-deliciosa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1600_832",
+      "x": 1562,
+      "y": 832,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633822_mesamassob.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1600_768",
+      "x": 1562,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787225633824_mesamassoa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1792_448",
+      "x": 1792,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787228124911_quadro-massagem.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1344_960",
+      "x": 1344,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787229583390_mesamasso2b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1280_960",
+      "x": 1280,
+      "y": 960,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787229583395_mesamasso2a.png",
       "efeito": false
     }
   ],
@@ -485,7 +656,7 @@ const Fase3 = {
     },
     {
       "id": "parede_1880_960",
-      "x": 1880,
+      "x": 1850,
       "y": 960,
       "width": 64,
       "height": 64,
@@ -493,15 +664,15 @@ const Fase3 = {
     },
     {
       "id": "parede_1880_896",
-      "x": 1880,
-      "y": 896,
+      "x": 1824,
+      "y": 856,
       "width": 64,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1880_832",
-      "x": 1880,
+      "x": 1824,
       "y": 832,
       "width": 64,
       "height": 64,
@@ -604,33 +775,33 @@ const Fase3 = {
       "img": ""
     },
     {
-      "id": "parede_1792_448",
+      "id": "parede_1792_460",
       "x": 1792,
-      "y": 448,
+      "y": 460,
       "width": 64,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_1728_448",
+      "id": "parede_1728_460",
       "x": 1728,
-      "y": 448,
+      "y": 460,
       "width": 64,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_1664_448",
+      "id": "parede_1664_460",
       "x": 1664,
-      "y": 448,
+      "y": 460,
       "width": 64,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_1600_448",
+      "id": "parede_1600_460",
       "x": 1580,
-      "y": 448,
+      "y": 460,
       "width": 64,
       "height": 64,
       "img": ""
@@ -876,98 +1047,98 @@ const Fase3 = {
       "img": ""
     },
     {
-      "id": "parede_356_960",
-      "x": 356,
+      "id": "parede_362_960",
+      "x": 362,
       "y": 960,
-      "width": 26,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_356_896",
-      "x": 356,
+      "id": "parede_362_896",
+      "x": 362,
       "y": 896,
-      "width": 26,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_356_832",
-      "x": 356,
+      "id": "parede_362_832",
+      "x": 362,
       "y": 832,
-      "width": 26,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_356_768",
-      "x": 356,
+      "id": "parede_362_768",
+      "x": 362,
       "y": 768,
-      "width": 26,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_356_704",
-      "x": 356,
+      "id": "parede_362_704",
+      "x": 362,
       "y": 704,
-      "width": 26,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
-      "id": "parede_356_640",
-      "x": 356,
+      "id": "parede_362_640",
+      "x": 362,
       "y": 650,
-      "width": 26,
+      "width": 16,
       "height": 40,
       "img": ""
     },
     {
       "id": "parede_1536_960",
-      "x": 1536,
+      "x": 1542,
       "y": 960,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1536_896",
-      "x": 1536,
+      "x": 1542,
       "y": 896,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1536_832",
-      "x": 1536,
+      "x": 1542,
       "y": 832,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1536_768",
-      "x": 1536,
+      "x": 1542,
       "y": 768,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1536_704",
-      "x": 1536,
+      "x": 1542,
       "y": 704,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_1536_640",
-      "x": 1536,
+      "x": 1542,
       "y": 650,
-      "width": 32,
+      "width": 16,
       "height": 64,
       "img": ""
     },
@@ -995,6 +1166,14 @@ const Fase3 = {
       "height": 8,
       "img": ""
     },
+    {
+      "id": "parede_1600_832",
+      "x": 1562,
+      "y": 776,
+      "width": 32,
+      "height": 64,
+      "img": ""
+    }
   ],
   "interacoes": [
     {
