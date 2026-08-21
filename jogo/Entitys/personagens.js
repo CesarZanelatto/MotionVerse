@@ -29,10 +29,12 @@ class Personagem {
         this.frame = 0;
 
         this.tempoFrame = 0;
-        this.intervaloFrame = 120; // ↑ mais estável (100 pode ficar rápido demais)
+        this.intervaloFrame = 120;
 
-        // INPUT SUAVIZADO (para controlar melhor com HandController)
-        // Valores vão de 0..1 para cada direção.
+        // INPUT SUAVIZADO
+        // Agora com aceleração e frenagem diferentes:
+        // - acelera rápido (resposta ágil, tipo CS)
+        // - freia devagar (aquele "deslize ensaboado" ao soltar a tecla)
         this._inputSuave = {
             direita: 0,
             esquerda: 0,
@@ -40,8 +42,12 @@ class Personagem {
             baixo: 0
         };
 
-        // "Tempo" de suavização (ms). Menor = responde mais rápido.
-        this._suavizacaoMs = 90;
+        this._msAcelerar = 70;   // menor = responde mais rápido ao apertar
+        this._msFrear   = 0;  // maior = desliza mais ao soltar (efeito "soapy")
+
+        // Zona morta de histerese pra escolher a direção da animação
+        // evita a linha do sprite "piscando" perto da diagonal
+        this._direcaoAtualPeso = { x: 0, y: 0 };
 
     }
 
@@ -53,7 +59,6 @@ class Personagem {
 
     }
 
-    // Verifica se um retângulo (x, y, tamanho, tamanho) colide com alguma parede
     colideComParede(x, y){
         const paredesFixas = this.faseData?.paredes || [];
         const paredesDinamicas = this.faseData?.__paredesDinamicas || [];
@@ -74,11 +79,7 @@ class Personagem {
 
     suavizarInput(input, deltaTime) {
 
-        // Se o deltaTime vier quebrado, assume um frame "padrão"
         const dt = Number.isFinite(deltaTime) ? deltaTime : 16;
-
-        // Filtro exponencial: alpha é estável independente do FPS
-        const alpha = 1 - Math.exp(-dt / this._suavizacaoMs);
 
         const alvo = {
             direita: input?.direita ? 1 : 0,
@@ -87,13 +88,20 @@ class Personagem {
             baixo: input?.baixo ? 1 : 0
         };
 
-        // Atualiza suavizado
-        this._inputSuave.direita += (alvo.direita - this._inputSuave.direita) * alpha;
-        this._inputSuave.esquerda += (alvo.esquerda - this._inputSuave.esquerda) * alpha;
-        this._inputSuave.cima += (alvo.cima - this._inputSuave.cima) * alpha;
-        this._inputSuave.baixo += (alvo.baixo - this._inputSuave.baixo) * alpha;
+        // Para cada eixo, escolhe a constante de tempo dependendo se está
+        // acelerando (indo em direção a 1) ou freando (indo em direção a 0)
+        const suavizarEixo = (atual, alvoVal) => {
+            const acelerando = alvoVal > atual;
+            const ms = acelerando ? this._msAcelerar : this._msFrear;
+            const alpha = 1 - Math.exp(-dt / ms);
+            return atual + (alvoVal - atual) * alpha;
+        };
 
-        // Pequena zona morta para evitar tremedeira
+        this._inputSuave.direita  = suavizarEixo(this._inputSuave.direita, alvo.direita);
+        this._inputSuave.esquerda = suavizarEixo(this._inputSuave.esquerda, alvo.esquerda);
+        this._inputSuave.cima     = suavizarEixo(this._inputSuave.cima, alvo.cima);
+        this._inputSuave.baixo    = suavizarEixo(this._inputSuave.baixo, alvo.baixo);
+
         const dead = 0.02;
         const clamp01 = (v) => (v < dead ? 0 : (v > 1 ? 1 : v));
 
@@ -107,13 +115,6 @@ class Personagem {
 
     mover(input, deltaTime){
 
-        let andando = false;
-
-        // Move eixo X e eixo Y separadamente,
-        // testando colisão antes de confirmar cada um.
-        // Isso permite "deslizar" na parede em vez de travar de vez.
-
-        // Base de movimento ajustada por deltaTime (para ficar consistente em FPS diferentes)
         const dt = Number.isFinite(deltaTime) ? deltaTime : 16;
         const fator = dt / 16.6667;
         const passo = this.velocidade * fator;
@@ -123,39 +124,41 @@ class Personagem {
         const cima = Number(input?.cima || 0);
         const baixo = Number(input?.baixo || 0);
 
-        // Direção principal (para animação)
-        const abs = (v) => Math.abs(v);
-        const horizontal = direita - esquerda;
-        const vertical = baixo - cima;
+        // Vetor de movimento combinado
+        let vx = direita - esquerda;
+        let vy = baixo - cima;
 
-        if (abs(horizontal) > abs(vertical) && abs(horizontal) > 0.05) {
-            this.direcao = horizontal > 0 ? "direita" : "esquerda";
-        } else if (abs(vertical) > 0.05) {
-            this.direcao = vertical > 0 ? "baixo" : "cima";
+        const andando = Math.abs(vx) > 0.02 || Math.abs(vy) > 0.02;
+
+        // NORMALIZA a diagonal: sem isso, andar na diagonal é ~41% mais
+        // rápido que andar reto, o que é a maior causa da sensação "estranha"
+        const mag = Math.hypot(vx, vy);
+        if (mag > 1) {
+            vx /= mag;
+            vy /= mag;
         }
 
-        if(direita > 0.01){
-            const novoX = this.x + (passo * direita);
-            if(!this.colideComParede(novoX, this.y)) this.x = novoX;
-            andando = true;
+        // Direção da animação com histerese (evita flicker perto da diagonal)
+        const abs = Math.abs;
+        if (andando) {
+            if (abs(vx) > abs(vy) * 1.15) {
+                this.direcao = vx > 0 ? "direita" : "esquerda";
+            } else if (abs(vy) > abs(vx) * 1.15) {
+                this.direcao = vy > 0 ? "baixo" : "cima";
+            }
+            // se estiver "empatado" perto da diagonal, mantém a direção anterior
+            // em vez de trocar — isso é o que dá aquele ar "liso"
         }
 
-        if(esquerda > 0.01){
-            const novoX = this.x - (passo * esquerda);
-            if(!this.colideComParede(novoX, this.y)) this.x = novoX;
-            andando = true;
+        // Move X e Y separadamente pra permitir "deslizar" na parede
+        if (vx !== 0) {
+            const novoX = this.x + passo * vx;
+            if (!this.colideComParede(novoX, this.y)) this.x = novoX;
         }
 
-        if(cima > 0.01){
-            const novoY = this.y - (passo * cima);
-            if(!this.colideComParede(this.x, novoY)) this.y = novoY;
-            andando = true;
-        }
-
-        if(baixo > 0.01){
-            const novoY = this.y + (passo * baixo);
-            if(!this.colideComParede(this.x, novoY)) this.y = novoY;
-            andando = true;
+        if (vy !== 0) {
+            const novoY = this.y + passo * vy;
+            if (!this.colideComParede(this.x, novoY)) this.y = novoY;
         }
 
         this.estado = andando ? "walk" : "idle";
@@ -163,26 +166,23 @@ class Personagem {
 
     animar(deltaTime){
 
-        // direção → linha correta da sprite
         if(this.direcao === "baixo") this.linha = 0;
         if(this.direcao === "direita") this.linha = 1;
         if(this.direcao === "cima") this.linha = 2;
         if(this.direcao === "esquerda") this.linha = 3;
 
-        // idle trava frame
+        // idle trava frame — mas não reseta o tempo abruptamente,
+        // isso deixa a retomada da caminhada mais fluida
         if(this.estado === "idle"){
             this.frame = 0;
             this.indiceFrame = 0;
-            this.tempoFrame = 0;
             return;
         }
 
-        // segurança caso deltaTime venha quebrado
         if(!deltaTime) deltaTime = 16;
 
         this.tempoFrame += deltaTime;
 
-        // loop de animação estável
         while(this.tempoFrame >= this.intervaloFrame){
 
             this.tempoFrame -= this.intervaloFrame;
@@ -204,8 +204,8 @@ class Personagem {
             this.frame * this.tamanho,
             this.linha * this.tamanho,
 
-            this.tamanho,/* x*/
-            this.tamanho,/* y*/
+            this.tamanho,
+            this.tamanho,
 
             this.x,
             this.y,
