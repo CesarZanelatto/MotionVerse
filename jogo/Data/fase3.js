@@ -2340,6 +2340,17 @@ const Fase3 = {
       "height": 64,
       "destino": "fase_inicio.html",
       "texto": ""
+    },
+    {
+      "id": "texto_192_512",
+      "tipo": "texto",
+      "x": 192,
+      "y": 560,
+      "width": 64,
+      "height": 64,
+      "texto": "teste 2 do ingles forehead do frances front do hebraico מֵצַח teste 2 do ingles forehead do frances front do hebraico מֵצַח",
+      "duracao": 10000,
+      "destino": ""
     }
   ],
   "elementosAnimados": [],
