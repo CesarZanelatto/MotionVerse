@@ -1532,6 +1532,14 @@ const Fase01 = {
       "id": "parede_1536_960",
       "x": 1536,
       "y": 960,
+      "width": 32,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_960",
+      "x": 448,
+      "y": 704,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1540,7 +1548,7 @@ const Fase01 = {
       "id": "parede_1536_832",
       "x": 1536,
       "y": 832,
-      "width": 64,
+      "width": 32,
       "height": 64,
       "img": ""
     },
@@ -1548,7 +1556,7 @@ const Fase01 = {
       "id": "parede_1536_768",
       "x": 1536,
       "y": 768,
-      "width": 64,
+      "width": 32,
       "height": 64,
       "img": ""
     },
@@ -1556,7 +1564,7 @@ const Fase01 = {
       "id": "parede_1536_704",
       "x": 1536,
       "y": 704,
-      "width": 64,
+      "width": 32,
       "height": 64,
       "img": ""
     },
@@ -1629,31 +1637,32 @@ const Fase01 = {
       "x": 640,
       "y": 448,
       "width": 64,
-      "height": 64,
+      "height": 32,
       "img": ""
     },
     {
       "id": "parede_576_384",
-      "x": 576,
+      "x": 595,
       "y": 384,
-      "width": 64,
+      "width": 56,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_576_448",
-      "x": 576,
+      "x": 608,
       "y": 448,
-      "width": 64,
-      "height": 64,
+      "width": 32,
+      "height": 32,
       "img": ""
+      
     },
     {
       "id": "parede_448_448",
       "x": 448,
       "y": 448,
       "width": 64,
-      "height": 64,
+      "height": 32,
       "img": ""
     },
     {
@@ -1666,18 +1675,18 @@ const Fase01 = {
     },
     {
       "id": "parede_384_384",
-      "x": 384,
+      "x": 409,
       "y": 384,
-      "width": 64,
+      "width": 32,
       "height": 64,
       "img": ""
     },
     {
       "id": "parede_384_448",
-      "x": 384,
+      "x": 427,
       "y": 448,
-      "width": 64,
-      "height": 64,
+      "width": 32,
+      "height": 32,
       "img": ""
     },
     {
@@ -1988,7 +1997,7 @@ const Fase01 = {
       "id": "parede_1536_896",
       "x": 1536,
       "y": 896,
-      "width": 64,
+      "width": 32,
       "height": 64,
       "img": ""
     },
