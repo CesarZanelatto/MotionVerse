@@ -1946,6 +1946,126 @@ const Fase3 = {
       "width": 64,
       "height": 64,
       "img": ""
+    },
+    {
+      "id": "parede_576_512",
+      "x": 628,
+      "y": 512,
+      "width": 48,
+      "height": 4,
+      "img": ""
+    },
+    {
+      "id": "parede_640_512",
+      "x": 690,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_704_512",
+      "x": 704,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_768_512",
+      "x": 730,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_768_448",
+      "x": 730,
+      "y": 438,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_704_448",
+      "x": 704,
+      "y": 438,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_640_448",
+      "x": 680,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1280_512",
+      "x": 1248,
+      "y": 512,
+      "width": 48,
+      "height": 4,
+      "img": ""
+    },
+    {
+      "id": "parede_1216_512",
+      "x": 1160,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_512",
+      "x": 1152,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_512",
+      "x": 1128,
+      "y": 502,
+      "width": 64,
+      "height": 16,
+      "img": ""
+    },
+    {
+      "id": "parede_1216_448",
+      "x": 1192,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1216_384",
+      "x": 1192,
+      "y": 380,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_448",
+      "x": 1106,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_384",
+      "x": 1106,
+      "y": 380,
+      "width": 64,
+      "height": 64,
+      "img": ""
     }
   ],
   "interacoes": [
