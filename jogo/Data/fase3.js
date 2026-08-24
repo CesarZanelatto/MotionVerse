@@ -888,6 +888,258 @@ const Fase3 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase3/1787311626119_caixadesom1.png",
       "efeito": false
+    },
+    {
+      "id": "tile_384_192",
+      "x": 352,
+      "y": 152,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252367_solanum-licopersium1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_256",
+      "x": 352,
+      "y": 216,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252370_solanum-licopersium1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_192",
+      "x": 416,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252375_pau-brazilian-echinata1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_256",
+      "x": 416,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252373_pau-brazilian-echinata1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_192",
+      "x": 480,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252380_capsicum-chinense1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_256",
+      "x": 480,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252378_capsicum-chinense1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_192",
+      "x": 544,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252384_monstera-deliciosa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_256",
+      "x": 544,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252382_monstera-deliciosa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_192",
+      "x": 608,
+      "y": 100,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252392_curcuma-longa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_256",
+      "x": 608,
+      "y": 164,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252386_curcuma-longa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_320",
+      "x": 608,
+      "y": 228,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252389_curcuma-longa1.3.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_192",
+      "x": 672,
+      "y": 86,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252399_plantaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_256",
+      "x": 672,
+      "y": 150,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252397_plantab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_320",
+      "x": 672,
+      "y": 214,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252395_plantac.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_192",
+      "x": 1508,
+      "y": 152,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252367_solanum-licopersium1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_384_256",
+      "x": 1508,
+      "y": 216,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252370_solanum-licopersium1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_192",
+      "x": 1444,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252375_pau-brazilian-echinata1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_448_256",
+      "x": 1444,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252373_pau-brazilian-echinata1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_192",
+      "x": 1380,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252380_capsicum-chinense1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_512_256",
+      "x": 1380,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252378_capsicum-chinense1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_192",
+      "x": 1316,
+      "y": 148,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252384_monstera-deliciosa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_576_256",
+      "x": 1316,
+      "y": 212,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252382_monstera-deliciosa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_192",
+      "x": 1252,
+      "y": 100,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252392_curcuma-longa1.1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_256",
+      "x": 1252,
+      "y": 164,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252386_curcuma-longa1.2.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_640_320",
+      "x": 1252,
+      "y": 228,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252389_curcuma-longa1.3.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_192",
+      "x": 1188,
+      "y": 86,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252399_plantaa.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_256",
+      "x": 1188,
+      "y": 150,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252397_plantab.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_704_320",
+      "x": 1188,
+      "y": 214,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787578252395_plantac.png",
+      "efeito": false
     }
   ],
   "paredes": [
@@ -1438,7 +1690,7 @@ const Fase3 = {
     {
       "id": "parede_320_128",
       "x": 320,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1446,7 +1698,7 @@ const Fase3 = {
     {
       "id": "parede_384_128",
       "x": 384,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1454,7 +1706,7 @@ const Fase3 = {
     {
       "id": "parede_448_128",
       "x": 448,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1462,7 +1714,7 @@ const Fase3 = {
     {
       "id": "parede_512_128",
       "x": 512,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1470,7 +1722,7 @@ const Fase3 = {
     {
       "id": "parede_576_128",
       "x": 576,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1478,7 +1730,7 @@ const Fase3 = {
     {
       "id": "parede_640_128",
       "x": 640,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1550,7 +1802,7 @@ const Fase3 = {
     {
       "id": "parede_1216_128",
       "x": 1216,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1558,7 +1810,7 @@ const Fase3 = {
     {
       "id": "parede_1280_128",
       "x": 1280,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1566,7 +1818,7 @@ const Fase3 = {
     {
       "id": "parede_1344_128",
       "x": 1344,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1574,7 +1826,7 @@ const Fase3 = {
     {
       "id": "parede_1408_128",
       "x": 1408,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1582,7 +1834,7 @@ const Fase3 = {
     {
       "id": "parede_1472_128",
       "x": 1472,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1590,7 +1842,7 @@ const Fase3 = {
     {
       "id": "parede_1536_128",
       "x": 1536,
-      "y": 128,
+      "y": 140,
       "width": 64,
       "height": 64,
       "img": ""
@@ -1760,7 +2012,7 @@ const Fase3 = {
       "x": 628,
       "y": 778,
       "width": 48,
-      "height": 8,
+      "height": 4,
       "img": ""
     },
     {
@@ -1856,7 +2108,7 @@ const Fase3 = {
       "x": 1248,
       "y": 778,
       "width": 48,
-      "height": 8,
+      "height": 4,
       "img": ""
     },
     {
