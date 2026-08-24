@@ -145,6 +145,14 @@ export function iniciarFase(fase, opcoes = {}) {
 
   function executarInteracao(zona) {
     if (zona.tipo === "porta") {
+      if (zona.itemNecessario && !inventario.possui(zona.itemNecessario)) {
+        mostrarTexto(
+          zona.textoBloqueio || "Você não possui o item necessário. Volte depois.",
+          zona.duracaoBloqueio || zona.duracao || 2000
+        );
+        return;
+      }
+
       window.location.href = zona.destino;
       return;
     }
@@ -319,11 +327,11 @@ export function iniciarFase(fase, opcoes = {}) {
       if (item.coletado) return;
       item.plataforma.desenhar(ctx);
 
-      ctx.save();
-      ctx.strokeStyle = "rgba(0, 255, 170, 0.9)";
-      ctx.lineWidth = 2;
-      ctx.strokeRect(item.x + 2, item.y + 2, tileSize - 4, tileSize - 4);
-      ctx.restore();
+      // ctx.save();
+      // ctx.strokeStyle = "rgba(0, 255, 170, 0.9)";
+      // ctx.lineWidth = 2;
+      // ctx.strokeRect(item.x + 2, item.y + 2, tileSize - 4, tileSize - 4);
+      // ctx.restore();
     });
   }
 
