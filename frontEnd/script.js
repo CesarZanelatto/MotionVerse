@@ -187,17 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fighterRole.textContent = role;
         fighterIndex.textContent = `Integrante ${String(index + 1).padStart(2, '0')}`;
         fighterFallback.querySelector('.initials').textContent = name.charAt(0).toUpperCase();
-
-        if (page) {
-          fighterEnter.hidden = false;
-          fighterEnter.setAttribute('href', page);
-        } else {
-          // Sem página de perfil cadastrada (ex.: Raissa) — o botão some
-          // em vez de levar a lugar nenhum.
-          fighterEnter.hidden = true;
-          fighterEnter.removeAttribute('href');
-        }
-
+        fighterEnter.setAttribute('href', page);
         fighterModel.setAttribute('src', model);
         fighterModelWrap.classList.remove('model-ready', 'model-error');
         fighterModelWrap.style.backgroundImage = bg ? `url('${bg}')` : 'none';
@@ -255,79 +245,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const sintetizador = window.speechSynthesis;
     let vozPortugues = null;
 
-    if (sintetizador) {
-      function carregarVozes() {
-        const vozes = sintetizador.getVoices();
-        vozPortugues =
-          vozes.find(v => v.lang === 'pt-BR') ||
-          vozes.find(v => v.lang.startsWith('pt')) ||
-          null;
-      }
-      carregarVozes();
-      if (sintetizador.onvoiceschanged !== undefined) {
-        sintetizador.onvoiceschanged = carregarVozes;
-      }
+    function carregarVozes() {
+      const vozes = sintetizador.getVoices();
+      vozPortugues =
+        vozes.find(v => v.lang === 'pt-BR') ||
+        vozes.find(v => v.lang.startsWith('pt')) ||
+        null;
+    }
+    carregarVozes();
+    if (sintetizador.onvoiceschanged !== undefined) {
+      sintetizador.onvoiceschanged = carregarVozes;
+    }
 
-      function falar(texto) {
-        if (!vozAtivada || !texto) return;
-        sintetizador.cancel();
-        const fala = new SpeechSynthesisUtterance(texto);
-        fala.lang = 'pt-BR';
-        if (vozPortugues) fala.voice = vozPortugues;
-        fala.rate = 1;
-        fala.pitch = 1;
-        fala.volume = 1;
-        sintetizador.speak(fala);
-      }
+    function falar(texto) {
+      if (!vozAtivada || !texto) return;
+      sintetizador.cancel();
+      const fala = new SpeechSynthesisUtterance(texto);
+      fala.lang = 'pt-BR';
+      if (vozPortugues) fala.voice = vozPortugues;
+      fala.rate = 1;
+      fala.pitch = 1;
+      fala.volume = 1;
+      sintetizador.speak(fala);
+    }
 
-      const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+    const btnAcessibilidade = document.getElementById('btn-acessibilidade');
 
-      if (btnAcessibilidade) {
-        function alternarVoz() {
-          vozAtivada = !vozAtivada;
+    if (btnAcessibilidade) {
+      function alternarVoz() {
+        vozAtivada = !vozAtivada;
 
-          btnAcessibilidade.classList.toggle('is-active', vozAtivada);
-          btnAcessibilidade.setAttribute('aria-pressed', String(vozAtivada));
+        btnAcessibilidade.classList.toggle('is-active', vozAtivada);
+        btnAcessibilidade.setAttribute('aria-pressed', String(vozAtivada));
 
-          if (vozAtivada) {
-            falar('Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.');
-          } else {
-            sintetizador.cancel();
-          }
+        if (vozAtivada) {
+          falar('Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.');
+        } else {
+          sintetizador.cancel();
         }
-
-        btnAcessibilidade.addEventListener('click', alternarVoz);
-
-        document.addEventListener('keydown', (e) => {
-          if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-          if (e.key.toLowerCase() === 'v') alternarVoz();
-        });
-
-        document.addEventListener('mouseover', (event) => {
-          const elemento = event.target.closest('.tts-trigger');
-          if (!elemento) return;
-          if (elemento._ttsHover) return;
-          elemento._ttsHover = true;
-          falar(elemento.getAttribute('data-tts'));
-        });
-
-        document.addEventListener('mouseout', (event) => {
-          const elemento = event.target.closest('.tts-trigger');
-          if (!elemento) return;
-          if (elemento.contains(event.relatedTarget)) return;
-          elemento._ttsHover = false;
-        });
-
-        document.addEventListener('focusin', (event) => {
-          const elemento = event.target.closest('.tts-trigger');
-          if (elemento) falar(elemento.getAttribute('data-tts'));
-        });
-
-        document.addEventListener('click', (event) => {
-          const elemento = event.target.closest('.tts-trigger');
-          if (elemento && elemento !== btnAcessibilidade) falar(elemento.getAttribute('data-tts'));
-        });
       }
+
+      btnAcessibilidade.addEventListener('click', alternarVoz);
+
+      document.addEventListener('keydown', (e) => {
+        if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+        if (e.key.toLowerCase() === 'v') alternarVoz();
+      });
+
+      document.addEventListener('mouseover', (event) => {
+        const elemento = event.target.closest('.tts-trigger');
+        if (!elemento) return;
+        if (elemento._ttsHover) return;
+        elemento._ttsHover = true;
+        falar(elemento.getAttribute('data-tts'));
+      });
+
+      document.addEventListener('mouseout', (event) => {
+        const elemento = event.target.closest('.tts-trigger');
+        if (!elemento) return;
+        if (elemento.contains(event.relatedTarget)) return;
+        elemento._ttsHover = false;
+      });
+
+      document.addEventListener('focusin', (event) => {
+        const elemento = event.target.closest('.tts-trigger');
+        if (elemento) falar(elemento.getAttribute('data-tts'));
+      });
+
+      document.addEventListener('click', (event) => {
+        const elemento = event.target.closest('.tts-trigger');
+        if (elemento && elemento !== btnAcessibilidade) falar(elemento.getAttribute('data-tts'));
+      });
     }
   } catch (err) {}
 
