@@ -12,7 +12,7 @@ const Fase02 = {
   "player": {
     "velocidade": 4,
     "x": 640,
-    "y": 1024,
+    "y": 1040,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -4307,7 +4307,18 @@ const Fase02 = {
       "tipo": "porta",
       "voltar": true,
       "x": 640,
-      "y": 1024,
+      "y": 1130,
+      "width": 64,
+      "height": 64,
+      "destino": "fase_01.html",
+      "texto": ""
+    },
+    {
+      "id": "porta_volta_fase_01",
+      "tipo": "porta",
+      "voltar": true,
+      "x": 704,
+      "y": 1130,
       "width": 64,
       "height": 64,
       "destino": "fase_01.html",
