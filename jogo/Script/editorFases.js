@@ -1281,21 +1281,21 @@ async function salvarFase() {
     fase.gridRows = defaultGridRows;
 
     for (const item of fase.plataforma1 || []) {
-      item.width = 64;
-      item.height = 64;
+      item.width = Math.max(1, Number(item.width || 64));
+      item.height = Math.max(1, Number(item.height || 64));
     }
     for (const item of fase.paredes || []) {
-      item.width = 64;
-      item.height = 64;
+      item.width = Math.max(1, Number(item.width || 64));
+      item.height = Math.max(1, Number(item.height || 64));
     }
     for (const item of fase.interacoes || []) {
-      item.width = 64;
-      item.height = 64;
+      item.width = Math.max(1, Number(item.width || 64));
+      item.height = Math.max(1, Number(item.height || 64));
     }
     fase.elementosAnimados = fase.elementosAnimados || [];
     for (const item of fase.coletaveis || []) {
-      item.width = 64;
-      item.height = 64;
+      item.width = Math.max(1, Number(item.width || 64));
+      item.height = Math.max(1, Number(item.height || 64));
     }
     for (const item of fase.elementosAnimados || []) {
       item.startX = Math.max(0, Number(item.startX || 0));

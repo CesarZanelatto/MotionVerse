@@ -297,28 +297,28 @@ async function savePhase(payload) {
 
   phase.plataforma1 = (phase.plataforma1 || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     img: assetsByRef.get(item.img) || item.img,
   }));
 
   phase.paredes = (phase.paredes || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
   }));
 
   phase.interacoes = (phase.interacoes || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     destino: mapDestino(item.destino),
   }));
 
   phase.coletaveis = (phase.coletaveis || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     img: assetsByRef.get(item.img) || item.img,
     tipo: item.tipo || "item",
     nome: item.nome || item.id,

@@ -14,7 +14,23 @@ const Fase1 = {
     "x": 1088,
     "y": 256,
     "img": "../Imagem/personagens/clara.png"
+  "id": "fase1",
+  "nome": "Fase1",
+  "background": "../Imagem/cenario/fase1/fase1.png",
+  "sceneWidth": 1920,
+  "sceneHeight": 1080,
+  "tileSize": 64,
+  "gridCols": 30,
+  "gridRows": 17,
+  "width": 64,
+  "height": 64,
+  "player": {
+    "velocidade": 4,
+    "x": 1088,
+    "y": 256,
+    "img": "../Imagem/personagens/clara.png"
   },
+  "plataforma1": [
   "plataforma1": [
     {
       "id": "tile_512_704",
