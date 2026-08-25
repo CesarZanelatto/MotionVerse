@@ -2079,19 +2079,19 @@ const Fase01 = {
       "destino": "fase_02.html",
       "texto": ""
     },
-    {
-      "id": "senha_1856_832",
-      "tipo": "senha",
-      "x": 1856,
-      "y": 832,
-      "width": 64,
-      "height": 64,
-      "pergunta": "Digite a senha:",
-      "resposta": "",
-      "textoSucesso": "Senha:1199",
-      "textoErro": "Senha incorreta.",
-      "destino": ""
-    },
+    // {
+    //   "id": "senha_1856_832",
+    //   "tipo": "senha",
+    //   "x": 1856,
+    //   "y": 832,
+    //   "width": 64,
+    //   "height": 64,
+    //   "pergunta": "Digite a senha:",
+    //   "resposta": "",
+    //   "textoSucesso": "Senha:1199",
+    //   "textoErro": "Senha incorreta.",
+    //   "destino": ""
+    // },
     {
       "id": "texto_1344_960",
       "tipo": "texto",
@@ -2103,19 +2103,19 @@ const Fase01 = {
       "duracao": 2000,
       "destino": ""
     },
-    {
-      "id": "senha_1856_768",
-      "tipo": "senha",
-      "x": 1856,
-      "y": 768,
-      "width": 64,
-      "height": 64,
-      "pergunta": "Digite a senha:",
-      "resposta": "",
-      "textoSucesso": "Senha correta!",
-      "textoErro": "Senha incorreta.",
-      "destino": ""
-    }
+    // {
+    //   "id": "senha_1856_768",
+    //   "tipo": "senha",
+    //   "x": 1856,
+    //   "y": 768,
+    //   "width": 64,
+    //   "height": 64,
+    //   "pergunta": "Digite a senha:",
+    //   "resposta": "",
+    //   "textoSucesso": "Senha correta!",
+    //   "textoErro": "Senha incorreta.",
+    //   "destino": ""
+    // }
   ],
   "elementosAnimados": [],
   "coletaveis": [],
