@@ -174,12 +174,7 @@ function carregarRanking(){
             )
         );
 
-
-        tr.appendChild(
-            criarCelula(equipe.pontuacao || 0)
-        );
-
-
+        
         tr.appendChild(
             criarCelula(equipe.tempo || "00:00")
         );
