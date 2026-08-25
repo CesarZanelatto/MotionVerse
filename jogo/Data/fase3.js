@@ -2344,7 +2344,7 @@ const Fase3 = {
       "destino": "fase_inicio.html",
       "texto": "",
       "itemNecessario": "chave_fase3",
-      "textoBloqueio": "Você não possui o item. Volte depois.",
+      "textoBloqueio": "Você não possui os itens necessarios. Volte depois.",
       "duracaoBloqueio": 2000
     },
     {
@@ -2354,9 +2354,31 @@ const Fase3 = {
       "y": 560,
       "width": 64,
       "height": 64,
-      "texto": "teste 2 do ingles forehead do frances front do hebraico מֵצַח teste 2 do ingles forehead do frances front do hebraico מֵצַח",
+      "texto": "Para voltar para casa você deve coletar todos os itens de todas as fases",
       "duracao": 10000,
       "destino": ""
+    },
+    {
+      "id": "porta_volta_fase_02",
+      "tipo": "porta",
+      "voltar": true,
+      "x": 896,
+      "y": 1060,
+      "width": 64,
+      "height": 64,
+      "destino": "fase_02.html",
+      "texto": ""
+    },
+    {
+      "id": "porta_volta_fase_02",
+      "tipo": "porta",
+      "voltar": true,
+      "x": 960,
+      "y": 1060,
+      "width": 64,
+      "height": 64,
+      "destino": "fase_02.html",
+      "texto": ""
     }
   ],
   "elementosAnimados": [],

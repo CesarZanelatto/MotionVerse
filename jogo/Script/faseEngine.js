@@ -90,6 +90,54 @@ function colide(personagem, zona) {
   );
 }
 
+// ---- Navegação entre fases (histórico + ponto de retorno) ----
+// Guarda, numa pilha na sessão do navegador, a posição exata em que o
+// jogador estava ao atravessar cada porta "de ida". Quando ele usa uma
+// porta marcada como `voltar: true`, desempilhamos essa posição e a
+// aplicamos como ponto de spawn na fase anterior, fazendo-o reaparecer
+// exatamente onde havia saído.
+const CHAVE_HISTORICO_FASES = "motionverse:historicoFases";
+const CHAVE_PONTO_RETORNO = "motionverse:pontoRetorno";
+
+function lerHistoricoFases() {
+  try {
+    const bruto = sessionStorage.getItem(CHAVE_HISTORICO_FASES);
+    const lista = bruto ? JSON.parse(bruto) : [];
+    return Array.isArray(lista) ? lista : [];
+  } catch (erro) {
+    console.error("Não foi possível ler o histórico de fases:", erro);
+    return [];
+  }
+}
+
+function salvarHistoricoFases(lista) {
+  try {
+    sessionStorage.setItem(CHAVE_HISTORICO_FASES, JSON.stringify(lista));
+  } catch (erro) {
+    console.error("Não foi possível salvar o histórico de fases:", erro);
+  }
+}
+
+function definirPontoRetorno(ponto) {
+  try {
+    sessionStorage.setItem(CHAVE_PONTO_RETORNO, JSON.stringify(ponto));
+  } catch (erro) {
+    console.error("Não foi possível salvar o ponto de retorno:", erro);
+  }
+}
+
+function consumirPontoRetorno() {
+  try {
+    const bruto = sessionStorage.getItem(CHAVE_PONTO_RETORNO);
+    if (!bruto) return null;
+    sessionStorage.removeItem(CHAVE_PONTO_RETORNO);
+    return JSON.parse(bruto);
+  } catch (erro) {
+    console.error("Não foi possível ler o ponto de retorno:", erro);
+    return null;
+  }
+}
+
 export function iniciarFase(fase, opcoes = {}) {
   const canvasSelector = opcoes.canvasSelector || "#telaRuntime";
   const tela = document.querySelector(canvasSelector);
@@ -115,7 +163,24 @@ export function iniciarFase(fase, opcoes = {}) {
     fundo.style.height = `${sceneHeight}px`;
   }
 
-  const jogador = new Personagem(fase.player.x, fase.player.y, fase);
+  // Se o jogador chegou aqui voltando de uma fase seguinte, reaparece
+  // exatamente no ponto (a mesma porta) por onde havia saído.
+  // As coordenadas são "travadas" dentro da área jogável porque portas de
+  // ida costumam ficar em bordas do cenário (ex.: y negativo, x além da
+  // largura) — spawns exatamente ali podem deixar o jogador fora da área
+  // visível/andável.
+  const TAMANHO_PERSONAGEM = 64;
+  function limitar(valor, min, max) {
+    return Math.min(Math.max(valor, min), max);
+  }
+
+  const pontoRetorno = consumirPontoRetorno();
+  const spawnXBruto = pontoRetorno && typeof pontoRetorno.x === "number" ? pontoRetorno.x : fase.player.x;
+  const spawnYBruto = pontoRetorno && typeof pontoRetorno.y === "number" ? pontoRetorno.y : fase.player.y;
+  const spawnX = limitar(spawnXBruto, 0, sceneWidth - TAMANHO_PERSONAGEM);
+  const spawnY = limitar(spawnYBruto, 0, sceneHeight - TAMANHO_PERSONAGEM);
+
+  const jogador = new Personagem(spawnX, spawnY, fase);
   const plataformas = carregarPlataformas(fase);
   const coletaveis = carregarColetaveis(fase);
   const elementosAnimados = carregarElementosAnimados(fase);
@@ -126,7 +191,12 @@ export function iniciarFase(fase, opcoes = {}) {
   controleEntrada.iniciarCameraSeDisponivel();
   atualizarHudInventario(inventarioHud, inventario);
 
-  let interacaoAtiva = null;
+  // Se o jogador nasce em cima de uma zona de interação (ex.: a própria
+  // porta de volta, posicionada no ponto de entrada da fase), marcamos
+  // essa zona como "já ativa" para não disparar a interação instantaneamente
+  // — ele só a aciona de novo depois de sair e voltar a entrar nela.
+  const zonaInicial = (fase.interacoes || []).find((zona) => colide(jogador, zona));
+  let interacaoAtiva = zonaInicial ? zonaInicial.id : null;
   let timeoutTexto = null;
   let ultimoFrame = performance.now();
   fase.__paredesDinamicas = [];
@@ -151,6 +221,25 @@ export function iniciarFase(fase, opcoes = {}) {
           zona.duracaoBloqueio || zona.duracao || 2000
         );
         return;
+      }
+
+      if (zona.voltar) {
+        // Porta "de volta": desempilha de onde o jogador veio e pede
+        // para a próxima fase (a anterior, no fluxo do jogo) reaparecer
+        // exatamente naquele ponto.
+        const historico = lerHistoricoFases();
+        const posicaoAnterior = historico.pop();
+        salvarHistoricoFases(historico);
+
+        if (posicaoAnterior) {
+          definirPontoRetorno({ x: posicaoAnterior.x, y: posicaoAnterior.y });
+        }
+      } else {
+        // Porta "de ida": empilha a posição atual (a própria porta) para
+        // que, se o jogador voltar depois, ele reapareça bem aqui.
+        const historico = lerHistoricoFases();
+        historico.push({ faseId: fase.id, x: jogador.x, y: jogador.y });
+        salvarHistoricoFases(historico);
       }
 
       window.location.href = zona.destino;
@@ -208,6 +297,35 @@ export function iniciarFase(fase, opcoes = {}) {
       interacaoAtiva = null;
     }
   }
+
+  // ---- Atalho de teclado para "voltar" ----
+  // A porta de volta só é alcançável a pé quando o jogador chega pelo
+  // caminho normal (spawn padrão da fase). Quando ele volta de uma fase
+  // mais à frente, reaparece em cima da porta de ida daquela fase — que
+  // pode ficar longe, ou até fora da área jogável, da porta de volta.
+  // Por isso a tecla Backspace aciona a mesma porta de volta direto,
+  // sem depender de posição, permitindo voltar várias fases seguidas.
+  const zonaVoltar = (fase.interacoes || []).find(
+    (zona) => zona.tipo === "porta" && zona.voltar
+  );
+
+  function aoApertarTecla(evento) {
+    if (evento.key !== "Backspace") return;
+    if (!zonaVoltar) return;
+
+    const alvoAtivo = document.activeElement;
+    const digitando =
+      alvoAtivo && (alvoAtivo.tagName === "INPUT" || alvoAtivo.tagName === "TEXTAREA");
+    if (digitando) return;
+
+    evento.preventDefault();
+    executarInteracao(zonaVoltar);
+  }
+
+  if (zonaVoltar) {
+    document.addEventListener("keydown", aoApertarTecla);
+  }
+
 
   function verificarColetaveis() {
     coletaveis.forEach((item) => {
@@ -359,3 +477,4 @@ export function iniciarFase(fase, opcoes = {}) {
     jogador,
   };
 }
+ 
