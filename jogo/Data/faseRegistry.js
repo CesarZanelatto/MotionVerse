@@ -2,16 +2,16 @@ import Inicio from "./inicio.js";
 import Fase1 from "./fase1.js";
 import Fase2 from "./fase2.js";
 import Fase3 from "./fase3.js";
-
+ 
 // AUTO_IMPORTS_START
 // (não remova) - imports gerados automaticamente pelo Editor de Fases
 import Fase01 from "./fase_01.js";
 import Fase02 from "./fase_02.js";
 import FaseInicio from "./fase_inicio.js";
 // AUTO_IMPORTS_END
-
+ 
 export const CUSTOM_PHASES_STORAGE_KEY = "motionverse_custom_phases";
-
+ 
 const FASES_PADRAO = {
   inicio: {
     id: "inicio",
@@ -45,7 +45,7 @@ const FASES_PADRAO = {
     data: Fase3,
     origem: "padrao",
   },
-
+ 
   // AUTO_FASES_START
   // (não remova) - fases geradas automaticamente pelo Editor de Fases
   fase_01: {
@@ -74,17 +74,17 @@ const FASES_PADRAO = {
   },
 // AUTO_FASES_END
 };
-
+ 
 function clonar(valor) {
   return JSON.parse(JSON.stringify(valor));
 }
-
+ 
 function normalizarFase(id, fase, meta = {}) {
   const faseBase = clonar(fase || {});
   const faseId = String(id || faseBase.id || "").trim();
   const nome = String(faseBase.nome || faseId || "Nova Fase").trim();
   const tileSize = Number(faseBase.tileSize || 64);
-
+ 
   return {
     id: faseId,
     nome,
@@ -135,12 +135,12 @@ function normalizarFase(id, fase, meta = {}) {
     },
   };
 }
-
+ 
 function lerFasesCustomizadas() {
   if (typeof window === "undefined") {
     return {};
   }
-
+ 
   try {
     const bruto = localStorage.getItem(CUSTOM_PHASES_STORAGE_KEY);
     if (!bruto) return {};
@@ -151,33 +151,33 @@ function lerFasesCustomizadas() {
     return {};
   }
 }
-
+ 
 function escreverFasesCustomizadas(fases) {
   if (typeof window === "undefined") {
     return;
   }
-
+ 
   localStorage.setItem(CUSTOM_PHASES_STORAGE_KEY, JSON.stringify(fases));
 }
-
+ 
 export function listarFasesRegistradas() {
   const custom = lerFasesCustomizadas();
   const customNormalizadas = Object.entries(custom).reduce((acc, [id, fase]) => {
     acc[id] = normalizarFase(id, fase, { origem: "custom", htmlPath: "fase.html" });
     return acc;
   }, {});
-
+ 
   const padraoNormalizadas = Object.entries(FASES_PADRAO).reduce((acc, [id, item]) => {
     acc[id] = normalizarFase(id, item.data, item);
     return acc;
   }, {});
-
+ 
   return {
     ...padraoNormalizadas,
     ...customNormalizadas,
   };
 }
-
+ 
 export function listarMetadadosFases() {
   return Object.values(listarFasesRegistradas()).map((fase) => ({
     id: fase.id,
@@ -186,59 +186,59 @@ export function listarMetadadosFases() {
     htmlPath: fase.htmlPath,
   }));
 }
-
+ 
 export function obterFasePorId(id) {
   const faseId = String(id || "").trim().toLowerCase();
   if (!faseId) return null;
   return listarFasesRegistradas()[faseId] || null;
 }
-
+ 
 export function faseJaExiste(id) {
   return Boolean(obterFasePorId(id));
 }
-
+ 
 export function salvarFaseCustomizada(fase) {
   const id = String(fase?.id || "").trim().toLowerCase();
   if (!id) {
     throw new Error("Informe um ID de fase.");
   }
-
+ 
   const registroAtual = obterFasePorId(id);
   if (registroAtual?.origem === "padrao") {
     throw new Error("Esse ID já pertence a uma fase padrão do jogo.");
   }
-
+ 
   const custom = lerFasesCustomizadas();
   custom[id] = clonar(fase);
   escreverFasesCustomizadas(custom);
-
+ 
   return obterFasePorId(id);
 }
-
+ 
 export function removerFaseCustomizada(id) {
   const faseId = String(id || "").trim().toLowerCase();
   if (!faseId) return;
-
+ 
   const custom = lerFasesCustomizadas();
   delete custom[faseId];
   escreverFasesCustomizadas(custom);
 }
-
+ 
 export function obterRotaDaFase(id) {
   const fase = obterFasePorId(id);
   if (!fase) {
     return `fase.html?fase=${encodeURIComponent(id)}`;
   }
-
+ 
   // Fases que ainda estão só no armazenamento (localStorage) usam o player genérico com querystring.
   if (fase.origem === "custom") {
     return `fase.html?fase=${encodeURIComponent(fase.id)}`;
   }
-
+ 
   // Se existir um HTML dedicado, usa ele (compatível com fases "manuais")
   if (fase.htmlPath) {
     return fase.htmlPath;
   }
-
+ 
   return `fase.html?fase=${encodeURIComponent(fase.id)}`;
 }
