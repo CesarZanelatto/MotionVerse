@@ -3,6 +3,119 @@ import Plataforma from "../Entitys/plataforma.js";
 import criarControleEntrada from "./controleEntrada.js";
 import Inventario from "./inventario.js";
 
+let tempoInicio = 0;
+let cronometroAtivo = false;
+let intervaloCronometro = null;
+
+function formatarTempo(tempoMs) {
+  const totalSegundos = Math.floor(tempoMs / 1000);
+
+  const minutos = Math.floor(totalSegundos / 60);
+
+  const segundos = totalSegundos % 60;
+
+  return (
+    String(minutos).padStart(2, "0") +
+    ":" +
+    String(segundos).padStart(2, "0")
+  );
+}
+
+function criarHudCronometro() {
+  let hud = document.querySelector("#cronometroHUD");
+
+  if (hud) {
+    return hud;
+  }
+
+  hud = document.createElement("div");
+
+  hud.id = "cronometroHUD";
+
+  Object.assign(hud.style, {
+    position: "fixed",
+    top: "16px",
+    left: "16px",
+    padding: "12px 18px",
+    borderRadius: "10px",
+    background: "rgba(11, 32, 54, 0.9)",
+    color: "#eef3f8",
+    border: "2px solid rgba(255,255,255,0.12)",
+    fontFamily: '"Pixelify Sans", monospace',
+    fontSize: "22px",
+    fontWeight: "bold",
+    zIndex: "20",
+    userSelect: "none",
+  });
+
+  document.body.appendChild(hud);
+
+  return hud;
+}
+
+function atualizarCronometro() {
+  if (!cronometroAtivo) {
+    return;
+  }
+
+  const agora = performance.now();
+
+  const tempoDecorrido =
+    agora - tempoInicio;
+
+  const hud =
+    document.querySelector("#cronometroHUD");
+
+  if (hud) {
+    hud.textContent =
+      `Tempo: ${formatarTempo(tempoDecorrido)}`;
+  }
+}
+
+function iniciarCronometro() {
+  tempoInicio = performance.now();
+
+  cronometroAtivo = true;
+
+  criarHudCronometro();
+
+  atualizarCronometro();
+
+  if (intervaloCronometro) {
+    clearInterval(intervaloCronometro);
+  }
+
+  intervaloCronometro =
+    setInterval(
+      atualizarCronometro,
+      100
+    );
+}
+
+function pararCronometro() {
+  if (!cronometroAtivo) {
+    return 0;
+  }
+
+  const tempoFinal =
+    performance.now() -
+    tempoInicio;
+
+  cronometroAtivo = false;
+
+  if (intervaloCronometro) {
+    clearInterval(
+      intervaloCronometro
+    );
+
+    intervaloCronometro = null;
+  }
+
+  return Math.floor(
+    tempoFinal / 1000
+  );
+}
+
 function criarHudInventario() {
   let hud = document.querySelector("#inventarioHUD");
   if (hud) return hud;
@@ -91,6 +204,7 @@ function colide(personagem, zona) {
 }
 
 export function iniciarFase(fase, opcoes = {}) {
+  iniciarCronometro();
   const canvasSelector = opcoes.canvasSelector || "#telaRuntime";
   const tela = document.querySelector(canvasSelector);
   const ctx = tela.getContext("2d");
@@ -144,11 +258,21 @@ export function iniciarFase(fase, opcoes = {}) {
   }
 
   function executarInteracao(zona) {
-    if (zona.tipo === "porta") {
-      window.location.href = zona.destino;
-      return;
-    }
+   if (zona.tipo === "porta") {
 
+  const tempoFinal =
+    pararCronometro();
+
+  console.log(
+    "Tempo final da fase:",
+    formatarTempo(tempoFinal * 1000)
+  );
+
+  window.location.href =
+    zona.destino;
+
+  return;
+    }
     if (zona.tipo === "texto") {
       mostrarTexto(zona.texto || "Mensagem", zona.duracao || 2000);
       return;
