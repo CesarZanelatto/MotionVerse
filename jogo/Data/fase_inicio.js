@@ -191,7 +191,7 @@ const FaseInicio = {
     {
       "id": "porta_768_576",
       "tipo": "porta",
-      "x": 720,
+      "x": 768,
       "y": 576,
       "width": 64,
       "height": 64,
@@ -201,7 +201,7 @@ const FaseInicio = {
     {
       "id": "porta_768_640",
       "tipo": "porta",  
-      "x": 720,
+      "x": 768,
       "y": 640,
       "width": 64,
       "height": 64,

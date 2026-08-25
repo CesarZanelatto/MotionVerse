@@ -46,10 +46,13 @@ function carregarPlataformas(fase) {
   );
 }
 
-function carregarColetaveis(fase) {
+function carregarColetaveis(fase, inventario) {
+  // Como o inventário agora é global (persiste entre fases), um coletável
+  // cujo id já esteja na mochila do jogador não deve reaparecer no cenário
+  // ao recarregar/revisitar a fase — ele já nasce marcado como coletado.
   return (fase.coletaveis || []).map((item) => ({
     ...item,
-    coletado: false,
+    coletado: Boolean(inventario.possui(item.id)),
     plataforma: new Plataforma(item.x, item.y, item.img, item.width, item.height),
   }));
 }
@@ -182,10 +185,10 @@ export function iniciarFase(fase, opcoes = {}) {
 
   const jogador = new Personagem(spawnX, spawnY, fase);
   const plataformas = carregarPlataformas(fase);
-  const coletaveis = carregarColetaveis(fase);
+  const inventario = new Inventario();
+  const coletaveis = carregarColetaveis(fase, inventario);
   const elementosAnimados = carregarElementosAnimados(fase);
   const controleEntrada = criarControleEntrada();
-  const inventario = new Inventario();
   const inventarioHud = criarHudInventario();
 
   controleEntrada.iniciarCameraSeDisponivel();

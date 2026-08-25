@@ -2355,7 +2355,7 @@ const Fase3 = {
       "width": 64,
       "height": 64,
       "texto": "Para voltar para casa você deve coletar todos os itens de todas as fases",
-      "duracao": 10000,
+      "duracao": 4000,
       "destino": ""
     },
     {
