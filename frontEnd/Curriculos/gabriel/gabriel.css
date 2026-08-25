@@ -48,7 +48,7 @@ body{
     background:
         linear-gradient(rgba(15,23,42,.75),
         rgba(15,23,42,.75)),
-        url("assets/curriculo/capa.png");
+        url("../assets/curriculo/capa.png");
 
     background-size:cover;
     background-position:center;
