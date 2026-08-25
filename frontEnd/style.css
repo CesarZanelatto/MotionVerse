@@ -189,6 +189,10 @@ button:focus-visible {
   box-shadow: none;
 }
 
+.pixel-btn[hidden] {
+  display: none;
+}
+
 .pixel-btn-orange {
   background: var(--senac-orange);
   color: var(--pixel-shadow);
@@ -665,13 +669,6 @@ button:focus-visible {
   }
 }
 
-@keyframes scrollcue {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  50.1% { transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
 section {
   padding: 110px 6%;
   position: relative;
@@ -731,7 +728,7 @@ section {
 
 .mechanic-step {
   font-family: var(--font-pixel);
-  font-size: 0.58rem;
+  font-size: 0.65rem;
   color: var(--senac-orange-light);
   margin-bottom: 18px;
   display: block;
@@ -747,7 +744,7 @@ section {
 
 .mechanic-card p {
   color: var(--text-dim);
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.7;
   overflow-wrap: break-word;
 }
@@ -756,6 +753,7 @@ section {
   width: 100%;
   height: 90px;
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
@@ -932,6 +930,10 @@ section {
   font-size: 0.58rem;
   color: var(--senac-orange-light);
   margin-bottom: 14px;
+}
+
+.fighter-badge[hidden] {
+  display: none;
 }
 
 .fighter-badge {
@@ -1129,16 +1131,16 @@ footer .foot-accent { color: var(--senac-orange); }
   }
 }
 .sprite-hand {
-  width: 64px;
-  height: 64px;
+  width: 149px;
+  height: 67px;
   background-image: url('assets/maofechada.png');
   background-repeat: no-repeat;
-  background-size: 256px 64px; 
+  background-size: 400% 100%;
   image-rendering: pixelated;
 }
 
 .sprite-static {
-  background-position: 0 0;
+  background-position: 0% 0;
 }
 
 .sprite-anim {
@@ -1146,6 +1148,10 @@ footer .foot-accent { color: var(--senac-orange); }
 }
 
 @keyframes fechar_punho {
-  from { background-position: 0 0; }      
-  to   { background-position: -192px 0; }
+  0%   { background-position: 0% 0; }
+  100% { background-position: 100% 0; }
 }
+
+
+
+

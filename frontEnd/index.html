@@ -146,43 +146,46 @@ Motion<em>Verse</em>
 <div class="center reveal tts-trigger" data-tts="Como Jogar. Quatro gestos simples controlam a aventura.">
 <span class="section-label">A Magia por Trás</span>
 <h2 class="section-title">Como Jogar</h2>
-<p class="section-desc">Quatro gestos simples controlam a aventura.</p>
+<p class="section-desc">Cada câmera capta um movimento da personagem</p>
 <img src="assets/2D.png" alt="Personagem 2D" class="personagem-mecanica" loading="lazy" decoding="async">
 </div>
 
 <div class="mechanics-grid">
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 1: Mão Aberta. Move para cima.">
-<span class="mechanic-step">Gesto 01</span>
-<div class="mechanic-media">
-  <div class="sprite-hand sprite-static" role="img" aria-label="Mão Aberta"></div>
-</div>
-<h3>Mão Aberta</h3>
-<p>Move para cima.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 2: Fechar Mão. Move para baixo.">
-<span class="mechanic-step">Gesto 02</span>
-<div class="mechanic-media">
-  <div class="sprite-hand sprite-anim" role="img" aria-label="Fechar Mão"></div>
-</div>
-<h3>Fechar Mão</h3>
-<p>Move para baixo.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 3: Mão para a Direita. Move para a direita.">
-<span class="mechanic-step">Gesto 03</span>
-<div class="mechanic-media">
-<img src="assets\mao-direita.png" alt="Mão para a Direita" class="mechanic-img" loading="lazy" decoding="async">
-</div>
-<h3>Mão para a Direita</h3>
-<p>Move para a Direita.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 4: Mão para a Esquerda. Move para a esquerda.">
-<span class="mechanic-step">Gesto 04</span>
-<div class="mechanic-media">
-<img src="assets\mao-esquerda.png" alt="Mão para a Esquerda" class="mechanic-img" loading="lazy" decoding="async">
-</div>
-<h3>Mão para a Esquerda</h3>
-<p>Move para a Esquerda.</p>
-</div>
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Camera 1: Move para cima.">
+    <span class="mechanic-step">Câmera 01</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim" role="img" aria-label="Mão Aberta"></div>
+    </div>
+    <h3>Mão aberta, mover para cima </h3>
+    <p>Mão fechada para movimento.</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 2: Fechar Mão. Move para baixo.">
+    <span class="mechanic-step">Câmera 02</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim" role="img" aria-label="Fechar Mão"></div>
+    </div>
+    <h3>Mão aberta, mover para baixo</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 3: Mão para a Direita. Move para a direita.">
+    <span class="mechanic-step">Câmera 03</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim sprite-right" role="img" aria-label="Mão para a Direita"></div>
+    </div>
+    <h3>Mão aberta, mover para direita</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 4: Mão para a Esquerda. Move para a esquerda.">
+    <span class="mechanic-step">Câmera 04</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim sprite-left" role="img" aria-label="Mão para a Esquerda"></div>
+    </div>
+    <h3>Mão aberta, mover para esquerda</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
 </div>
 </section>
 
@@ -227,7 +230,7 @@ Motion<em>Verse</em>
     <span class="fighter-badge" id="fighterBadge" hidden>Mestre</span>
     <h3 id="fighterName">Professor</h3>
     <span class="fighter-role" id="fighterRole">Mestre do Projeto</span>
-    <a href="curriculos/professor/index.html" class="pixel-btn pixel-btn-orange" id="fighterEnter" target="_blank"
+    <a href="https://www.linkedin.com/in/rogerio-sobral-ribeiro-49228552/" class="pixel-btn pixel-btn-orange" id="fighterEnter" target="_blank"
     rel="noopener noreferrer">Ver Perfil</a>
     </div>
     </div>
@@ -238,7 +241,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item is-active" type="button" data-index="0"
         data-name="Rogerio" data-role="Rogerio Sobral" data-badge="Mestre"
-        data-model="modelos/Professor.glb" data-page="Curriculos/professor/index.html"
+        data-model="modelos/Professor.glb" data-page="https://www.linkedin.com/in/rogerio-sobral-ribeiro-49228552/"
         data-bg="fundos/professor.png"
         role="option" aria-selected="true">
         <span class="roster-master" aria-hidden="true"></span>
@@ -252,7 +255,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="1"
         data-name="Cesar" data-role="CESAR DE OLIVEIRA ZANELATTO" data-badge="Back-End"
-        data-model="modelos/cesar.glb" data-page="Curriculos\cesar\curriculo\cesar.html"
+        data-model="modelos/cesar.glb" data-page="../curriculos/cesar/curriculo/cesar.html"
         data-bg="fundos/cesar.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -264,8 +267,8 @@ Motion<em>Verse</em>
       </button>
     
       <button class="roster-item" type="button" data-index="2"
-        data-name="Daiane" data-role="DAIANE DUARTE DOS SANYOS" data-badge="Front-End"
-        data-model="modelos/Dai.glb" data-page="Curriculos/daiane/daiane.html"
+        data-name="Daiane" data-role="DAIANE DUARTE DOS SANTOS" data-badge="Front-End"
+        data-model="modelos/Dai.glb" data-page="../curriculos/daiane/daiane.html"
         data-bg="fundos/daiane.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -278,7 +281,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="3"
         data-name="Erik" data-role="ERIK MAURICIO SILVA" data-badge="Front-End"
-        data-model="modelos/erik.glb" data-page="Curriculos\Erik-Mauricio\index.html"
+        data-model="modelos/erik.glb" data-page="Curriculos/Erik-Mauricio/index.html"
         data-bg="fundos/erik.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -291,7 +294,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="4"
         data-name="Gabriel" data-role="GABRIEL ROBERTO ROSSI" data-badge="Front-End"
-        data-model="modelos/Gabriel.glb" data-page="Curriculos/gabriel/gabriel.html"
+        data-model="modelos/Gabriel.glb" data-page="../curriculos/gabriel/gabriel.html"
         data-bg="fundos/gabriel.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -304,7 +307,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="5"
         data-name="Hebert" data-role="HEBERT CRISTIAN SILVA DA CRUZ" data-badge="Front-End"
-        data-model="modelos/heber.glb" data-page="Curriculos/hebert/index.html"
+        data-model="modelos/heber.glb" data-page="curriculos/hebert/index.html"
         data-bg="fundos/hebert.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -317,7 +320,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="6"
         data-name="Kleber" data-role="KLEBER AMARO DA SILVA" data-badge="Back-End"
-        data-model="modelos/kleber.glb" data-page="Curriculos\kleb\pages\kleber.html"
+        data-model="modelos/kleber.glb" data-page="../curriculos/kleb/pages/kleber.html"
         data-bg="fundos/kleber.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -330,7 +333,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="7"
         data-name="Leandro" data-role="LEANDRO CAVALCANTE CHAVES DA MATA" data-badge="Back-End"
-        data-model="modelos/leandro.glb" data-page="Curriculos/leandro/index.html"
+        data-model="modelos/leandro.glb" data-page="curriculos/leandro/index.html"
         data-bg="fundos/leandro.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -343,7 +346,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="8"
         data-name="Leonardo" data-role="LEONARDO DIAS DA SILVA" data-badge="Back-End"
-        data-model="modelos/Leo.glb" data-page="Curriculos/leonardo/index.html"
+        data-model="modelos/Leo.glb" data-page="curriculos/leonardo/index.html"
         data-bg="fundos/leonardo.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -356,7 +359,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="9"
         data-name="Lyss" data-role="LYSS KEURY GOMES BELLO DA MOTTA" data-badge="Front-End"
-        data-model="modelos/Lyss.glb" data-page="Curriculos\lyss\assets\index.html"
+        data-model="modelos/Lyss.glb" data-page="Curriculos/lyss/assets/index.html"
         data-bg="fundos/lyss.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -369,7 +372,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="10"
         data-name="Rafael Gomes" data-role="RAFAEL SILVA GOMES" data-badge="Front-End"
-        data-model="modelos/Rafael Gomes.glb" data-page="Curriculos\rafael-gomes\curriculo.html"
+        data-model="modelos/Rafael Gomes.glb" data-page="../curriculos/rafael-gomes/curriculo.html"
         data-bg="fundos/rafael-gomes.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -382,7 +385,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="11"
         data-name="Rafael Moralli" data-role="RAFAEL SPER MORALLI" data-badge="Front-End"
-        data-model="modelos/Rafael mora.glb" data-page="Curriculos\rafael\page\page.html"
+        data-model="modelos/Rafael mora.glb" data-page="Curriculos/rafael/page/page.html"
         data-bg="fundos/rafael-moralli.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -395,7 +398,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="12"
         data-name="Raissa" data-role="RAISSA MICHELY GUTIERREZ QUISPE" data-badge="Front-End"
-        data-model="modelos/Raissa.glb" data-page="Curriculos/raissa/index.html"
+        data-model="modelos/Raissa.glb"
         data-bg="fundos/raissa.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
@@ -408,7 +411,7 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="13"
         data-name="Victor" data-role="VICTOR JATOBA ALCANTARA BATISTA" data-badge="Back-End"
-        data-model="modelos/Victor.glb" data-page="Curriculos\victor\marcacao\index.html"
+        data-model="modelos/Victor.glb" data-page="Curriculos/victor/marcacao/index.html"
         data-bg="fundos/victor.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">

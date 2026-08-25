@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MotionVerse — Fim da Jornada</title>
+<meta name="description" content="Cutscene Clara retorna ao seu mundo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="cutscene.css?v=2">
+</head>
+<body class="cutscene-body">
+
+<div class="bg-video" id="bgVideo">
+  <div class="bg-fireflies" id="fireflies" aria-hidden="true"></div>
+  <div class="bg-overlay"></div>
+</div>
+
+<div class="cutscene-topbar">
+  <button class="pixel-btn pixel-btn-ghost cutscene-mute" id="btnSom" type="button" aria-pressed="false" aria-label="Ativar som">
+    🔇 Som
+  </button>
+  <button class="pixel-btn pixel-btn-ghost cutscene-skip" id="btnPular" type="button">
+    Pular ▶▶
+  </button>
+</div>
+
+<main class="cutscene-stage" id="cutsceneStage">
+
+  <p class="cutscene-caption" id="captionOne" aria-live="polite">
+    Um portal puxa Clara novamente<span class="dots" aria-hidden="true">...</span>
+  </p>
+
+  <div class="cutscene-video-frame pixel-panel" id="videoFrame">
+    <span class="trailer-tag"><span class="rec-dot" aria-hidden="true"></span>Cutscene</span>
+
+    <div class="cutscene-video-inner">
+      <video
+        id="cutsceneVideo"
+        class="cutscene-video"
+        src="Cutscene final V2.mp4"
+        muted
+        autoplay
+        playsinline
+        preload="auto">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+
+      <div class="screen-scanlines" aria-hidden="true"></div>
+      <div class="screen-glare" aria-hidden="true"></div>
+    </div>
+
+    <span class="frame-corner corner-tl" aria-hidden="true"></span>
+    <span class="frame-corner corner-tr" aria-hidden="true"></span>
+    <span class="frame-corner corner-bl" aria-hidden="true"></span>
+    <span class="frame-corner corner-br" aria-hidden="true"></span>
+
+    <button class="pixel-btn pixel-btn-orange cutscene-play-fallback" id="btnPlayFallback" type="button" hidden>
+      ▶ Reproduzir
+    </button>
+  </div>
+
+  <p class="cutscene-caption cutscene-caption-error" id="captionErro" hidden>
+    Não foi possível carregar o vídeo.
+  </p>
+
+</main>
+
+<div class="cutscene-fade" id="cutsceneFade" aria-hidden="true">
+  <span class="cutscene-loading">Carregando<span class="dots" aria-hidden="true">...</span></span>
+</div>
+
+<noscript>
+  <div class="cutscene-noscript">
+    <p>A cutscene precisa de JavaScript para ser exibida.</p>
+    <a href="ranking.html" class="pixel-btn pixel-btn-orange">Ver ranking</a>
+  </div>
+</noscript>
+
+<script src="cutscene-final.js?v=1" defer></script>
+</body>
+</html>
