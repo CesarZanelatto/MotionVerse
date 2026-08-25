@@ -2329,7 +2329,10 @@ const Fase3 = {
       "width": 64,
       "height": 64,
       "destino": "fase_inicio.html",
-      "texto": ""
+      "texto": "",
+      "itemNecessario": "chave_fase3",
+      "textoBloqueio": "Você não possui o item. Volte depois.",
+      "duracaoBloqueio": 2000
     },
     {
       "id": "porta_960_192",
@@ -2339,7 +2342,10 @@ const Fase3 = {
       "width": 64,
       "height": 64,
       "destino": "fase_inicio.html",
-      "texto": ""
+      "texto": "",
+      "itemNecessario": "chave_fase3",
+      "textoBloqueio": "Você não possui o item. Volte depois.",
+      "duracaoBloqueio": 2000
     },
     {
       "id": "texto_192_512",
@@ -2354,7 +2360,19 @@ const Fase3 = {
     }
   ],
   "elementosAnimados": [],
-  "coletaveis": [],
+  "coletaveis": [
+    {
+      "id": "chave_fase3",
+      "nome": "Chave",
+      "tipo": "chave",
+      "unico": true,
+      "x": 190,
+      "y": 880,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787594018833_chave.png"
+    },
+  ],
   "caixa1": {
     "id": "c1_1",
     "x": 0,
