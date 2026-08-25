@@ -1429,6 +1429,17 @@ const Fase02 = {
       "height": 64,
       "destino": "fase3.html",
       "texto": ""
+    },
+    {
+      "id": "porta_volta_fase_01",
+      "tipo": "porta",
+      "voltar": true,
+      "x": 640,
+      "y": 1024,
+      "width": 64,
+      "height": 64,
+      "destino": "fase_01.html",
+      "texto": ""
     }
   ],
   "elementosAnimados": [],

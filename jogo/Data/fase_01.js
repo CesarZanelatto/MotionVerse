@@ -779,7 +779,7 @@ const Fase01 = {
       "height": 64,
       "destino": "fase_02.html",
       "texto": ""
-    }
+    },
   ],
   "elementosAnimados": [],
   "coletaveis": [],
