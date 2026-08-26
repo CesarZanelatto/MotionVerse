@@ -2334,7 +2334,11 @@ const Fase3 = {
         "chave_fase3",
         "cartao_fase01",
         "patchcord",
-        "oleo_fase3"
+        "oleo_fase3",
+        "item_192_960",
+        "item_320_384",
+        "vela",
+        "sabonete"
       ],
       "textoBloqueio": "Você não possui o item. Volte depois.",
       "duracaoBloqueio": 2000
@@ -2352,21 +2356,14 @@ const Fase3 = {
         "chave_fase3",
         "cartao_fase01",
         "patchcord",
-        "oleo_fase3"
+        "oleo_fase3",
+        "item_192_960",
+        "item_320_384",
+        "vela",
+        "sabonete"
       ],
       "textoBloqueio": "Você não possui os itens necessarios. Volte depois.",
       "duracaoBloqueio": 2000
-    },
-    {
-      "id": "texto_192_512",
-      "tipo": "texto",
-      "x": 192,
-      "y": 560,
-      "width": 64,
-      "height": 64,
-      "texto": "Para voltar para casa você deve coletar todos os itens de todas as fases",
-      "duracao": 4000,
-      "destino": ""
     },
     {
       "id": "porta_volta_fase_02",
@@ -2406,14 +2403,36 @@ const Fase3 = {
     },
     {
       "id": "oleo_fase3",
-      "nome": "Óleo de Massagem",
+      "nome": "Creme Hidratante",
       "tipo": "item",
       "unico": true,
-      "x": 1664,
-      "y": 896,
+      "x": 1260,
+      "y": 486,
       "width": 64,
       "height": 64,
       "img": "../Imagem/editor_uploads/fase3/1787751134146_oleo.png"
+    },
+    {
+      "id": "sabonete",
+      "nome": "Sabonete",
+      "tipo": "item",
+      "unico": true,
+      "x": 576,
+      "y": 906,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787773784300_sabonete.png"
+    },
+    {
+      "id": "vela",
+      "nome": "Vela",
+      "tipo": "item",
+      "unico": true,
+      "x": 1562,
+      "y": 800,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787773784304_velas.png"
     }
   ],
   "caixa1": {
