@@ -5,7 +5,6 @@ import Fase3 from "./fase3.js";
  
 // AUTO_IMPORTS_START
 // (não remova) - imports gerados automaticamente pelo Editor de Fases
-import Fase01 from "./fase_01.js";
 import Fase02 from "./fase_02.js";
 import FaseInicio from "./fase_inicio.js";
 // AUTO_IMPORTS_END
@@ -48,18 +47,10 @@ const FASES_PADRAO = {
  
   // AUTO_FASES_START
   // (não remova) - fases geradas automaticamente pelo Editor de Fases
-  fase_01: {
-    id: "fase_01",
-    nome: "Servidor",
-    background: "../Imagem/editor_uploads/fase_01/1787234154713_layoutfase1.2.png",
-    htmlPath: "fase_01.html",
-    data: Fase01,
-    origem: "padrao",
-  },
   fase_02: {
     id: "fase_02",
     nome: "Biblioteca",
-    background: "../Imagem/editor_uploads/fase_02/1787668138761_biblioteca.png",
+    background: "../Imagem/editor_uploads/fase_02/1787745129458_bibliotecab.png",
     htmlPath: "fase_02.html",
     data: Fase02,
     origem: "padrao",
