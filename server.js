@@ -136,80 +136,36 @@ function generateHtml({ id, nome, background, scriptFile }) {
 }
 
 function generateScript({ dataImportName, dataFileName, phaseId }) {
-  const musicaFase01 = phaseId === "fase_01"
+  const musicasPorFase = {
+    fase_01: { arquivo: "fase1musicaFundo.mp3", handler: "iniciarMusica" },
+    fase_02: { arquivo: "fase2musicaFundo.mp3", handler: "iniciarMusica2" },
+    fase3: { arquivo: "fase3musicaFundo.mp3", handler: "iniciarMusica3" },
+  };
+
+  const musicaFase = musicasPorFase[phaseId];
+
+  const blocoMusica = musicaFase
     ? `
 
-const audioFundo = new Audio("../som/fase1musicaFundo.mp3");
+const audioFundo = new Audio("../som/${musicaFase.arquivo}");
 audioFundo.loop = true;
 audioFundo.volume = 0.4;
 
-function iniciarMusica() {
+function ${musicaFase.handler}() {
   audioFundo.play().catch((error) => {
     console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
   });
 }
 
-document.addEventListener("pointerdown", iniciarMusica, { once: true });
-document.addEventListener("keydown", iniciarMusica, { once: true });`
+document.addEventListener("pointerdown", ${musicaFase.handler}, { once: true });
+document.addEventListener("keydown", ${musicaFase.handler}, { once: true });`
     : "";
 
   return `import { iniciarFase } from "./faseEngine.js";
 import ${dataImportName} from "../Data/${dataFileName}";
 
 const fase = ${dataImportName};
-iniciarFase(fase);${musicaFase01}
-`;
-}
-
-function generateScript2({ dataImportName, dataFileName, phaseId }) {
-  const musicaFase02 = phaseId === "fase_02"
-    ? `
-
-const audioFundo = new Audio("../som/fase2musicaFundo.mp3");
-audioFundo.loop = true;
-audioFundo.volume = 0.4;
-
-function iniciarMusica2() {
-  audioFundo.play().catch((error) => {
-    console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
-  });
-}
-
-document.addEventListener("pointerdown", iniciarMusica2, { once: true });
-document.addEventListener("keydown", iniciarMusica2, { once: true });`
-    : "";
-
-  return `import { iniciarFase } from "./faseEngine.js";
-import ${dataImportName} from "../Data/${dataFileName}";
-
-const fase2 = ${dataImportName};
-iniciarFase(fase2);${musicaFase02}
-`;
-}
-
-function generateScript3({ dataImportName, dataFileName, phaseId }) {
-  const musicaFase03 = phaseId === "fase3"
-    ? `
-
-const audioFundo = new Audio("../som/fase3musicaFundo.mp3");
-audioFundo.loop = true;
-audioFundo.volume = 0.4;
-
-function iniciarMusica3() {
-  audioFundo.play().catch((error) => {
-    console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
-  });
-}
-
-document.addEventListener("pointerdown", iniciarMusica3, { once: true });
-document.addEventListener("keydown", iniciarMusica3, { once: true });`
-    : "";
-
-  return `import { iniciarFase } from "./faseEngine.js";
-import ${dataImportName} from "../Data/${dataFileName}";
-
-const fase3 = ${dataImportName};
-iniciarFase(fase3);${musicaFase03}
+iniciarFase(fase);${blocoMusica}
 `;
 }
 
@@ -411,21 +367,9 @@ async function savePhase(payload) {
     phaseId: id,
   });
 
-  const scriptContent2 = generateScript2({
-    dataImportName,
-    dataFileName,
-    phaseId: id,
-  });
-
-  const scriptContent3 = generateScript3({
-    dataImportName,
-    dataFileName,
-    phaseId: id,
-  });
-
   await fs.writeFile(path.join(ROOT, "jogo", "Data", dataFileName), dataContent, "utf-8");
   await fs.writeFile(path.join(ROOT, "jogo", "Marcacao", htmlFileName), htmlContent, "utf-8");
-  await fs.writeFile(path.join(ROOT, "jogo", "Script", scriptFileName), scriptContent, scriptContent2, scriptContent3, "utf-8");
+  await fs.writeFile(path.join(ROOT, "jogo", "Script", scriptFileName), scriptContent, "utf-8");
   await updateRegistry();
 
   return {
