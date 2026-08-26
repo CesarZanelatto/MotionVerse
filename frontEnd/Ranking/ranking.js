@@ -8,7 +8,6 @@ const corpoTabela = document.getElementById("corpoTabela");
 const pesquisa = document.getElementById("pesquisa");
 const btnLimpar = document.getElementById("btnLimpar");
 
-
 const senhaCorreta = "Senacsala21@";
 
 
