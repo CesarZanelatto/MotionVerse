@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Estilo/">
-    <title>Motion Verse</title>
+    <link rel="stylesheet" href="../Estilo/tutorial.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Motion Verse - Tutorial</title>
 </head>
 <body>
-    <header>
-
+    <header class="tutorial-header">
+        <h1>Como <span class="accent">Jogar</span></h1>
+        <p>Abra o livro e aprenda os controles do Motion Verse</p>
     </header>
-    <main>
 
+    <main class="tutorial-main">
+        <div class="livro-container">
+            <img class="livro-img" src="../Imagem/cenario/tutorial/livro.png" alt="Livro de tutorial aberto">
+
+            <div class="pagina pagina-esquerda">
+                <div class="mao-wrapper">
+                    <div class="mao-sprite"></div>
+                </div>
+                <h2>Abra a mão para se mover!</h2>
+                <p>A câmera fica de olho na sua mão. Toda vez que você <strong>abrir a mão</strong>, seu personagem anda no jogo. Feche a mão de novo para ele ficar parado.</p>
+            </div>
+
+            <div class="pagina pagina-direita">
+                <h2>Sem câmera?</h2>
+                <p>Você também pode jogar pelo teclado, usando <strong>WASD</strong> ou as <strong>setas</strong> do teclado para mover o personagem.</p>
+                <div class="legenda-gestos">
+                    <div class="icone f0"></div>
+                    <span class="seta">&#8594;</span>
+                    <div class="icone f3"></div>
+                </div>
+                <p>Mão aberta = parado. Mão fechada = em movimento.</p>
+            </div>
+        </div>
+
+        <div class="tutorial-botoes">
+            <a href="./inicio.html">Voltar</a>
+            <a href="./fase_inicio.html">Jogar</a>
+        </div>
     </main>
-    <footer>
-        
-    </footer>
 </body>
 </html>
