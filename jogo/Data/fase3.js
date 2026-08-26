@@ -2331,10 +2331,11 @@ const Fase3 = {
       "destino": "fase_inicio.html",
       "texto": "",
       "itensNecessarios": [
-                          "chave_fase3",
-                          "cartao_fase01",
-                          "patchcord"
-                          ],
+        "chave_fase3",
+        "cartao_fase01",
+        "patchcord",
+        "oleo_fase3"
+      ],
       "textoBloqueio": "Você não possui o item. Volte depois.",
       "duracaoBloqueio": 2000
     },
@@ -2348,10 +2349,11 @@ const Fase3 = {
       "destino": "fase_inicio.html",
       "texto": "",
       "itensNecessarios": [
-                          "chave_fase3",
-                          "cartao_fase01",
-                          "patchcord"
-                          ],
+        "chave_fase3",
+        "cartao_fase01",
+        "patchcord",
+        "oleo_fase3"
+      ],
       "textoBloqueio": "Você não possui os itens necessarios. Volte depois.",
       "duracaoBloqueio": 2000
     },
@@ -2402,6 +2404,17 @@ const Fase3 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase3/1787594018833_chave.png"
     },
+    {
+      "id": "oleo_fase3",
+      "nome": "Óleo de Massagem",
+      "tipo": "item",
+      "unico": true,
+      "x": 1664,
+      "y": 896,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase3/1787751134146_oleo.png"
+    }
   ],
   "caixa1": {
     "id": "c1_1",
