@@ -1,7 +1,7 @@
 const Fase02 = {
   "id": "fase_02",
   "nome": "Biblioteca",
-  "background": "../Imagem/editor_uploads/fase_02/1787668138761_biblioteca.png",
+  "background": "../Imagem/editor_uploads/fase_02/1787745129458_bibliotecab.png",
   "sceneWidth": 1920,
   "sceneHeight": 1080,
   "tileSize": 64,
@@ -11,8 +11,8 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 1000,
-    "y": 900,
+    "x": 1100,
+    "y": 600,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -748,24 +748,6 @@ const Fase02 = {
     {
       "id": "tile_1792_576",
       "x": 1446,
-      "y": 98,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787574077885_livros1armario.png",
-      "efeito": false
-    },
-    {
-      "id": "tile_1472_384",
-      "x": 1458,
-      "y": 98,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787574077885_livros1armario.png",
-      "efeito": false
-    },
-    {
-      "id": "tile_1536_384",
-      "x": 1690,
       "y": 98,
       "width": 64,
       "height": 64,
@@ -4522,7 +4504,7 @@ const Fase02 = {
       "id": "parede_1088_896",
       "x": 1148,
       "y": 892,
-      "width": -10,
+      "width": 1,
       "height": 10,
       "img": ""
     },
@@ -4546,7 +4528,7 @@ const Fase02 = {
       "id": "parede_1344_896",
       "x": 1354,
       "y": 892,
-      "width": -10,
+      "width": 1,
       "height": 10,
       "img": ""
     },
@@ -4562,7 +4544,7 @@ const Fase02 = {
       "id": "parede_1536_896",
       "x": 1560,
       "y": 892,
-      "width": -10,
+      "width": 1,
       "height": 10,
       "img": ""
     },
@@ -4578,24 +4560,24 @@ const Fase02 = {
       "id": "parede_1728_896",
       "x": 1758,
       "y": 892,
-      "width": -10,
+      "width": 1,
       "height": 10,
       "img": ""
     },
     {
       "id": "parede_1856_576",
       "x": 1854,
-      "y": 576,
+      "y": 620,
       "width": 64,
-      "height": 64,
+      "height": 1,
       "img": ""
     },
     {
       "id": "parede_1856_192",
       "x": 1856,
-      "y": 192,
+      "y": 204,
       "width": 64,
-      "height": 64,
+      "height": 1,
       "img": ""
     },
     {
@@ -4627,7 +4609,7 @@ const Fase02 = {
       "x": 774,
       "y": 380,
       "width": 64,
-      "height": -22,
+      "height": 1,
       "img": ""
     },
     {
@@ -4635,7 +4617,7 @@ const Fase02 = {
       "x": 774,
       "y": 450,
       "width": 64,
-      "height": -22,
+      "height": 1,
       "img": ""
     },
     {
@@ -4643,7 +4625,311 @@ const Fase02 = {
       "x": 774,
       "y": 518,
       "width": 64,
-      "height": -22,
+      "height": 1,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_512",
+      "x": 1874,
+      "y": 470,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_448",
+      "x": 1874,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_384",
+      "x": 1874,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_320",
+      "x": 1874,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_256",
+      "x": 1874,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_128",
+      "x": 1900,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_64",
+      "x": 1864,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1792_64",
+      "x": 1792,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1728_64",
+      "x": 1728,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1664_64",
+      "x": 1664,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1600_64",
+      "x": 1600,
+      "y": 50,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_64",
+      "x": 1520,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1472_64",
+      "x": 1472,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1408_64",
+      "x": 1408,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_64",
+      "x": 1344,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_128",
+      "x": 1320,
+      "y": 60,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_960_320",
+      "x": 960,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_320",
+      "x": 1024,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_320",
+      "x": 1088,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_320",
+      "x": 1140,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_960_448",
+      "x": 960,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_448",
+      "x": 1024,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_448",
+      "x": 1088,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_448",
+      "x": 1140,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_960_192",
+      "x": 960,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_192",
+      "x": 1024,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_192",
+      "x": 1088,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_192",
+      "x": 1140,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_192",
+      "x": 1304,
+      "y": 240,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_256",
+      "x": 1304,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_320",
+      "x": 1304,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_384",
+      "x": 1304,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_448",
+      "x": 1304,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_512",
+      "x": 1304,
+      "y": 512,
+      "width": 64,
+      "height": 34,
+      "img": ""
+    },
+    {
+      "id": "parede_832_384",
+      "x": 806,
+      "y": 346,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_384",
+      "x": 806,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_448",
+      "x": 806,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_512",
+      "x": 806,
+      "y": 512,
+      "width": 64,
+      "height": 34,
       "img": ""
     }
   ],
