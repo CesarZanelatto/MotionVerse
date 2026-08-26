@@ -2328,7 +2328,7 @@ const Fase3 = {
       "y": 192,
       "width": 64,
       "height": 64,
-      "destino": "../../frontEnd/cutscene-Final/cutscene-Final.html",
+      "destino": "../../frontEnd/cutscene-Final/cutscene-final.html",
       "texto": "",
       "itensNecessarios": [
         "chave_fase3",
@@ -2350,7 +2350,7 @@ const Fase3 = {
       "y": 192,
       "width": 64,
       "height": 64,
-      "destino": "../../frontEnd/cutscene-Final/cutscene-Final.html",
+      "destino": "../../frontEnd/cutscene-Final/cutscene-final.html",
       "texto": "",
       "itensNecessarios": [
         "chave_fase3",
