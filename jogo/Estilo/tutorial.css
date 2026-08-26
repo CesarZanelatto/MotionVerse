@@ -1,0 +1,409 @@
+:root {
+  --bg: #071522;
+  --senac-blue: #004a8d;
+  --senac-blue-deep: #00284a;
+  --panel: rgba(0, 32, 58, 0.88);
+  --senac-orange: #f7941d;
+  --senac-orange-light: #fdc180;
+  --pixel-shadow: #00101c;
+  --text: #eef3f8;
+  --text-dim: #9fb8d1;
+  --font-pixel: "Press Start 2P", monospace;
+  --font-body: "Pixelify Sans", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(
+    circle at 50% 20%,
+    #0d2338 0%,
+    var(--bg) 70%
+  );
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+
+  /* ALTERADO: antes 40px */
+  padding-bottom: 25px;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+/* ---------- Cabeçalho ---------- */
+
+.tutorial-header {
+  text-align: center;
+
+  /* ALTERADO: antes 36px 6% 10px */
+  padding: 28px 5% 8px;
+}
+
+.tutorial-header h1 {
+  font-family: var(--font-pixel);
+
+  /* ALTERADO: antes clamp(1.4rem, 4vw, 2.4rem) */
+  font-size: clamp(1.1rem, 3.2vw, 1.9rem);
+
+  color: var(--text);
+  text-shadow: 2px 3px 0 var(--pixel-shadow);
+  letter-spacing: 2px;
+}
+
+.tutorial-header h1 .accent {
+  color: var(--senac-orange);
+}
+
+.tutorial-header p {
+  /* ALTERADO: antes 12px */
+  margin-top: 8px;
+
+  font-family: var(--font-body);
+
+  /* ALTERADO: antes 1.35rem */
+  font-size: 1.05rem;
+
+  color: var(--text-dim);
+}
+
+/* ---------- Livro ---------- */
+
+.tutorial-main {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* ALTERADO: antes 28px */
+  gap: 20px;
+}
+
+.livro-container {
+  position: relative;
+
+  /* ALTERADO:
+     antes: min(97vw, 1280px)
+     agora o livro fica menor */
+  width: min(90vw, 1050px);
+
+  aspect-ratio: 1024 / 729;
+
+  filter: drop-shadow(
+    0 15px 25px rgba(0, 0, 0, 0.55)
+  );
+}
+
+.livro-img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.pagina {
+  position: absolute;
+
+  top: 12.2%;
+  height: 60.5%;
+  width: 31.6%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  /* ALTERADO: antes 5% */
+  gap: 3%;
+
+  /* ALTERADO: antes 2% 4% */
+  padding: 1.5% 3%;
+
+  overflow: hidden;
+}
+
+.pagina-esquerda {
+  left: 16.4%;
+}
+
+.pagina-direita {
+  left: 53%;
+}
+
+.pagina h2 {
+  font-family: var(--font-pixel);
+
+  /* ALTERADO:
+     antes clamp(0.65rem, 1.75vw, 1.1rem) */
+  font-size: clamp(0.5rem, 1.45vw, 0.9rem);
+
+  color: #3a2a18;
+  line-height: 1.5;
+}
+
+.pagina p {
+  font-family: var(--font-body);
+
+  /* ALTERADO:
+     antes clamp(0.9rem, 2.1vw, 1.35rem) */
+  font-size: clamp(0.72rem, 1.7vw, 1.05rem);
+
+  color: #4a3a26;
+  line-height: 1.35;
+}
+
+.pagina strong {
+  color: #8a3d0c;
+}
+
+/* ---------- Sprite animada da mão ---------- */
+
+.mao-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ALTERADO: antes 42% */
+  width: 35%;
+
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+}
+
+.mao-sprite {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../Imagem/cenario/tutorial/mao_fechada.png");
+
+  background-repeat: no-repeat;
+  background-size: 400% 100%;
+
+  image-rendering: pixelated;
+
+  animation: fecharMao 1s steps(1) infinite;
+}
+
+@keyframes fecharMao {
+  0% {
+    background-position: 0% 0;
+  }
+
+  12% {
+    background-position: 0% 0;
+  }
+
+  25% {
+    background-position: 33.333% 0;
+  }
+
+  37% {
+    background-position: 66.666% 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  70% {
+    background-position: 100% 0;
+  }
+
+  80% {
+    background-position: 66.666% 0;
+  }
+
+  90% {
+    background-position: 33.333% 0;
+  }
+
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* ---------- Legenda dos gestos ---------- */
+
+.legenda-gestos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ALTERADO: antes 6% */
+  gap: 4%;
+
+  /* ALTERADO: antes 2% */
+  margin-top: 1%;
+}
+
+.legenda-gestos .icone {
+  /* ALTERADO: antes 19% */
+  width: 15%;
+
+  aspect-ratio: 1 / 1;
+
+  background-image: url("../Imagem/cenario/tutorial/mao_fechada.png");
+
+  background-repeat: no-repeat;
+  background-size: 400% 100%;
+
+  image-rendering: pixelated;
+}
+
+.legenda-gestos .icone.f0 {
+  background-position: 0% 0;
+}
+
+.legenda-gestos .icone.f3 {
+  background-position: 100% 0;
+}
+
+.legenda-gestos .seta {
+  font-family: var(--font-pixel);
+
+  /* ALTERADO:
+     antes clamp(0.6rem, 1.4vw, 1rem) */
+  font-size: clamp(0.5rem, 1.1vw, 0.8rem);
+
+  color: #8a3d0c;
+}
+
+/* ---------- Botões ---------- */
+
+.tutorial-botoes {
+  display: flex;
+
+  /* ALTERADO: antes 18px */
+  gap: 12px;
+
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* ALTERADO: antes 4px */
+  margin-top: 2px;
+}
+
+.tutorial-botoes a {
+  font-family: var(--font-pixel);
+
+  /* ALTERADO: antes 0.9rem */
+  font-size: 0.7rem;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  /* ALTERADO:
+     antes 18px 30px */
+  padding: 13px 22px;
+
+  /* ALTERADO: antes 3px */
+  border: 2px solid var(--senac-orange);
+
+  /* ALTERADO: antes 8px */
+  border-radius: 6px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: var(--text);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 0.15);
+
+  transition: all 0.2s ease;
+}
+
+.tutorial-botoes a:hover {
+  background: var(--senac-orange);
+
+  color: #1a1204;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(247, 148, 29, 0.45);
+}
+
+.tutorial-botoes a:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 860px) {
+  .pagina h2 {
+    /* ALTERADO: menor */
+    font-size: clamp(0.38rem, 2vw, 0.52rem);
+  }
+
+  .pagina p {
+    /* ALTERADO: menor */
+    font-size: clamp(0.5rem, 2.2vw, 0.68rem);
+  }
+
+  .mao-wrapper {
+    /* ALTERADO: antes 40% */
+    width: 34%;
+  }
+
+  .tutorial-header {
+    /* ALTERADO */
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* ALTERADO: ajustes extras para telas pequenas */
+
+  .tutorial-header h1 {
+    font-size: 0.9rem;
+  }
+
+  .tutorial-header p {
+    font-size: 0.85rem;
+  }
+
+  .livro-container {
+    /* ALTERADO */
+    width: 94vw;
+  }
+
+  .tutorial-botoes {
+    gap: 8px;
+  }
+
+  .tutorial-botoes a {
+    font-size: 0.55rem;
+    padding: 10px 16px;
+  }
+}
+
+/* ---------- Redução de animações ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .mao-sprite,
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
