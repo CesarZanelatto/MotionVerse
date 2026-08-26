@@ -411,13 +411,13 @@ async function savePhase(payload) {
     phaseId: id,
   });
 
-  const scriptContent = generateScript2({
+  const scriptContent2 = generateScript2({
     dataImportName,
     dataFileName,
     phaseId: id,
   });
 
-  const scriptContent = generateScript3({
+  const scriptContent3 = generateScript3({
     dataImportName,
     dataFileName,
     phaseId: id,
@@ -425,7 +425,7 @@ async function savePhase(payload) {
 
   await fs.writeFile(path.join(ROOT, "jogo", "Data", dataFileName), dataContent, "utf-8");
   await fs.writeFile(path.join(ROOT, "jogo", "Marcacao", htmlFileName), htmlContent, "utf-8");
-  await fs.writeFile(path.join(ROOT, "jogo", "Script", scriptFileName), scriptContent, "utf-8");
+  await fs.writeFile(path.join(ROOT, "jogo", "Script", scriptFileName), scriptContent, scriptContent2, scriptContent3, "utf-8");
   await updateRegistry();
 
   return {
