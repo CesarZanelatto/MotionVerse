@@ -4977,7 +4977,7 @@ const Fase02 = {
     },
     {
       "id": "item_64_576",
-      "nome": "livro Secreto",
+      "nome": "Livro",
       "tipo": "item",
       "unico": true,
       "x": 230,
@@ -4987,15 +4987,15 @@ const Fase02 = {
       "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
     },
     {
-      "id": "item_64_576",
-      "nome": "livro Secreto",
+      "id": "item_192_960",
+      "nome": "Marcador de Página",
       "tipo": "item",
       "unico": true,
       "x": 170,
-      "y": 890,
+      "y": 884,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
+      "img": "../Imagem/editor_uploads/fase_02/1787752263526_teste45.png"
     }
   ],
   "caixa1": {
