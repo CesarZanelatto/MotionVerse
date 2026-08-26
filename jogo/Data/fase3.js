@@ -2330,7 +2330,11 @@ const Fase3 = {
       "height": 64,
       "destino": "fase_inicio.html",
       "texto": "",
-      "itemNecessario": "chave_fase3",
+      "itensNecessarios": [
+                          "chave_fase3",
+                          "cartao_fase01",
+                          "patchcord"
+                          ],
       "textoBloqueio": "Você não possui o item. Volte depois.",
       "duracaoBloqueio": 2000
     },
@@ -2343,7 +2347,11 @@ const Fase3 = {
       "height": 64,
       "destino": "fase_inicio.html",
       "texto": "",
-      "itemNecessario": "chave_fase3",
+      "itensNecessarios": [
+                          "chave_fase3",
+                          "cartao_fase01",
+                          "patchcord"
+                          ],
       "textoBloqueio": "Você não possui os itens necessarios. Volte depois.",
       "duracaoBloqueio": 2000
     },

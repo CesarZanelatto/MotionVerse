@@ -42,7 +42,14 @@ function atualizarHudInventario(hud, inventario) {
 
 function carregarPlataformas(fase) {
   return (fase.plataforma1 || []).map(
-    (square) => new Plataforma(square.x, square.y, square.img, square.width, square.height)
+    (square) =>
+      new Plataforma(
+        square.x,
+        square.y,
+        square.img,
+        square.width,
+        square.height
+      )
   );
 }
 
@@ -53,7 +60,13 @@ function carregarColetaveis(fase, inventario) {
   return (fase.coletaveis || []).map((item) => ({
     ...item,
     coletado: Boolean(inventario.possui(item.id)),
-    plataforma: new Plataforma(item.x, item.y, item.img, item.width, item.height),
+    plataforma: new Plataforma(
+      item.x,
+      item.y,
+      item.img,
+      item.width,
+      item.height
+    ),
   }));
 }
 
@@ -81,7 +94,9 @@ function criarElementoAnimado(item) {
 }
 
 function carregarElementosAnimados(fase) {
-  return (fase.elementosAnimados || []).map((item) => criarElementoAnimado(item));
+  return (fase.elementosAnimados || []).map((item) =>
+    criarElementoAnimado(item)
+  );
 }
 
 function colide(personagem, zona) {
@@ -146,8 +161,12 @@ export function iniciarFase(fase, opcoes = {}) {
   const tela = document.querySelector(canvasSelector);
   const ctx = tela.getContext("2d");
   const fundo = document.querySelector(opcoes.fundoSelector || "#fundo");
-  const caixaDialogo = document.querySelector(opcoes.caixaDialogoSelector || "#caixa-dialogo");
-  const textoDialogo = document.querySelector(opcoes.textoDialogoSelector || "#texto-dialogo");
+  const caixaDialogo = document.querySelector(
+    opcoes.caixaDialogoSelector || "#caixa-dialogo"
+  );
+  const textoDialogo = document.querySelector(
+    opcoes.textoDialogoSelector || "#texto-dialogo"
+  );
 
   const sceneWidth = Number(fase.sceneWidth || 1920);
   const sceneHeight = Number(fase.sceneHeight || 1080);
@@ -157,8 +176,14 @@ export function iniciarFase(fase, opcoes = {}) {
   tela.height = sceneHeight;
   tela.style.width = `${sceneWidth}px`;
   tela.style.height = `${sceneHeight}px`;
-  document.documentElement.style.setProperty("--scene-width", `${sceneWidth}px`);
-  document.documentElement.style.setProperty("--scene-height", `${sceneHeight}px`);
+  document.documentElement.style.setProperty(
+    "--scene-width",
+    `${sceneWidth}px`
+  );
+  document.documentElement.style.setProperty(
+    "--scene-height",
+    `${sceneHeight}px`
+  );
 
   if (fundo) {
     fundo.src = fase.background || "../Imagem/cenario/fundo_tela_inicio.png";
@@ -178,8 +203,14 @@ export function iniciarFase(fase, opcoes = {}) {
   }
 
   const pontoRetorno = consumirPontoRetorno();
-  const spawnXBruto = pontoRetorno && typeof pontoRetorno.x === "number" ? pontoRetorno.x : fase.player.x;
-  const spawnYBruto = pontoRetorno && typeof pontoRetorno.y === "number" ? pontoRetorno.y : fase.player.y;
+  const spawnXBruto =
+    pontoRetorno && typeof pontoRetorno.x === "number"
+      ? pontoRetorno.x
+      : fase.player.x;
+  const spawnYBruto =
+    pontoRetorno && typeof pontoRetorno.y === "number"
+      ? pontoRetorno.y
+      : fase.player.y;
   const spawnX = limitar(spawnXBruto, 0, sceneWidth - TAMANHO_PERSONAGEM);
   const spawnY = limitar(spawnYBruto, 0, sceneHeight - TAMANHO_PERSONAGEM);
 
@@ -198,7 +229,9 @@ export function iniciarFase(fase, opcoes = {}) {
   // porta de volta, posicionada no ponto de entrada da fase), marcamos
   // essa zona como "já ativa" para não disparar a interação instantaneamente
   // — ele só a aciona de novo depois de sair e voltar a entrar nela.
-  const zonaInicial = (fase.interacoes || []).find((zona) => colide(jogador, zona));
+  const zonaInicial = (fase.interacoes || []).find((zona) =>
+    colide(jogador, zona)
+  );
   let interacaoAtiva = zonaInicial ? zonaInicial.id : null;
   let timeoutTexto = null;
   let ultimoFrame = performance.now();
@@ -218,9 +251,16 @@ export function iniciarFase(fase, opcoes = {}) {
 
   function executarInteracao(zona) {
     if (zona.tipo === "porta") {
-      if (zona.itemNecessario && !inventario.possui(zona.itemNecessario)) {
+      const itensNecessarios = zona.itensNecessarios || [];
+
+      const possuiTodosItens = itensNecessarios.every((itemId) =>
+        inventario.possui(itemId)
+      );
+
+      if (itensNecessarios.length > 0 && !possuiTodosItens) {
         mostrarTexto(
-          zona.textoBloqueio || "Você não possui o item necessário. Volte depois.",
+          zona.textoBloqueio ||
+            "Você não possui todos os itens necessários. Volte depois.",
           zona.duracaoBloqueio || zona.duracao || 2000
         );
         return;
@@ -259,17 +299,29 @@ export function iniciarFase(fase, opcoes = {}) {
       if (resposta === null) return;
 
       if (String(resposta).trim() === String(zona.resposta || "").trim()) {
-        mostrarTexto(zona.textoSucesso || "Senha correta!", zona.duracao || 1500);
-        window.dispatchEvent(new CustomEvent("motionverse:senha-correta", { detail: zona }));
+        mostrarTexto(
+          zona.textoSucesso || "Senha correta!",
+          zona.duracao || 1500
+        );
+        window.dispatchEvent(
+          new CustomEvent("motionverse:senha-correta", { detail: zona })
+        );
       } else {
-        mostrarTexto(zona.textoErro || "Senha incorreta.", zona.duracaoErro || 1500);
-        window.dispatchEvent(new CustomEvent("motionverse:senha-incorreta", { detail: zona }));
+        mostrarTexto(
+          zona.textoErro || "Senha incorreta.",
+          zona.duracaoErro || 1500
+        );
+        window.dispatchEvent(
+          new CustomEvent("motionverse:senha-incorreta", { detail: zona })
+        );
       }
       return;
     }
 
     if (zona.tipo === "evento") {
-      window.dispatchEvent(new CustomEvent("motionverse:evento-fase", { detail: zona }));
+      window.dispatchEvent(
+        new CustomEvent("motionverse:evento-fase", { detail: zona })
+      );
       if (zona.texto) {
         mostrarTexto(zona.texto, zona.duracao || 1500);
       }
@@ -318,7 +370,8 @@ export function iniciarFase(fase, opcoes = {}) {
 
     const alvoAtivo = document.activeElement;
     const digitando =
-      alvoAtivo && (alvoAtivo.tagName === "INPUT" || alvoAtivo.tagName === "TEXTAREA");
+      alvoAtivo &&
+      (alvoAtivo.tagName === "INPUT" || alvoAtivo.tagName === "TEXTAREA");
     if (digitando) return;
 
     evento.preventDefault();
@@ -328,7 +381,6 @@ export function iniciarFase(fase, opcoes = {}) {
   if (zonaVoltar) {
     document.addEventListener("keydown", aoApertarTecla);
   }
-
 
   function verificarColetaveis() {
     coletaveis.forEach((item) => {
@@ -388,8 +440,14 @@ export function iniciarFase(fase, opcoes = {}) {
         item.currentX = Number(item.endX || item.startX || 0);
         item.currentY = Number(item.endY || item.startY || 0);
       } else {
-        item.currentX = Number(item.startX || 0) + (Number(item.endX || item.startX || 0) - Number(item.startX || 0)) * progressoCiclo;
-        item.currentY = Number(item.startY || 0) + (Number(item.endY || item.startY || 0) - Number(item.startY || 0)) * progressoCiclo;
+        item.currentX =
+          Number(item.startX || 0) +
+          (Number(item.endX || item.startX || 0) - Number(item.startX || 0)) *
+            progressoCiclo;
+        item.currentY =
+          Number(item.startY || 0) +
+          (Number(item.endY || item.startY || 0) - Number(item.startY || 0)) *
+            progressoCiclo;
       }
 
       if (item.colisao) {
@@ -409,7 +467,8 @@ export function iniciarFase(fase, opcoes = {}) {
       const largura = item.width;
       const altura = item.height;
       const frameCount = item.frameCount;
-      const frameAtual = Math.floor(item.elapsed / item.frameInterval) % frameCount;
+      const frameAtual =
+        Math.floor(item.elapsed / item.frameInterval) % frameCount;
 
       if (item.sourceImage.complete && item.sourceImage.naturalWidth > 0) {
         const frameWidth = item.sourceImage.naturalWidth / frameCount;
@@ -433,9 +492,16 @@ export function iniciarFase(fase, opcoes = {}) {
       }
 
       ctx.save();
-      ctx.strokeStyle = item.colisao ? "rgba(255, 90, 90, 0.95)" : "rgba(0, 200, 255, 0.95)";
+      ctx.strokeStyle = item.colisao
+        ? "rgba(255, 90, 90, 0.95)"
+        : "rgba(0, 200, 255, 0.95)";
       ctx.lineWidth = 2;
-      ctx.strokeRect(item.currentX + 1, item.currentY + 1, largura - 2, altura - 2);
+      ctx.strokeRect(
+        item.currentX + 1,
+        item.currentY + 1,
+        largura - 2,
+        altura - 2
+      );
       ctx.restore();
     });
   }
@@ -480,4 +546,3 @@ export function iniciarFase(fase, opcoes = {}) {
     jogador,
   };
 }
- 

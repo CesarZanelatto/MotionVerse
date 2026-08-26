@@ -764,15 +764,6 @@ const Fase01 = {
       "efeito": false
     },
     {
-      "id": "tile_1344_960",
-      "x": 1344,
-      "y": 960,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_01/1787235781953_cartao.png",
-      "efeito": false
-    },
-    {
       "id": "tile_1536_896",
       "x": 1536,
       "y": 896,
@@ -1655,7 +1646,6 @@ const Fase01 = {
       "width": 32,
       "height": 32,
       "img": ""
-      
     },
     {
       "id": "parede_448_448",
@@ -2078,47 +2068,33 @@ const Fase01 = {
       "height": 64,
       "destino": "fase_02.html",
       "texto": ""
-    },
-    // {
-    //   "id": "senha_1856_832",
-    //   "tipo": "senha",
-    //   "x": 1856,
-    //   "y": 832,
-    //   "width": 64,
-    //   "height": 64,
-    //   "pergunta": "Digite a senha:",
-    //   "resposta": "",
-    //   "textoSucesso": "Senha:1199",
-    //   "textoErro": "Senha incorreta.",
-    //   "destino": ""
-    // },
+    }
+  ],
+  "elementosAnimados": [],
+  "coletaveis": [
     {
-      "id": "texto_1344_960",
-      "tipo": "texto",
+      "id": "cartao_fase01",
+      "nome": "Cartão de Acesso",
+      "tipo": "item",
+      "unico": true,
       "x": 1344,
       "y": 960,
       "width": 64,
       "height": 64,
-      "texto": "Mensagem",
-      "duracao": 2000,
-      "destino": ""
+      "img": "../Imagem/editor_uploads/fase_01/1787749094964_cartao.png"
     },
-    // {
-    //   "id": "senha_1856_768",
-    //   "tipo": "senha",
-    //   "x": 1856,
-    //   "y": 768,
-    //   "width": 64,
-    //   "height": 64,
-    //   "pergunta": "Digite a senha:",
-    //   "resposta": "",
-    //   "textoSucesso": "Senha correta!",
-    //   "textoErro": "Senha incorreta.",
-    //   "destino": ""
-    // }
+    {
+      "id": "patchcord",
+      "nome": "Patch Cord",
+      "tipo": "item",
+      "unico": true,
+      "x": 64,
+      "y": 768,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_01/1787750263758_patchcord.png"
+    }
   ],
-  "elementosAnimados": [],
-  "coletaveis": [],
   "caixa1": {
     "id": "c1_1",
     "x": 0,
