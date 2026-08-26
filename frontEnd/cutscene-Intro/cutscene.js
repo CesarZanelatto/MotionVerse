@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const PROXIMA_TELA = 'jogo.html';
+  const PROXIMA_TELA = '/jogo/Marcacao/fase_inicio.html';
 
   const stage = document.getElementById('cutsceneStage');
   const video = document.getElementById('cutsceneVideo');
@@ -58,13 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function atualizarBotaoSom() {
+    if (!btnSom) return;
+    btnSom.classList.toggle('is-active', !video.muted);
+    btnSom.setAttribute('aria-pressed', String(!video.muted));
+    btnSom.textContent = video.muted ? '🔇 Som' : '🔊 Som';
+  }
 
   function tentarAutoplay() {
     const promessa = video.play();
     if (promessa && typeof promessa.catch === 'function') {
       promessa.catch(() => {
-
-        if (btnPlayFallback) btnPlayFallback.hidden = false;
+        video.muted = true;
+        atualizarBotaoSom();
+        video.play().catch(() => {
+          if (btnPlayFallback) btnPlayFallback.hidden = false;
+        });
       });
     }
   }
@@ -104,9 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSom.addEventListener('click', (e) => {
       e.stopPropagation();
       video.muted = !video.muted;
-      btnSom.classList.toggle('is-active', !video.muted);
-      btnSom.setAttribute('aria-pressed', String(!video.muted));
-      btnSom.textContent = video.muted ? '🔇 Som' : '🔊 Som';
+      atualizarBotaoSom();
     });
   }
 
