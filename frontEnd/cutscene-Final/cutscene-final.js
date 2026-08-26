@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const PROXIMA_TELA = 'ranking.html';
+  const PROXIMA_TELA = '../Ranking/ranking.html';
 
   const stage = document.getElementById('cutsceneStage');
   const video = document.getElementById('cutsceneVideo');

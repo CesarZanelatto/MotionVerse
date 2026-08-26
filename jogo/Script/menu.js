@@ -19,7 +19,7 @@ if (fundo) {
 }
 
 btn_jogar.addEventListener("click", () => {
-  window.location.href = "../Marcacao/fase_inicio.html";
+  window.location.href = "../../frontEnd/cutscene-Intro/cutscene.html";
 });
 
 btn_tutorial.addEventListener("click", () => {
