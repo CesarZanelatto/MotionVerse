@@ -4976,26 +4976,26 @@ const Fase02 = {
       "unico": true
     },
     {
-      "id": "item_64_576",
-      "nome": "Livro",
-      "tipo": "item",
-      "unico": true,
-      "x": 230,
-      "y": 444,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
-    },
-    {
       "id": "item_192_960",
-      "nome": "Marcador de Página",
+      "nome": "Marca Página",
       "tipo": "item",
       "unico": true,
       "x": 170,
-      "y": 884,
+      "y": 890,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787752263526_teste45.png"
+      "img": "../Imagem/editor_uploads/fase_02/1787754080212_marca_paginateste.png"
+    },
+    {
+      "id": "item_320_384",
+      "nome": "Livro",
+      "tipo": "item",
+      "unico": true,
+      "x": 300,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787754080216_livro_secreto.png"
     }
   ],
   "caixa1": {
