@@ -1,7 +1,7 @@
 const Fase02 = {
   "id": "fase_02",
   "nome": "Biblioteca",
-  "background": "../Imagem/editor_uploads/fase_02/1787668138761_biblioteca.png",
+  "background": "../Imagem/editor_uploads/fase_02/1787745129458_bibliotecab.png",
   "sceneWidth": 1920,
   "sceneHeight": 1080,
   "tileSize": 64,
@@ -11,8 +11,8 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 640,
-    "y": 1040,
+    "x": 1100,
+    "y": 600,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -748,24 +748,6 @@ const Fase02 = {
     {
       "id": "tile_1792_576",
       "x": 1446,
-      "y": 98,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787574077885_livros1armario.png",
-      "efeito": false
-    },
-    {
-      "id": "tile_1472_384",
-      "x": 1458,
-      "y": 98,
-      "width": 64,
-      "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787574077885_livros1armario.png",
-      "efeito": false
-    },
-    {
-      "id": "tile_1536_384",
-      "x": 1690,
       "y": 98,
       "width": 64,
       "height": 64,
@@ -2679,6 +2661,330 @@ const Fase02 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_02/1787665999985_costas_sem_fundo_2_.png",
       "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 928,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 974,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1020,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1066,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1112,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1158,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 928,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 974,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1020,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1066,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1112,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1158,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 928,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 974,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1020,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1066,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1112,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1158,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 928,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 974,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1020,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1066,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1112,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1158,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 928,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 974,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1020,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1066,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1112,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1088_384",
+      "x": 1158,
+      "y": 440,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787314111404_armario4b.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 928,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 974,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1020,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1066,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1112,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1152_192",
+      "x": 1158,
+      "y": 504,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
+      "efeito": false
     }
   ],
   "paredes": [
@@ -2709,7 +3015,7 @@ const Fase02 = {
     {
       "id": "parede_448_960",
       "x": 494,
-      "y": 940,
+      "y": 944,
       "width": 10,
       "height": 64,
       "img": ""
@@ -4172,26 +4478,34 @@ const Fase02 = {
     },
     {
       "id": "parede_192_896",
-      "x": 192,
+      "x": 256,
       "y": 896,
-      "width": 64,
-      "height": 64,
+      "width": 16,
+      "height": 1,
       "img": ""
     },
     {
       "id": "parede_256_896",
-      "x": 220,
+      "x": 206,
       "y": 916,
-      "width": 64,
-      "height": 20,
+      "width": 72,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1088_896",
-      "x": 1088,
-      "y": 896,
+      "x": 1106,
+      "y": 916,
       "width": 64,
-      "height": 64,
+      "height": 10,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_896",
+      "x": 1148,
+      "y": 892,
+      "width": 1,
+      "height": 10,
       "img": ""
     },
     {
@@ -4199,71 +4513,71 @@ const Fase02 = {
       "x": 1152,
       "y": 916,
       "width": 28,
-      "height": 20,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1280_896",
-      "x": 1314,
+      "x": 1318,
       "y": 916,
       "width": 64,
-      "height": 20,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1344_896",
-      "x": 1344,
-      "y": 896,
-      "width": 64,
-      "height": 64,
+      "x": 1354,
+      "y": 892,
+      "width": 1,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1472_896",
-      "x": 1472,
+      "x": 1520,
       "y": 916,
       "width": 64,
-      "height": 20,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1536_896",
-      "x": 1536,
-      "y": 896,
-      "width": 64,
-      "height": 64,
+      "x": 1560,
+      "y": 892,
+      "width": 1,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1664_896",
-      "x": 1664,
+      "x": 1726,
       "y": 916,
       "width": 64,
-      "height": 20,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1728_896",
-      "x": 1728,
-      "y": 896,
-      "width": 64,
-      "height": 64,
+      "x": 1758,
+      "y": 892,
+      "width": 1,
+      "height": 10,
       "img": ""
     },
     {
       "id": "parede_1856_576",
-      "x": 1856,
-      "y": 576,
+      "x": 1854,
+      "y": 620,
       "width": 64,
-      "height": 64,
+      "height": 1,
       "img": ""
     },
     {
       "id": "parede_1856_192",
       "x": 1856,
-      "y": 192,
+      "y": 204,
       "width": 64,
-      "height": 64,
+      "height": 1,
       "img": ""
     },
     {
@@ -4288,6 +4602,334 @@ const Fase02 = {
       "y": 682,
       "width": 64,
       "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_704_384",
+      "x": 774,
+      "y": 380,
+      "width": 64,
+      "height": 1,
+      "img": ""
+    },
+    {
+      "id": "parede_704_448",
+      "x": 774,
+      "y": 450,
+      "width": 64,
+      "height": 1,
+      "img": ""
+    },
+    {
+      "id": "parede_704_512",
+      "x": 774,
+      "y": 518,
+      "width": 64,
+      "height": 1,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_512",
+      "x": 1874,
+      "y": 470,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_448",
+      "x": 1874,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_384",
+      "x": 1874,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_320",
+      "x": 1874,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_256",
+      "x": 1874,
+      "y": 274,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_128",
+      "x": 1900,
+      "y": 128,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1856_64",
+      "x": 1864,
+      "y": 64,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1792_64",
+      "x": 1792,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1728_64",
+      "x": 1728,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1664_64",
+      "x": 1664,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1600_64",
+      "x": 1600,
+      "y": 50,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_64",
+      "x": 1520,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1472_64",
+      "x": 1472,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1408_64",
+      "x": 1408,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_64",
+      "x": 1344,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_128",
+      "x": 1320,
+      "y": 60,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_960_320",
+      "x": 960,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_320",
+      "x": 1024,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_320",
+      "x": 1088,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_320",
+      "x": 1140,
+      "y": 324,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_960_448",
+      "x": 960,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_448",
+      "x": 1024,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_448",
+      "x": 1088,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_448",
+      "x": 1140,
+      "y": 444,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_960_192",
+      "x": 960,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_192",
+      "x": 1024,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_192",
+      "x": 1088,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_192",
+      "x": 1140,
+      "y": 202,
+      "width": 64,
+      "height": 54,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_192",
+      "x": 1304,
+      "y": 240,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_256",
+      "x": 1304,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_320",
+      "x": 1304,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_384",
+      "x": 1304,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_448",
+      "x": 1304,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1344_512",
+      "x": 1304,
+      "y": 512,
+      "width": 64,
+      "height": 34,
+      "img": ""
+    },
+    {
+      "id": "parede_832_384",
+      "x": 806,
+      "y": 346,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_384",
+      "x": 806,
+      "y": 384,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_448",
+      "x": 806,
+      "y": 448,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_832_512",
+      "x": 806,
+      "y": 512,
+      "width": 64,
+      "height": 34,
       "img": ""
     }
   ],
@@ -4334,15 +4976,26 @@ const Fase02 = {
       "unico": true
     },
     {
-      "id": "item_64_576",
-      "nome": "item_64_576",
+      "id": "item_192_960",
+      "nome": "Marca Página",
       "tipo": "item",
       "unico": true,
-      "x": 230,
-      "y": 444,
+      "x": 170,
+      "y": 890,
       "width": 64,
       "height": 64,
-      "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
+      "img": "../Imagem/editor_uploads/fase_02/1787754080212_marca_paginateste.png"
+    },
+    {
+      "id": "item_320_384",
+      "nome": "Livro",
+      "tipo": "item",
+      "unico": true,
+      "x": 300,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787754080216_livro_secreto.png"
     }
   ],
   "caixa1": {

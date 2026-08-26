@@ -59,7 +59,7 @@ const FASES_PADRAO = {
   fase_02: {
     id: "fase_02",
     nome: "Biblioteca",
-    background: "../Imagem/editor_uploads/fase_02/1787668138761_biblioteca.png",
+    background: "../Imagem/editor_uploads/fase_02/1787745129458_bibliotecab.png",
     htmlPath: "fase_02.html",
     data: Fase02,
     origem: "padrao",
