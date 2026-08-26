@@ -4977,11 +4977,22 @@ const Fase02 = {
     },
     {
       "id": "item_64_576",
-      "nome": "item_64_576",
+      "nome": "livro Secreto",
       "tipo": "item",
       "unico": true,
       "x": 230,
       "y": 444,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
+    },
+    {
+      "id": "item_64_576",
+      "nome": "livro Secreto",
+      "tipo": "item",
+      "unico": true,
+      "x": 170,
+      "y": 890,
       "width": 64,
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_02/1787660226809_chave.png"
