@@ -11,8 +11,8 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 1100,
-    "y": 600,
+    "x": 640,
+    "y": 1000,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -2985,6 +2985,222 @@ const Fase02 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_02/1787236943845_armario4a.png",
       "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1470,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1534,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1470,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1534,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1640,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1704,
+      "y": 200,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1640,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1704,
+      "y": 264,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1470,
+      "y": 300,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1534,
+      "y": 300,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1470,
+      "y": 364,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1534,
+      "y": 364,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1640,
+      "y": 300,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1704,
+      "y": 300,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1640,
+      "y": 364,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1704,
+      "y": 364,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1470,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1534,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1470,
+      "y": 464,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1534,
+      "y": 464,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_256",
+      "x": 1640,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420052_mesacomcadeirasateste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_256",
+      "x": 1704,
+      "y": 400,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420057_mesacomcadeirasbteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1472_320",
+      "x": 1640,
+      "y": 464,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420060_mesacomcadeirascteste1.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1536_320",
+      "x": 1704,
+      "y": 464,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
+      "efeito": false
     }
   ],
   "paredes": [
@@ -3231,14 +3447,6 @@ const Fase02 = {
     {
       "id": "parede_256_0",
       "x": 256,
-      "y": -64,
-      "width": 64,
-      "height": 64,
-      "img": ""
-    },
-    {
-      "id": "parede_448_0",
-      "x": 448,
       "y": -64,
       "width": 64,
       "height": 64,
