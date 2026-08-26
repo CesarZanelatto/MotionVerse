@@ -161,6 +161,32 @@ iniciarFase(fase);${musicaFase01}
 `;
 }
 
+// function generateScript2({ dataImportName, dataFileName, phaseId }) {
+//   const musicaFase02 = phaseId === "fase_02"
+//     ? `
+
+// const audioFundo = new Audio("../som/fase2musicaFundo.mp3");
+// audioFundo.loop = true;
+// audioFundo.volume = 0.4;
+
+// function iniciarMusica2() {
+//   audioFundo.play().catch((error) => {
+//     console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
+//   });
+// }
+
+// document.addEventListener("pointerdown", iniciarMusica2, { once: true });
+// document.addEventListener("keydown", iniciarMusica2, { once: true });`
+//     : "";
+
+//   return `import { iniciarFase } from "./faseEngine.js";
+// import ${dataImportName} from "../Data/${dataFileName}";
+
+// const fase2 = ${dataImportName};
+// iniciarFase(fase2);${musicaFase02}
+// `;
+// }
+
 function replaceBlock(text, startMarker, endMarker, newBlockContent) {
   const start = text.indexOf(startMarker);
   const end = text.indexOf(endMarker);
@@ -358,6 +384,12 @@ async function savePhase(payload) {
     dataFileName,
     phaseId: id,
   });
+
+  // const scriptContent = generateScript2({
+  //   dataImportName,
+  //   dataFileName,
+  //   phaseId: id,
+  // });
 
   await fs.writeFile(path.join(ROOT, "jogo", "Data", dataFileName), dataContent, "utf-8");
   await fs.writeFile(path.join(ROOT, "jogo", "Marcacao", htmlFileName), htmlContent, "utf-8");
