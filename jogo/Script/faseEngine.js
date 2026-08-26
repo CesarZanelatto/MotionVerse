@@ -3,6 +3,490 @@ import Plataforma from "../Entitys/plataforma.js";
 import criarControleEntrada from "./controleEntrada.js";
 import Inventario from "./inventario.js";
 
+const CHAVE_CRONOMETRO =
+  "motionverse_cronometro";
+
+function obterCronometro() {
+
+  const dados =
+    localStorage.getItem(
+      CHAVE_CRONOMETRO
+    );
+
+  if (!dados) {
+    return null;
+  }
+
+  try {
+
+    return JSON.parse(dados);
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao ler cronômetro:",
+      erro
+    );
+
+    return null;
+  }
+}
+
+
+
+function salvarCronometro(dados) {
+
+  localStorage.setItem(
+    CHAVE_CRONOMETRO,
+    JSON.stringify(dados)
+  );
+
+}
+
+
+
+function formatarTempo(tempoMs) {
+
+  const totalSegundos =
+    Math.floor(
+      tempoMs / 1000
+    );
+
+  const minutos =
+    Math.floor(
+      totalSegundos / 60
+    );
+
+  const segundos =
+    totalSegundos % 60;
+
+  return (
+    String(minutos).padStart(2, "0") +
+    ":" +
+    String(segundos).padStart(2, "0")
+  );
+
+}
+
+function criarHudCronometro() {
+
+  let hud =
+    document.querySelector(
+      "#cronometroHUD"
+    );
+
+
+  if (hud) {
+    return hud;
+  }
+
+
+  hud =
+    document.createElement("div");
+
+
+  hud.id =
+    "cronometroHUD";
+
+
+  Object.assign(
+    hud.style,
+    {
+
+      position: "fixed",
+
+      top: "16px",
+
+      left: "16px",
+
+      padding:
+        "12px 18px",
+
+      borderRadius:
+        "10px",
+
+      background:
+        "rgba(11, 32, 54, 0.9)",
+
+      color:
+        "#eef3f8",
+
+      border:
+        "2px solid rgba(255,255,255,0.12)",
+
+      fontFamily:
+        '"Pixelify Sans", monospace',
+
+      fontSize:
+        "22px",
+
+      fontWeight:
+        "bold",
+
+      zIndex:
+        "9999",
+
+      userSelect:
+        "none"
+
+    }
+  );
+
+
+  document.body.appendChild(
+    hud
+  );
+
+
+  return hud;
+
+}
+
+function iniciarCronometro() {
+
+  let dados =
+    obterCronometro();
+
+  if (
+    dados &&
+    dados.ativo === true &&
+    dados.inicio
+  ) {
+
+    console.log(
+      "Continuando cronômetro existente."
+    );
+
+  } else {
+
+    dados = {
+
+      ativo: true,
+
+      inicio:
+        Date.now(),
+
+      tempoFinal:
+        null
+
+    };
+
+
+    salvarCronometro(
+      dados
+    );
+
+
+    console.log(
+      "Novo cronômetro iniciado."
+    );
+
+  }
+
+
+  criarHudCronometro();
+
+
+  atualizarCronometro();
+
+}
+
+function atualizarCronometro() {
+
+  const dados =
+    obterCronometro();
+
+
+  if (
+    !dados ||
+    !dados.ativo ||
+    !dados.inicio
+  ) {
+
+    return;
+
+  }
+
+
+  const agora =
+    Date.now();
+
+
+  const tempoDecorrido =
+    agora -
+    dados.inicio;
+
+
+  const hud =
+    document.querySelector(
+      "#cronometroHUD"
+    );
+
+
+  if (hud) {
+
+    hud.textContent =
+      `Tempo: ${formatarTempo(
+        tempoDecorrido
+      )}`;
+
+  }
+
+
+  requestAnimationFrame(
+    atualizarCronometro
+  );
+
+}
+
+function pararCronometro() {
+
+  const dados =
+    obterCronometro();
+
+
+  if (
+    !dados ||
+    !dados.ativo ||
+    !dados.inicio
+  ) {
+
+    return 0;
+
+  }
+
+
+  const tempoFinal =
+    Math.floor(
+
+      (
+        Date.now() -
+        dados.inicio
+
+      ) / 1000
+
+    );
+
+
+  dados.ativo =
+    false;
+
+
+  dados.tempoFinal =
+    tempoFinal;
+
+
+  salvarCronometro(
+    dados
+  );
+
+
+  console.log(
+    "Tempo final:",
+    formatarTempo(
+      tempoFinal * 1000
+    )
+  );
+
+
+  return tempoFinal;
+
+}
+
+function obterEquipeAtual() {
+
+  try {
+
+    const dados =
+      localStorage.getItem(
+        "equipeAtual"
+      );
+
+
+    if (!dados) {
+
+      console.error(
+        "Equipe atual não encontrada."
+      );
+
+      return null;
+
+    }
+
+
+    return JSON.parse(
+      dados
+    );
+
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao ler equipeAtual:",
+      erro
+    );
+
+    return null;
+
+  }
+
+}
+
+function salvarTempoRanking(
+  tempoSegundos
+) {
+
+  const equipeAtual =
+    obterEquipeAtual();
+
+
+  if (!equipeAtual) {
+
+    console.error(
+      "Não foi possível salvar o tempo."
+    );
+
+    return;
+
+  }
+
+  let ranking = [];
+
+
+  try {
+
+    ranking =
+      JSON.parse(
+        localStorage.getItem(
+          "ranking"
+        )
+      ) || [];
+
+
+  } catch (erro) {
+
+    console.error(
+      "Erro ao ler ranking:",
+      erro
+    );
+
+    ranking = [];
+
+  }
+
+  const indice =
+    ranking.findIndex(
+
+      equipe =>
+        equipe.id ===
+        equipeAtual.id
+
+    );
+
+  const tempoFormatado =
+    formatarTempo(
+      tempoSegundos * 1000
+    );
+
+  if (indice !== -1) {
+
+    ranking[indice].tempo =
+      tempoFormatado;
+
+
+    ranking[indice].fase =
+      equipeAtual.fase || 1;
+
+
+  } else {
+
+    ranking.push({
+
+      ...equipeAtual,
+
+      tempo:
+        tempoFormatado
+
+    });
+
+  }
+
+
+  ranking.sort(
+    (a, b) => {
+
+      const tempoA =
+        converterTempoParaSegundos(
+          a.tempo
+        );
+
+
+      const tempoB =
+        converterTempoParaSegundos(
+          b.tempo
+        );
+
+
+      return tempoA - tempoB;
+
+    }
+  );
+
+  localStorage.setItem(
+
+    "ranking",
+
+    JSON.stringify(
+      ranking
+    )
+
+  );
+
+
+  console.log(
+    "Tempo salvo no ranking:",
+    tempoFormatado
+  );
+
+}
+
+function converterTempoParaSegundos(
+  tempo
+) {
+
+  if (!tempo) {
+    return 999999;
+  }
+
+
+  const partes =
+    String(tempo).split(":");
+
+
+  if (partes.length !== 2) {
+    return 999999;
+  }
+
+
+  const minutos =
+    Number(
+      partes[0]
+    );
+
+
+  const segundos =
+    Number(
+      partes[1]
+    );
+
+
+  return (
+    minutos * 60 +
+    segundos
+  );
+
+}
+
 function criarHudInventario() {
   let hud = document.querySelector("#inventarioHUD");
   if (hud) return hud;
@@ -91,6 +575,7 @@ function colide(personagem, zona) {
 }
 
 export function iniciarFase(fase, opcoes = {}) {
+  iniciarCronometro();
   const canvasSelector = opcoes.canvasSelector || "#telaRuntime";
   const tela = document.querySelector(canvasSelector);
   const ctx = tela.getContext("2d");
@@ -145,7 +630,69 @@ export function iniciarFase(fase, opcoes = {}) {
 
   function executarInteracao(zona) {
     if (zona.tipo === "porta") {
-      window.location.href = zona.destino;
+
+      // ==========================================
+      // PORTA FINAL DO JOGO
+      // ==========================================
+    
+      if (zona.final === true) {
+    
+        console.log(
+          "Porta final encontrada."
+        );
+    
+    
+        // Para o cronômetro
+        const tempoFinal =
+          pararCronometro();
+    
+    
+        // Salva o tempo no ranking
+        salvarTempoRanking(
+          tempoFinal
+        );
+    
+    
+        console.log(
+          "Tempo final:",
+          formatarTempo(
+            tempoFinal * 1000
+          )
+        );
+    
+    
+        // Remove o cronômetro salvo,
+        // pois a partida terminou
+        localStorage.removeItem(
+          CHAVE_CRONOMETRO
+        );
+    
+    
+        // Vai para a tela definida no JSON
+        if (zona.destino) {
+    
+          window.location.href =
+            zona.destino;
+    
+        }
+    
+    
+        return;
+      }
+    
+    
+      // ==========================================
+      // PORTA NORMAL
+      // ==========================================
+    
+      if (zona.destino) {
+    
+        window.location.href =
+          zona.destino;
+    
+      }
+    
+    
       return;
     }
 

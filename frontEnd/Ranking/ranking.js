@@ -8,7 +8,6 @@ const corpoTabela = document.getElementById("corpoTabela");
 const pesquisa = document.getElementById("pesquisa");
 const btnLimpar = document.getElementById("btnLimpar");
 
-
 const senhaCorreta = "Senacsala21@";
 
 
@@ -173,12 +172,6 @@ function carregarRanking(){
                 jogadores[3]?.nome
             )
         );
-
-
-        tr.appendChild(
-            criarCelula(equipe.pontuacao || 0)
-        );
-
 
         tr.appendChild(
             criarCelula(equipe.tempo || "00:00")
