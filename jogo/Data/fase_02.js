@@ -11,8 +11,8 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 640,
-    "y": 1000,
+    "x": 1400,
+    "y": 250,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
@@ -5139,6 +5139,70 @@ const Fase02 = {
       "width": 64,
       "height": 34,
       "img": ""
+    },
+    {
+      "id": "parede_1472_256",
+      "x": 1500,
+      "y": 226,
+      "width": 64,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_256",
+      "x": 1536,
+      "y": 226,
+      "width": 20,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1664_256",
+      "x": 1674,
+      "y": 226,
+      "width": 64,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1728_256",
+      "x": 1728,
+      "y": 226,
+      "width": 10,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1472_320",
+      "x": 1472,
+      "y": 350,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_320",
+      "x": 1536,
+      "y": 350,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1664_320",
+      "x": 1664,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1728_320",
+      "x": 1728,
+      "y": 320,
+      "width": 64,
+      "height": 64,
+      "img": ""
     }
   ],
   "interacoes": [
@@ -5204,6 +5268,28 @@ const Fase02 = {
       "width": 64,
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_02/1787754080216_livro_secreto.png"
+    },
+    {
+      "id": "item_1536_448",
+      "nome": "Ficheiro",
+      "tipo": "item",
+      "unico": true,
+      "x": 1536,
+      "y": 430,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787831576802_testeficheiro2.png"
+    },
+    {
+      "id": "item_1856_192",
+      "nome": "Pastas",
+      "tipo": "item",
+      "unico": true,
+      "x": 1836,
+      "y": 186,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787831576802_testeficheiro2.png"
     }
   ],
   "caixa1": {
