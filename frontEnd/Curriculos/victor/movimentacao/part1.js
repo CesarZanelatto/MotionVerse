@@ -5,8 +5,6 @@ const textoDialogo = document.getElementById("textoDialogo");
 
 const avatar = document.getElementById("avatar3d");
 
-const btnAcenar = document.getElementById("btnAcenar");
-
 const modal = document.getElementById("modal");
 
 const fechar = document.getElementById("fechar");
@@ -190,20 +188,13 @@ function fadeOut(elemento){
     EVENTOS
 =========================================================*/
 
-btnAcenar.addEventListener("click",()=>{
-
-    // Parte 2
-    // Aqui será adicionada a animação do personagem.
-
-});
-
-
 cards.forEach(card=>{
 
     card.addEventListener("click",()=>{
 
-        // Parte 2
-        // Abrirá o modal do projeto.
+        abrirProjeto(
+            card.dataset.project
+        );
 
     });
 
@@ -219,14 +210,7 @@ fechar.addEventListener("click",()=>{
 
 
 /*=========================================================
-    PREPARAÇÃO
-=========================================================*/
-
-// Avatar seguindo o mouse
-// (Parte 2)
-/*=========================================================
-    SCRIPT.JS
-    PARTE 2
+    SCRIPT.JS - PARTE 2
 =========================================================*/
 
 
@@ -363,36 +347,6 @@ function abrirProjeto(id){
 
 
 
-/*=========================================================
-    EVENTO DOS CARDS
-=========================================================*/
-
-cards.forEach(card=>{
-
-    card.addEventListener("click",()=>{
-
-        abrirProjeto(
-            card.dataset.project
-        );
-
-    });
-
-});
-
-
-
-/*=========================================================
-    BOTÃO FECHAR
-=========================================================*/
-
-fechar.addEventListener("click",()=>{
-
-    fadeOut(modal);
-
-});
-
-
-
 modal.addEventListener("click",(e)=>{
 
     if(e.target===modal){
@@ -406,52 +360,61 @@ modal.addEventListener("click",(e)=>{
 
 
 /*=========================================================
-    ACENO DO PERSONAGEM
+    ACENO DO PERSONAGEM 3D
 =========================================================*/
+
+// Guarda se o modelo já terminou de carregar
+let modeloCarregado = false;
+
+// O model-viewer dispara "load" quando o .glb termina de carregar
+avatar.addEventListener("load", () => {
+
+    modeloCarregado = true;
+
+});
 
 function acenar(){
 
-    avatar.classList.remove("acenar");
+    if(!modeloCarregado){
 
-    void avatar.offsetWidth;
+        // Modelo ainda não carregou, tenta novamente em breve
+        setTimeout(acenar, 300);
 
-    avatar.classList.add("acenar");
+        return;
+
+    }
+
+    // availableAnimations só existe em elementos <model-viewer>
+    const animacoesDisponiveis = avatar.availableAnimations || [];
+
+    if(animacoesDisponiveis.length > 0){
+
+        // Procura por uma animação com nome relacionado a aceno/wave
+        const nomeAceno = animacoesDisponiveis.find(nome =>
+            /aceno|wave|hi|hello|greet/i.test(nome)
+        ) || animacoesDisponiveis[0];
+
+        avatar.animationName = nomeAceno;
+
+        avatar.currentTime = 0;
+
+        avatar.play({ repetitions: 1 });
+
+    } else {
+
+        // O arquivo .glb não tem animação embutida.
+        // Aplica um efeito CSS simples como alternativa
+        // (defina a classe .acenar em animations.css, ex:
+        // rotacionar/balançar o elemento por 1s)
+        avatar.classList.remove("acenar");
+
+        void avatar.offsetWidth;
+
+        avatar.classList.add("acenar");
+
+    }
 
 }
-
-
-
-btnAcenar.addEventListener("click",()=>{
-
-    acenar();
-
-});
-
-
-
-/*=========================================================
-    PERSONAGEM SEGUE O MOUSE
-=========================================================*/
-
-document.addEventListener("mousemove",(event)=>{
-
-    const x =
-    (event.clientX/window.innerWidth-.5)*18;
-
-    const y =
-    (event.clientY/window.innerHeight-.5)*18;
-
-    avatar.style.transform =
-    `translate(${x}px,${y}px)`;
-
-});
-
-
-
-/*=========================================================
-    HOVER DOS CARDS
-=========================================================*/
-
 cards.forEach(card=>{
 
     card.addEventListener("mouseenter",()=>{
@@ -473,7 +436,7 @@ cards.forEach(card=>{
 
 
 /*=========================================================
-    ABRIR MODAL COM ENTER
+    FECHAR MODAL COM ESC
 =========================================================*/
 
 document.addEventListener("keydown",(e)=>{
@@ -489,49 +452,7 @@ document.addEventListener("keydown",(e)=>{
 
 
 /*=========================================================
-    EFEITO DE BRILHO NO AVATAR
-=========================================================*/
-
-setInterval(()=>{
-
-    avatar.animate(
-
-        [
-
-            {
-
-                filter:"drop-shadow(0 0 0px gold)"
-
-            },
-
-            {
-
-                filter:"drop-shadow(0 0 18px gold)"
-
-            },
-
-            {
-
-                filter:"drop-shadow(0 0 0px gold)"
-
-            }
-
-        ],
-
-        {
-
-            duration:2500
-
-        }
-
-    );
-
-},2600);
-
-
-
-/*=========================================================
-    ACENO AUTOMÁTICO
+    ACENO AUTOMÁTICO AO CARREGAR
 =========================================================*/
 
 setTimeout(()=>{
@@ -540,16 +461,9 @@ setTimeout(()=>{
 
 },3200);
 
-// Modal dos projetos
-// (Parte 2)
-
-
-// Inventário
-// (Parte 3)
 
 /*=========================================================
-    SCRIPT.JS
-    PARTE 3
+    SCRIPT.JS - PARTE 3
 =========================================================*/
 
 
@@ -593,7 +507,7 @@ setInterval(criarParticula,250);
 
 
 /*=========================================================
-    ATALHOS
+    ATALHOS DE TECLADO
 =========================================================*/
 
 document.addEventListener("keydown",(e)=>{
@@ -603,7 +517,7 @@ document.addEventListener("keydown",(e)=>{
         case "i":
 
             document.querySelector(".inventario")
-            .scrollIntoView({
+            ?.scrollIntoView({
 
                 behavior:"smooth"
 
@@ -614,7 +528,7 @@ document.addEventListener("keydown",(e)=>{
         case "p":
 
             document.querySelector(".projetos")
-            .scrollIntoView({
+            ?.scrollIntoView({
 
                 behavior:"smooth"
 
@@ -625,7 +539,7 @@ document.addEventListener("keydown",(e)=>{
         case "h":
 
             document.querySelector("header")
-            .scrollIntoView({
+            ?.scrollIntoView({
 
                 behavior:"smooth"
 
@@ -638,31 +552,8 @@ document.addEventListener("keydown",(e)=>{
 });
 
 
-
 /*=========================================================
-    ANIMAÇÃO DOS BOTÕES
-=========================================================*/
-
-inventarioBotoes.forEach(botao=>{
-
-    botao.addEventListener("mouseenter",()=>{
-
-        botao.style.transform="scale(1.08)";
-
-    });
-
-    botao.addEventListener("mouseleave",()=>{
-
-        botao.style.transform="scale(1)";
-
-    });
-
-});
-
-
-
-/*=========================================================
-    PREPARAÇÃO PARA O JOGO
+    CURRÍCULO
 =========================================================*/
 
 function abrirCurriculo(){
@@ -680,65 +571,3 @@ function fecharCurriculo(){
     .style.display="none";
 
 }
-
-
-
-/*=========================================================
-    PREPARAÇÃO PARA O MODELO 3D
-=========================================================*/
-
-let modelo3D = null;
-
-function carregarModelo3D(){
-
-    /*
-        Futuramente iremos utilizar:
-
-        THREE.GLTFLoader()
-
-        para carregar o arquivo .glb
-
-        modelo3D será armazenado aqui.
-
-    */
-
-}
-
-
-
-/*=========================================================
-    LOOP PRINCIPAL
-=========================================================*/
-
-function atualizar(){
-
-    requestAnimationFrame(atualizar);
-
-    /*
-        Aqui ficarão:
-
-        animação do modelo 3D
-
-        partículas
-
-        câmera
-
-        iluminação
-
-        efeitos
-
-    */
-
-}
-
-atualizar();
-// Partículas
-// (Parte 3)
-
-
-// Easter Eggs
-// (Parte 3)
-
-
-// Integração com o jogo
-// (Parte 3)
