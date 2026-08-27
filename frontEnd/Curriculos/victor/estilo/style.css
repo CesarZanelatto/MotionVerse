@@ -198,56 +198,6 @@ header h2{
 
 }
 
-.nivel{
-
-    position:absolute;
-
-    top:20px;
-
-    left:20px;
-
-    background:var(--primary);
-
-    color:var(--text);
-
-    font-weight:bold;
-
-    padding:8px 15px;
-
-    border-radius:25px;
-
-    font-size:.8rem;
-
-}
-
-#btnAcenar{
-
-    margin-top:25px;
-
-    padding:12px 30px;
-
-    border:none;
-
-    border-radius:40px;
-
-    background:var(--primary);
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-    color: var(--white)
-
-}
-
-#btnAcenar:hover{
-
-    transform:translateY(-3px);
-
-}
-
 .informacoes{
 
     display:flex;
