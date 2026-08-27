@@ -382,7 +382,8 @@ async function savePhase(payload) {
 }
 
 async function serveStatic(req, res, pathname) {
-  const requested = pathname === "/" ? "/index.html" : pathname;
+  const decodedPathname = decodeURIComponent(pathname);
+  const requested = decodedPathname === "/" ? "/index.html" : decodedPathname;
   const absPath = path.normalize(path.join(ROOT, requested));
   if (!absPath.startsWith(ROOT)) {
     res.writeHead(403);
@@ -396,9 +397,41 @@ async function serveStatic(req, res, pathname) {
   }
   const stat = await fs.stat(absPath);
   const filePath = stat.isDirectory() ? path.join(absPath, "index.html") : absPath;
+  const finalStat = stat.isDirectory() ? await fs.stat(filePath) : stat;
   const ext = path.extname(filePath).toLowerCase();
+  const contentType = MIME_TYPES[ext] || "application/octet-stream";
+  const range = req.headers.range;
+
+  if (range) {
+    const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+    if (match) {
+      const fileSize = finalStat.size;
+      const start = match[1] ? parseInt(match[1], 10) : 0;
+      const end = match[2] ? parseInt(match[2], 10) : fileSize - 1;
+
+      if (Number.isNaN(start) || Number.isNaN(end) || start > end || end >= fileSize) {
+        res.writeHead(416, {
+          "Content-Range": `bytes */${fileSize}`,
+        });
+        res.end();
+        return;
+      }
+
+      res.writeHead(206, {
+        "Content-Type": contentType,
+        "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+        "Accept-Ranges": "bytes",
+        "Content-Length": end - start + 1,
+      });
+      createReadStream(filePath, { start, end }).pipe(res);
+      return;
+    }
+  }
+
   res.writeHead(200, {
-    "Content-Type": MIME_TYPES[ext] || "application/octet-stream",
+    "Content-Type": contentType,
+    "Accept-Ranges": "bytes",
+    "Content-Length": finalStat.size,
   });
   createReadStream(filePath).pipe(res);
 }

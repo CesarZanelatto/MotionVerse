@@ -201,9 +201,6 @@ function salvarEquipe(){
 
         fase:1,
 
-        pontuacao:0,
-
-        tempo:"00:00",
 
         jogadores:[
 
