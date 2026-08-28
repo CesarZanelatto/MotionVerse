@@ -85,7 +85,7 @@ function escreverDialogo(texto){
 
             clearInterval(intervalo);
 
-            setTimeout(fecharDialogo,4000);
+            setTimeout(fecharDialogo,8000);
 
         }
 
@@ -110,9 +110,11 @@ function iniciarSkills(){
 
                       barra.classList.contains("js") ? "92%" :
 
-                      barra.classList.contains("java") ? "82%" :
+                      barra.classList.contains("java") ? "62%" :
 
                       barra.classList.contains("mysql") ? "87%" :
+
+                      barra.classList.contains("python") ? "77%" :
 
                       "70%";
 
@@ -373,48 +375,6 @@ avatar.addEventListener("load", () => {
 
 });
 
-function acenar(){
-
-    if(!modeloCarregado){
-
-        // Modelo ainda não carregou, tenta novamente em breve
-        setTimeout(acenar, 300);
-
-        return;
-
-    }
-
-    // availableAnimations só existe em elementos <model-viewer>
-    const animacoesDisponiveis = avatar.availableAnimations || [];
-
-    if(animacoesDisponiveis.length > 0){
-
-        // Procura por uma animação com nome relacionado a aceno/wave
-        const nomeAceno = animacoesDisponiveis.find(nome =>
-            /aceno|wave|hi|hello|greet/i.test(nome)
-        ) || animacoesDisponiveis[0];
-
-        avatar.animationName = nomeAceno;
-
-        avatar.currentTime = 0;
-
-        avatar.play({ repetitions: 1 });
-
-    } else {
-
-        // O arquivo .glb não tem animação embutida.
-        // Aplica um efeito CSS simples como alternativa
-        // (defina a classe .acenar em animations.css, ex:
-        // rotacionar/balançar o elemento por 1s)
-        avatar.classList.remove("acenar");
-
-        void avatar.offsetWidth;
-
-        avatar.classList.add("acenar");
-
-    }
-
-}
 cards.forEach(card=>{
 
     card.addEventListener("mouseenter",()=>{
