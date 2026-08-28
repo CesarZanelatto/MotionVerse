@@ -11,8 +11,8 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 880,
-    "y": 250,
+    "x": 650,
+    "y": 1064,
     "img": "../Imagem/personagens/clara.png"
   },
   "plataforma1": [
