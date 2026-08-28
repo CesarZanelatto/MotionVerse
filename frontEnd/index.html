@@ -17,6 +17,8 @@
 </head>
 <body>
 
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
 <div class="bg-video" id="bgVideo">
 <div class="bg-fireflies" id="fireflies" aria-hidden="true"></div>
 <div class="bg-overlay"></div>
@@ -31,17 +33,18 @@ Motion<em>Verse</em>
 <ul class="nav-links" id="navLinks">
 <li><a href="#home" class="tts-trigger" data-tts="Início.">Início</a></li>
 <li><a href="#mecanica" class="tts-trigger" data-tts="Como Jogar.">Como  Jogar</a></li>
-<li><a href="#demo" class="tts-trigger" data-tts="Demonstração.">Demonstração</a></li>
+<li><a href="#protagonista" class="tts-trigger" data-tts="Protagonista.">Protagonista</a></li>
 <li><a href="#equipe" class="tts-trigger" data-tts="Equipe.">Equipe</a></li>
 </ul>
 
 <div class="nav-actions" id="navActions">
-<button id="btn-acessibilidade" class="access-btn tts-trigger" type="button" aria-pressed="false" aria-label="Ativar leitura por voz" data-tts="Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.">
+<button id="btn-acessibilidade" class="access-btn tts-trigger" type="button" aria-pressed="false" aria-label="Ativar leitura por voz" title="Atalho: tecla V" data-tts="Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.">
 <span class="access-icon" aria-hidden="true">♿</span><span class="access-label">Acessibilidade</span>
 </button>
-<a href="Ranking/ranking.html" class="pixel-btn pixel-btn-blue tts-trigger" data-tts="Ranking.">🏆 Ranking</a>
-<a href="Cadastro/cadastro.html" class="pixel-btn pixel-btn-orange tts-trigger" data-tts="Cadastro.">Cadastro</a>
+<span id="a11yStatus" class="sr-only" role="status" aria-live="polite"></span>
+<a href="Ranking\ranking.html" class="pixel-btn pixel-btn-blue tts-trigger" data-tts="Ranking.">🏆 Ranking</a>
 <a href="../jogo/Marcacao/editor.html" class="pixel-btn pixel-btn-blue tts-trigger" data-tts="Editor de fases.">Editor</a>
+<a href="Cadastro\cadastro.html" class="pixel-btn pixel-btn-play tts-trigger" data-tts="Jogar.">Jogar</a>
 </div>
 
 <button class="nav-toggle tts-trigger" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" data-tts="Menu.">
@@ -134,7 +137,7 @@ Motion<em>Verse</em>
 <h1>Motion<span class="accent">Verse</span></h1>
 <p>Puxada para dentro do computador, Clara ficou presa em um mundo 2D. Agora, ela precisa desvendar seus mistérios para voltar ao mundo dela.</p>
 <div class="hero-actions">
-<a href="#demo" class="pixel-btn pixel-btn-orange tts-trigger" data-tts="Ver Demonstração.">Ver Demonstração</a>
+<a href="#protagonista" class="pixel-btn pixel-btn-orange tts-trigger" data-tts="Conhecer Clara.">Conhecer Clara</a>
 <a href="#equipe" class="pixel-btn pixel-btn-ghost tts-trigger" data-tts="Conhecer a Equipe.">Conhecer a Equipe</a>
 </div>
 </div>
@@ -142,70 +145,90 @@ Motion<em>Verse</em>
 <div class="scroll-cue">Role</div>
 </header>
 
+<main id="conteudo">
+
 <section id="mecanica">
 <div class="center reveal tts-trigger" data-tts="Como Jogar. Quatro gestos simples controlam a aventura.">
 <span class="section-label">A Magia por Trás</span>
 <h2 class="section-title">Como Jogar</h2>
-<p class="section-desc">Quatro gestos simples controlam a aventura.</p>
+<p class="section-desc">Cada câmera capta um movimento da personagem</p>
 <img src="assets/2D.png" alt="Personagem 2D" class="personagem-mecanica" loading="lazy" decoding="async">
 </div>
 
 <div class="mechanics-grid">
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 1: Mão Aberta. Move para cima.">
-<span class="mechanic-step">Gesto 01</span>
-<div class="mechanic-media">
-  <div class="sprite-hand sprite-static" role="img" aria-label="Mão Aberta"></div>
-</div>
-<h3>Mão Aberta</h3>
-<p>Move para cima.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 2: Fechar Mão. Move para baixo.">
-<span class="mechanic-step">Gesto 02</span>
-<div class="mechanic-media">
-  <div class="sprite-hand sprite-anim" role="img" aria-label="Fechar Mão"></div>
-</div>
-<h3>Fechar Mão</h3>
-<p>Move para baixo.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 3: Mão para a Direita. Move para a direita.">
-<span class="mechanic-step">Gesto 03</span>
-<div class="mechanic-media">
-<img src="assets\mao-direita.png" alt="Mão para a Direita" class="mechanic-img" loading="lazy" decoding="async">
-</div>
-<h3>Mão para a Direita</h3>
-<p>Move para a Direita.</p>
-</div>
-<div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 4: Mão para a Esquerda. Move para a esquerda.">
-<span class="mechanic-step">Gesto 04</span>
-<div class="mechanic-media">
-<img src="assets\mao-esquerda.png" alt="Mão para a Esquerda" class="mechanic-img" loading="lazy" decoding="async">
-</div>
-<h3>Mão para a Esquerda</h3>
-<p>Move para a Esquerda.</p>
-</div>
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Camera 1: Move para cima.">
+    <span class="mechanic-step">Câmera 01</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim" role="img" aria-label="Mão Aberta"></div>
+    </div>
+    <h3>Mão aberta, mover para cima </h3>
+    <p>Mão fechada para movimento.</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 2: Fechar Mão. Move para baixo.">
+    <span class="mechanic-step">Câmera 02</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim" role="img" aria-label="Fechar Mão"></div>
+    </div>
+    <h3>Mão aberta, mover para baixo</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 3: Mão para a Direita. Move para a direita.">
+    <span class="mechanic-step">Câmera 03</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim sprite-right" role="img" aria-label="Mão para a Direita"></div>
+    </div>
+    <h3>Mão aberta, mover para direita</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
+
+  <div class="mechanic-card pixel-panel reveal-zoom tts-trigger" data-tts="Gesto 4: Mão para a Esquerda. Move para a esquerda.">
+    <span class="mechanic-step">Câmera 04</span>
+    <div class="mechanic-media">
+      <div class="sprite-hand sprite-anim sprite-left" role="img" aria-label="Mão para a Esquerda"></div>
+    </div>
+    <h3>Mão aberta, mover para esquerda</h3>
+    <p>Mão fechada para movimento</p>
+  </div>
 </div>
 </section>
 
-<section id="demo">
-<div class="center reveal tts-trigger" data-tts="Gameplay. Ação em Tempo Real. Assista ao vídeo tutorial para entender como a aventura de Clara funcionará.">
-<span class="section-label">Gameplay</span>
-<h2 class="section-title">Ação em Tempo Real</h2>
-<p class="section-desc">Assista ao video tutorial para entender como a aventura de Clara funcionará.</p>
+<section id="protagonista">
+<div class="center reveal tts-trigger" data-tts="Protagonista. Conheça Clara, a heroína presa no mundo do MotionVerse.">
+<span class="section-label">A Heroína</span>
+<h2 class="section-title">Conheça Clara</h2>
+<p class="section-desc">Presa dentro do computador, ela precisa entender as regras desse novo mundo para conseguir voltar para casa.</p>
 </div>
 
-<div class="trailer-frame pixel-panel reveal-zoom tts-trigger" id="trailerFrame" role="button" tabindex="0" aria-label="Assistir demonstração" data-tts="Vídeo demonstrativo de como jogar MotionVerse.">
-<span class="trailer-tag"><span class="rec-dot" aria-hidden="true"></span>Preview</span>
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80" alt="Cena de gameplay do MotionVerse" loading="lazy" decoding="async">
-<span class="play-btn" aria-hidden="true">▶</span>
+<div class="hero-spotlight reveal-zoom">
+<div class="spotlight-stage pixel-panel">
+<div class="spotlight-glow" aria-hidden="true"></div>
+<model-viewer src="modelos/heroina.glb" alt="Clara, a heroína do jogo, em destaque" auto-rotate rotation-per-second="14deg" camera-controls disable-zoom disable-pan min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" shadow-intensity="0.25" exposure="1.1" power-preference="high-performance"></model-viewer>
+</div>
+
+<div class="spotlight-card pixel-panel tts-trigger" data-tts="Clara. Exploradora Digital. Guiada pelos seus próprios movimentos, decifra os mistérios do mundo 2D e busca o caminho de volta para casa.">
+<span class="spotlight-tag">Personagem Jogável</span>
+<h3>Clara</h3>
+<span class="spotlight-role">Exploradora Digital</span>
+
+<ul class="spotlight-traits">
+<li><span class="trait-icon" aria-hidden="true">🧭</span> Guiada pelos seus próprios movimentos</li>
+<li><span class="trait-icon" aria-hidden="true">🧩</span> Decifra os mistérios do mundo 2D</li>
+<li><span class="trait-icon" aria-hidden="true">🏠</span> Sua missão: encontrar o caminho de volta</li>
+</ul>
+
+<div class="spotlight-stat">
+<span class="stat-label">Determinação</span>
+<div class="stat-bar"><span class="stat-fill"></span></div>
+</div>
+
+<div class="hero-actions">
+<a href="Cadastro\cadastro.html" class="pixel-btn pixel-btn-play tts-trigger" data-tts="Jogar.">Jogar</a>
+</div>
+</div>
 </div>
 </section>
-
-<div class="modal-overlay" id="trailerModal">
-<div class="modal-box">
-<button class="modal-close tts-trigger" id="modalClose" aria-label="Fechar vídeo" data-tts="Fechar vídeo.">✕</button>
-<p>Vídeo de demonstração ainda não foi adicionado. Troque este bloco por um vídeo ou iframe real em script.js.</p>
-</div>
-</div>
 
 <section id="equipe">
     <div class="center reveal tts-trigger" data-tts="Sobre Nós. O professor e treze alunos deram vida a este mundo.">
@@ -218,7 +241,7 @@ Motion<em>Verse</em>
     
     <div class="fighter-stage pixel-panel" id="fighterStage">
     <div class="fighter-model" id="fighterModelWrap" style="background-image:url('fundos/professor.png')">
-    <model-viewer id="fighterModel" src="modelos/Professor.glb" alt="Avatar selecionado" auto-rotate rotation-per-second="18deg" camera-controls disable-zoom disable-pan min-camera-orbit="auto 75deg auto" max-camera-orbit="auto 105deg auto" shadow-intensity="0.3" exposure="1" power-preference="high-performance"></model-viewer>
+    <model-viewer id="fighterModel" src="modelos/Professor.glb" alt="Avatar selecionado" loading="lazy" auto-rotate rotation-per-second="16deg" camera-controls disable-zoom disable-pan min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" shadow-intensity="0.3" exposure="1" power-preference="high-performance"></model-viewer>
     <div class="avatar-fallback" id="fighterFallback"><div class="ring"></div><div class="initials">M</div><small>modelo 3D pendente</small></div>
     </div>
     
@@ -227,7 +250,7 @@ Motion<em>Verse</em>
     <span class="fighter-badge" id="fighterBadge" hidden>Mestre</span>
     <h3 id="fighterName">Professor</h3>
     <span class="fighter-role" id="fighterRole">Mestre do Projeto</span>
-    <a href="curriculos/professor/index.html" class="pixel-btn pixel-btn-orange" id="fighterEnter" target="_blank"
+    <a href="https://www.linkedin.com/in/rogerio-sobral-ribeiro-49228552/" class="pixel-btn pixel-btn-orange" id="fighterEnter" target="_blank"
     rel="noopener noreferrer">Ver Perfil</a>
     </div>
     </div>
@@ -238,13 +261,13 @@ Motion<em>Verse</em>
     
       <button class="roster-item is-active" type="button" data-index="0"
         data-name="Rogerio" data-role="Rogerio Sobral" data-badge="Mestre"
-        data-model="modelos/Professor.glb" data-page="Curriculos/professor/index.html"
+        data-model="modelos/Professor.glb" data-page="https://www.linkedin.com/in/rogerio-sobral-ribeiro-49228552/"
         data-bg="fundos/professor.png"
         role="option" aria-selected="true">
         <span class="roster-master" aria-hidden="true"></span>
         <span class="roster-thumb">
-          <model-viewer src="modelos/Professor.glb" alt="Avatar do Professor" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Professor.glb" alt="Avatar do Professor" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">M</span>
         </span>
         <span class="roster-name">Rogerio</span>
@@ -252,25 +275,25 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="1"
         data-name="Cesar" data-role="CESAR DE OLIVEIRA ZANELATTO" data-badge="Back-End"
-        data-model="modelos/cesar.glb" data-page="Curriculos\cesar\curriculo\cesar.html"
+        data-model="modelos/cesar.glb" data-page="Curriculos/cesar/curriculo/cesar.html"
         data-bg="fundos/cesar.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/cesar.glb" alt="Avatar de Aluno 01" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/cesar.glb" alt="Avatar de Aluno 01" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">01</span>
         </span>
         <span class="roster-name">Cesar</span>
       </button>
     
       <button class="roster-item" type="button" data-index="2"
-        data-name="Daiane" data-role="DAIANE DUARTE DOS SANYOS" data-badge="Front-End"
+        data-name="Daiane" data-role="DAIANE DUARTE DOS SANTOS" data-badge="Front-End"
         data-model="modelos/Dai.glb" data-page="Curriculos/daiane/daiane.html"
         data-bg="fundos/daiane.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Dai.glb" alt="Avatar de Aluno 02" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Dai.glb" alt="Avatar de Aluno 02" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">02</span>
         </span>
         <span class="roster-name">Daiane</span>
@@ -278,12 +301,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="3"
         data-name="Erik" data-role="ERIK MAURICIO SILVA" data-badge="Front-End"
-        data-model="modelos/erik.glb" data-page="Curriculos\Erik-Mauricio\index.html"
+        data-model="modelos/erik.glb" data-page="Curriculos/Erik-Mauricio/index.html"
         data-bg="fundos/erik.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/erik.glb" alt="Avatar de Aluno 03" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/erik.glb" alt="Avatar de Aluno 03" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">03</span>
         </span>
         <span class="roster-name">Erik</span>
@@ -295,8 +318,8 @@ Motion<em>Verse</em>
         data-bg="fundos/gabriel.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Gabriel.glb" alt="Avatar de Aluno 04" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Gabriel.glb" alt="Avatar de Aluno 04" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">04</span>
         </span>
         <span class="roster-name">Gabriel</span>
@@ -304,12 +327,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="5"
         data-name="Hebert" data-role="HEBERT CRISTIAN SILVA DA CRUZ" data-badge="Front-End"
-        data-model="modelos/heber.glb" data-page="Curriculos/hebert/index.html"
+        data-model="modelos/heber.glb" data-page="curriculos/hebert/index.html"
         data-bg="fundos/hebert.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/heber.glb" alt="Avatar de Aluno 05" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/heber.glb" alt="Avatar de Aluno 05" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">05</span>
         </span>
         <span class="roster-name">Hebert</span>
@@ -317,12 +340,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="6"
         data-name="Kleber" data-role="KLEBER AMARO DA SILVA" data-badge="Back-End"
-        data-model="modelos/kleber.glb" data-page="Curriculos\kleb\pages\kleber.html"
+        data-model="modelos/kleber.glb" data-page="Curriculos/kleb/pages/kleber.html"
         data-bg="fundos/kleber.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/kleber.glb" alt="Avatar de Aluno 06" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/kleber.glb" alt="Avatar de Aluno 06" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">06</span>
         </span>
         <span class="roster-name">Kleber</span>
@@ -330,12 +353,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="7"
         data-name="Leandro" data-role="LEANDRO CAVALCANTE CHAVES DA MATA" data-badge="Back-End"
-        data-model="modelos/leandro.glb" data-page="Curriculos/leandro/index.html"
+        data-model="modelos/leandro.glb" data-page="curriculos/leandro/index.html"
         data-bg="fundos/leandro.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/leandro.glb" alt="Avatar de Aluno 07" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/leandro.glb" alt="Avatar de Aluno 07" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">07</span>
         </span>
         <span class="roster-name">Leandro</span>
@@ -343,12 +366,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="8"
         data-name="Leonardo" data-role="LEONARDO DIAS DA SILVA" data-badge="Back-End"
-        data-model="modelos/Leo.glb" data-page="Curriculos/leonardo/index.html"
+        data-model="modelos/Leo.glb" data-page="curriculos/leonardo/index.html"
         data-bg="fundos/leonardo.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Leo.glb" alt="Avatar de Aluno 08" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Leo.glb" alt="Avatar de Aluno 08" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">08</span>
         </span>
         <span class="roster-name">Leonardo</span>
@@ -356,12 +379,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="9"
         data-name="Lyss" data-role="LYSS KEURY GOMES BELLO DA MOTTA" data-badge="Front-End"
-        data-model="modelos/Lyss.glb" data-page="Curriculos\lyss\assets\index.html"
+        data-model="modelos/Lyss.glb" data-page="Curriculos/lyss/assets/index.html"
         data-bg="fundos/lyss.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Lyss.glb" alt="Avatar de Aluno 09" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Lyss.glb" alt="Avatar de Aluno 09" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">09</span>
         </span>
         <span class="roster-name">Lyss</span>
@@ -369,12 +392,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="10"
         data-name="Rafael Gomes" data-role="RAFAEL SILVA GOMES" data-badge="Front-End"
-        data-model="modelos/Rafael Gomes.glb" data-page="Curriculos\rafael-gomes\curriculo.html"
+        data-model="modelos/Rafael Gomes.glb" data-page="Curriculos/rafael-gomes/curriculo.html"
         data-bg="fundos/rafael-gomes.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Rafael Gomes.glb" alt="Avatar de Aluno 10" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Rafael Gomes.glb" alt="Avatar de Aluno 10" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">10</span>
         </span>
         <span class="roster-name">Rafael Gomes</span>
@@ -382,12 +405,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="11"
         data-name="Rafael Moralli" data-role="RAFAEL SPER MORALLI" data-badge="Front-End"
-        data-model="modelos/Rafael mora.glb" data-page="Curriculos\rafael\page\page.html"
+        data-model="modelos/Rafael mora.glb" data-page="Curriculos/rafael/page/page.html"
         data-bg="fundos/rafael-moralli.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Rafael mora.glb" alt="Avatar de Aluno 11" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Rafael mora.glb" alt="Avatar de Aluno 11" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">11</span>
         </span>
         <span class="roster-name">Rafael Moralli</span>
@@ -395,12 +418,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="12"
         data-name="Raissa" data-role="RAISSA MICHELY GUTIERREZ QUISPE" data-badge="Front-End"
-        data-model="modelos/Raissa.glb" data-page="Curriculos/raissa/index.html"
+        data-model="modelos/Raissa.glb"
         data-bg="fundos/raissa.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Raissa.glb" alt="Avatar de Aluno 12" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Raissa.glb" alt="Avatar de Aluno 12" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">12</span>
         </span>
         <span class="roster-name">Raissa</span>
@@ -408,12 +431,12 @@ Motion<em>Verse</em>
     
       <button class="roster-item" type="button" data-index="13"
         data-name="Victor" data-role="VICTOR JATOBA ALCANTARA BATISTA" data-badge="Back-End"
-        data-model="modelos/Victor.glb" data-page="Curriculos\victor\marcacao\index.html"
+        data-model="modelos/Victor.glb" data-page="Curriculos/victor/marcacao/index.html"
         data-bg="fundos/victor.png"
         role="option" aria-selected="false">
         <span class="roster-thumb">
-          <model-viewer src="modelos/Victor.glb" alt="Avatar de Aluno 13" loading="lazy" shadow-intensity="0"
-            disable-zoom disable-pan></model-viewer>
+          <model-viewer data-src="modelos/Victor.glb" alt="Avatar de Aluno 13" shadow-intensity="0"
+            rotation-per-second="20deg" min-camera-orbit="auto 89.9deg auto" max-camera-orbit="auto 90.1deg auto" power-preference="low-power" disable-zoom disable-pan></model-viewer>
           <span class="thumb-fallback">13</span>
         </span>
         <span class="roster-name">Victor</span>
@@ -422,6 +445,8 @@ Motion<em>Verse</em>
     
     </div>
     </section>
+
+</main>
 
 <footer>
 <p>© 2026 Motion<span class="foot-accent">Verse</span></p>

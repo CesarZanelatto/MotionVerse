@@ -84,14 +84,6 @@ header h2{
 
 }
 
-.acenar{
-
-    animation:wave 1s ease;
-
-    transform-origin:bottom right;
-
-}
-
 @keyframes wave{
 
     0%{transform:rotate(0deg);}
@@ -323,6 +315,12 @@ button:active{
 
 }
 
+.python{
+
+    width:87%;
+
+}
+
 #modal{
 
     animation:fadeModal .4s;
@@ -487,11 +485,5 @@ header h1{
         transform:translateY(0);
 
     }
-
-}
-
-#btnAcenar{
-
-    animation:pulse 2s infinite;
 
 }

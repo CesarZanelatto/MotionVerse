@@ -135,12 +135,37 @@ function generateHtml({ id, nome, background, scriptFile }) {
 </html>`;
 }
 
-function generateScript({ dataImportName, dataFileName }) {
+function generateScript({ dataImportName, dataFileName, phaseId }) {
+  const musicasPorFase = {
+    fase_01: { arquivo: "fase1musicaFundo.mp3", handler: "iniciarMusica" },
+    fase_02: { arquivo: "fase2musicaFundo.mp3", handler: "iniciarMusica2" },
+    fase3: { arquivo: "fase3musicaFundo.mp3", handler: "iniciarMusica3" },
+  };
+
+  const musicaFase = musicasPorFase[phaseId];
+
+  const blocoMusica = musicaFase
+    ? `
+
+const audioFundo = new Audio("../som/${musicaFase.arquivo}");
+audioFundo.loop = true;
+audioFundo.volume = 0.4;
+
+function ${musicaFase.handler}() {
+  audioFundo.play().catch((error) => {
+    console.warn("N\u00e3o foi poss\u00edvel iniciar a m\u00fasica.", error);
+  });
+}
+
+document.addEventListener("pointerdown", ${musicaFase.handler}, { once: true });
+document.addEventListener("keydown", ${musicaFase.handler}, { once: true });`
+    : "";
+
   return `import { iniciarFase } from "./faseEngine.js";
 import ${dataImportName} from "../Data/${dataFileName}";
 
 const fase = ${dataImportName};
-iniciarFase(fase);
+iniciarFase(fase);${blocoMusica}
 `;
 }
 
@@ -280,28 +305,28 @@ async function savePhase(payload) {
 
   phase.plataforma1 = (phase.plataforma1 || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     img: assetsByRef.get(item.img) || item.img,
   }));
 
   phase.paredes = (phase.paredes || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
   }));
 
   phase.interacoes = (phase.interacoes || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     destino: mapDestino(item.destino),
   }));
 
   phase.coletaveis = (phase.coletaveis || []).map((item) => ({
     ...item,
-    width: 64,
-    height: 64,
+    width: Math.max(1, Number(item.width || 64)),
+    height: Math.max(1, Number(item.height || 64)),
     img: assetsByRef.get(item.img) || item.img,
     tipo: item.tipo || "item",
     nome: item.nome || item.id,
@@ -339,6 +364,7 @@ async function savePhase(payload) {
   const scriptContent = generateScript({
     dataImportName,
     dataFileName,
+    phaseId: id,
   });
 
   await fs.writeFile(path.join(ROOT, "jogo", "Data", dataFileName), dataContent, "utf-8");
@@ -356,7 +382,8 @@ async function savePhase(payload) {
 }
 
 async function serveStatic(req, res, pathname) {
-  const requested = pathname === "/" ? "/index.html" : pathname;
+  const decodedPathname = decodeURIComponent(pathname);
+  const requested = decodedPathname === "/" ? "/index.html" : decodedPathname;
   const absPath = path.normalize(path.join(ROOT, requested));
   if (!absPath.startsWith(ROOT)) {
     res.writeHead(403);
@@ -370,9 +397,41 @@ async function serveStatic(req, res, pathname) {
   }
   const stat = await fs.stat(absPath);
   const filePath = stat.isDirectory() ? path.join(absPath, "index.html") : absPath;
+  const finalStat = stat.isDirectory() ? await fs.stat(filePath) : stat;
   const ext = path.extname(filePath).toLowerCase();
+  const contentType = MIME_TYPES[ext] || "application/octet-stream";
+  const range = req.headers.range;
+
+  if (range) {
+    const match = /^bytes=(\d*)-(\d*)$/.exec(range);
+    if (match) {
+      const fileSize = finalStat.size;
+      const start = match[1] ? parseInt(match[1], 10) : 0;
+      const end = match[2] ? parseInt(match[2], 10) : fileSize - 1;
+
+      if (Number.isNaN(start) || Number.isNaN(end) || start > end || end >= fileSize) {
+        res.writeHead(416, {
+          "Content-Range": `bytes */${fileSize}`,
+        });
+        res.end();
+        return;
+      }
+
+      res.writeHead(206, {
+        "Content-Type": contentType,
+        "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+        "Accept-Ranges": "bytes",
+        "Content-Length": end - start + 1,
+      });
+      createReadStream(filePath, { start, end }).pipe(res);
+      return;
+    }
+  }
+
   res.writeHead(200, {
-    "Content-Type": MIME_TYPES[ext] || "application/octet-stream",
+    "Content-Type": contentType,
+    "Accept-Ranges": "bytes",
+    "Content-Length": finalStat.size,
   });
   createReadStream(filePath).pipe(res);
 }

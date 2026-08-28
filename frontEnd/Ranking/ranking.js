@@ -108,7 +108,7 @@ function carregarRanking(){
 
         td.colSpan = 9;
 
-        td.className="vazio";
+        td.clName="vazio";
 
         td.textContent =
         "Nenhuma equipe cadastrada.";
@@ -172,13 +172,6 @@ function carregarRanking(){
                 jogadores[3]?.nome
             )
         );
-
-        
-        tr.appendChild(
-            criarCelula(equipe.tempo || "00:00")
-        );
-
-
 
         const tdAcoes =
         document.createElement("td");

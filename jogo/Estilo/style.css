@@ -93,16 +93,16 @@ img {
     transform: translateY(-100px);
   }
   to {
-    transform: translateY(1000px);
+    transform: translateY(1600px);
   }
 }
  
 @keyframes carroAndarDeRe {
   from {
-    transform: translateY(1000px);
+    transform: translateY(1400px);
   }
   to {
-    transform: translateY(-1200px);
+    transform: translateY(-600px);
   }
 }
  

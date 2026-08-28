@@ -5,14 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   try {
-    document.querySelectorAll('.mechanic-img').forEach(img => {
-      img.addEventListener('error', () => {
-        img.style.display = 'none';
-      });
-    });
-  } catch (err) {}
-
-  try {
     const revealTargets = document.querySelectorAll('.reveal, .reveal-zoom');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -119,35 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {}
 
   try {
-    const trailerFrame = document.getElementById('trailerFrame');
-    const trailerModal = document.getElementById('trailerModal');
-    const modalClose = document.getElementById('modalClose');
-
-    if (trailerFrame && trailerModal && modalClose) {
-      function openModal() {
-        trailerModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal() {
-        trailerModal.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      trailerFrame.addEventListener('click', openModal);
-      trailerFrame.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
-      });
-      modalClose.addEventListener('click', closeModal);
-      trailerModal.addEventListener('click', (e) => {
-        if (e.target === trailerModal) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-      });
-    }
-  } catch (err) {}
-
-  try {
     const roster = Array.from(document.querySelectorAll('.roster-item'));
     const fighterModel = document.getElementById('fighterModel');
     const fighterModelWrap = document.getElementById('fighterModelWrap');
@@ -162,6 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (roster.length && fighterModel && fighterModelWrap && fighterFallback && fighterName && fighterRole && fighterIndex && fighterBadge && fighterEnter) {
       let currentIndex = 0;
 
+      // Só um avatar pequeno gira por vez (o selecionado, ou o que está sob
+      // o mouse/foco) — girar os 14 ao mesmo tempo o tempo todo é o que
+      // deixava a seção pesada. Parado, ele continua sempre no ângulo certo
+      // (nunca de cabeça para baixo) graças ao min/max-camera-orbit.
+      function setSpin(item, on) {
+        const mv = item.querySelector('.roster-thumb model-viewer');
+        if (mv) mv.toggleAttribute('auto-rotate', on);
+      }
+
       function selectFighter(index, { focus = false, scroll = true } = {}) {
         const item = roster[index];
         if (!item) return;
@@ -170,9 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roster.forEach(r => {
           r.classList.remove('is-active');
           r.setAttribute('aria-selected', 'false');
+          setSpin(r, false);
         });
         item.classList.add('is-active');
         item.setAttribute('aria-selected', 'true');
+        setSpin(item, true);
         if (scroll) {
           item.scrollIntoView({
             behavior: 'smooth',
@@ -187,7 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
         fighterRole.textContent = role;
         fighterIndex.textContent = `Integrante ${String(index + 1).padStart(2, '0')}`;
         fighterFallback.querySelector('.initials').textContent = name.charAt(0).toUpperCase();
-        fighterEnter.setAttribute('href', page);
+
+        if (page) {
+          fighterEnter.hidden = false;
+          fighterEnter.setAttribute('href', page);
+        } else {
+          // Sem página de perfil cadastrada (ex.: Raissa) — o botão some
+          // em vez de levar a lugar nenhum.
+          fighterEnter.hidden = true;
+          fighterEnter.removeAttribute('href');
+        }
+
         fighterModel.setAttribute('src', model);
         fighterModelWrap.classList.remove('model-ready', 'model-error');
         fighterModelWrap.style.backgroundImage = bg ? `url('${bg}')` : 'none';
@@ -195,8 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (badge) {
           fighterBadge.textContent = badge;
           fighterBadge.hidden = false;
+          const badgeLower = badge.toLowerCase();
+          const badgeType = badgeLower.includes('mestre')
+            ? 'mestre'
+            : (badgeLower.includes('back') ? 'back' : 'front');
+          fighterBadge.setAttribute('data-type', badgeType);
         } else {
           fighterBadge.hidden = true;
+          fighterBadge.removeAttribute('data-type');
         }
       }
 
@@ -204,6 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('tts-trigger');
         item.setAttribute('data-tts', `${item.dataset.name}. ${item.dataset.role}${item.dataset.badge ? '. ' + item.dataset.badge : ''}.`);
         item.addEventListener('click', () => selectFighter(i));
+        item.addEventListener('mouseenter', () => setSpin(item, true));
+        item.addEventListener('mouseleave', () => setSpin(item, item.classList.contains('is-active')));
+        item.addEventListener('focus', () => setSpin(item, true));
+        item.addEventListener('blur', () => setSpin(item, item.classList.contains('is-active')));
 
         const thumbViewer = item.querySelector('model-viewer');
         const thumbWrap = item.querySelector('.roster-thumb');
@@ -241,81 +235,128 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {}
 
   try {
+    const lazyModels = Array.from(document.querySelectorAll('.roster-thumb model-viewer[data-src]'));
+
+    if (lazyModels.length) {
+      if ('IntersectionObserver' in window) {
+        const STAGGER_MS = 120;
+        let queued = 0;
+
+        // Só busca o .glb de cada avatar quando ele realmente se aproxima da
+        // tela, e ainda assim em fila (um pouco espaçado no tempo) — em vez
+        // de disparar os 14 modelos ao mesmo tempo e travar a página.
+        const loadObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const mv = entry.target;
+            if (entry.isIntersecting && !mv.src) {
+              const delay = queued * STAGGER_MS;
+              queued += 1;
+              setTimeout(() => {
+                if (!mv.src) mv.src = mv.dataset.src;
+              }, delay);
+              loadObserver.unobserve(mv);
+            }
+          });
+        }, { rootMargin: '200px 0px', threshold: 0.01 });
+
+        lazyModels.forEach(mv => {
+          loadObserver.observe(mv);
+        });
+      } else {
+        lazyModels.forEach(mv => { mv.src = mv.dataset.src; });
+      }
+    }
+  } catch (err) {}
+
+  try {
     let vozAtivada = false;
     const sintetizador = window.speechSynthesis;
     let vozPortugues = null;
 
-    function carregarVozes() {
-      const vozes = sintetizador.getVoices();
-      vozPortugues =
-        vozes.find(v => v.lang === 'pt-BR') ||
-        vozes.find(v => v.lang.startsWith('pt')) ||
-        null;
-    }
-    carregarVozes();
-    if (sintetizador.onvoiceschanged !== undefined) {
-      sintetizador.onvoiceschanged = carregarVozes;
-    }
-
-    function falar(texto) {
-      if (!vozAtivada || !texto) return;
-      sintetizador.cancel();
-      const fala = new SpeechSynthesisUtterance(texto);
-      fala.lang = 'pt-BR';
-      if (vozPortugues) fala.voice = vozPortugues;
-      fala.rate = 1;
-      fala.pitch = 1;
-      fala.volume = 1;
-      sintetizador.speak(fala);
-    }
-
-    const btnAcessibilidade = document.getElementById('btn-acessibilidade');
-
-    if (btnAcessibilidade) {
-      function alternarVoz() {
-        vozAtivada = !vozAtivada;
-
-        btnAcessibilidade.classList.toggle('is-active', vozAtivada);
-        btnAcessibilidade.setAttribute('aria-pressed', String(vozAtivada));
-
-        if (vozAtivada) {
-          falar('Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.');
-        } else {
-          sintetizador.cancel();
-        }
+    if (sintetizador) {
+      function carregarVozes() {
+        const vozes = sintetizador.getVoices();
+        vozPortugues =
+          vozes.find(v => v.lang === 'pt-BR') ||
+          vozes.find(v => v.lang.startsWith('pt')) ||
+          null;
+      }
+      carregarVozes();
+      if (sintetizador.onvoiceschanged !== undefined) {
+        sintetizador.onvoiceschanged = carregarVozes;
       }
 
-      btnAcessibilidade.addEventListener('click', alternarVoz);
+      function falar(texto) {
+        if (!vozAtivada || !texto) return;
+        sintetizador.cancel();
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = 'pt-BR';
+        if (vozPortugues) fala.voice = vozPortugues;
+        fala.rate = 1;
+        fala.pitch = 1;
+        fala.volume = 1;
+        sintetizador.speak(fala);
+      }
 
-      document.addEventListener('keydown', (e) => {
-        if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
-        if (e.key.toLowerCase() === 'v') alternarVoz();
-      });
+      const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+      const a11yStatus = document.getElementById('a11yStatus');
 
-      document.addEventListener('mouseover', (event) => {
-        const elemento = event.target.closest('.tts-trigger');
-        if (!elemento) return;
-        if (elemento._ttsHover) return;
-        elemento._ttsHover = true;
-        falar(elemento.getAttribute('data-tts'));
-      });
+      if (btnAcessibilidade) {
+        function alternarVoz() {
+          vozAtivada = !vozAtivada;
 
-      document.addEventListener('mouseout', (event) => {
-        const elemento = event.target.closest('.tts-trigger');
-        if (!elemento) return;
-        if (elemento.contains(event.relatedTarget)) return;
-        elemento._ttsHover = false;
-      });
+          btnAcessibilidade.classList.toggle('is-active', vozAtivada);
+          btnAcessibilidade.setAttribute('aria-pressed', String(vozAtivada));
+          btnAcessibilidade.setAttribute(
+            'aria-label',
+            vozAtivada ? 'Desativar leitura por voz' : 'Ativar leitura por voz'
+          );
 
-      document.addEventListener('focusin', (event) => {
-        const elemento = event.target.closest('.tts-trigger');
-        if (elemento) falar(elemento.getAttribute('data-tts'));
-      });
+          if (a11yStatus) {
+            a11yStatus.textContent = vozAtivada
+              ? 'Leitura por voz ativada.'
+              : 'Leitura por voz desativada.';
+          }
 
-      document.addEventListener('click', (event) => {
-        const elemento = event.target.closest('.tts-trigger');
-        if (elemento && elemento !== btnAcessibilidade) falar(elemento.getAttribute('data-tts'));
-      });
+          if (vozAtivada) {
+            falar('Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.');
+          } else {
+            sintetizador.cancel();
+          }
+        }
+
+        btnAcessibilidade.addEventListener('click', alternarVoz);
+
+        document.addEventListener('keydown', (e) => {
+          if (document.activeElement && ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+          if (e.key.toLowerCase() === 'v') alternarVoz();
+        });
+
+        document.addEventListener('mouseover', (event) => {
+          const elemento = event.target.closest('.tts-trigger');
+          if (!elemento || !vozAtivada) return;
+          if (elemento._ttsHover) return;
+          elemento._ttsHover = true;
+          falar(elemento.getAttribute('data-tts'));
+        });
+
+        document.addEventListener('mouseout', (event) => {
+          const elemento = event.target.closest('.tts-trigger');
+          if (!elemento) return;
+          if (elemento.contains(event.relatedTarget)) return;
+          elemento._ttsHover = false;
+        });
+
+        document.addEventListener('focusin', (event) => {
+          const elemento = event.target.closest('.tts-trigger');
+          if (elemento) falar(elemento.getAttribute('data-tts'));
+        });
+
+        document.addEventListener('click', (event) => {
+          const elemento = event.target.closest('.tts-trigger');
+          if (elemento && elemento !== btnAcessibilidade) falar(elemento.getAttribute('data-tts'));
+        });
+      }
     }
   } catch (err) {}
 

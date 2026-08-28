@@ -11,24 +11,20 @@ html{
 body{
 
     font-family:'Poppins',sans-serif;
-
-    background:#101522;
-
     color:var(--white);
-
     overflow-y:auto;
     overflow-x:hidden;
 
 }
 :root{
 
-    --background:#101522;
+    --card: rgba(37, 36, 36, 0.975);
+    
+    --background:#000000;
 
     --container:#1A2236;
 
-    --card:#232F4D;
-
-    --primary:#690a0a;
+    --primary:yellow;
 
     --white:#FFFFFF;
 
@@ -45,7 +41,7 @@ body{
     inset:0;
 
     background:
-    radial-gradient(circle at top,#263B68 0%,#101522 65%);
+    radial-gradient(circle at top, var(--background) 0%,var(--background) 65%);
 
     z-index:-2;
 
@@ -87,8 +83,6 @@ body{
 
     margin-top:2vh;
 
-    background:rgba(26,34,54,.95);
-
     border:3px solid var(--);
 
     border-radius:20px;
@@ -123,7 +117,7 @@ header h1{
 
     font-family:'Press Start 2P',cursive;
 
-    color:var(--white);
+    color:var(--primary);
 
     font-size:1.6rem;
 
@@ -155,12 +149,6 @@ header h2{
 
 .avatar{
 
-    background:var(--card);
-
-    border-radius:var(--radius);
-
-    border:2px solid rgba(255,255,255,.08);
-
     display:flex;
 
     flex-direction:column;
@@ -178,7 +166,6 @@ header h2{
 }
 
 .avatar:hover {
-    border-color: var(--primary);
     transform:translateY(-5px);
 }
 
@@ -198,56 +185,6 @@ header h2{
 
 }
 
-.nivel{
-
-    position:absolute;
-
-    top:20px;
-
-    left:20px;
-
-    background:var(--primary);
-
-    color:var(--text);
-
-    font-weight:bold;
-
-    padding:8px 15px;
-
-    border-radius:25px;
-
-    font-size:.8rem;
-
-}
-
-#btnAcenar{
-
-    margin-top:25px;
-
-    padding:12px 30px;
-
-    border:none;
-
-    border-radius:40px;
-
-    background:var(--primary);
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-    color: var(--white)
-
-}
-
-#btnAcenar:hover{
-
-    transform:translateY(-3px);
-
-}
-
 .informacoes{
 
     display:flex;
@@ -258,29 +195,7 @@ header h2{
 
 }
 
-.frase{
-
-    background:var(--card);
-
-    padding:22px;
-
-    border-radius:var(--radius);
-
-    border-left:5px solid var(--primary);
-
-}
-
-.frase p{
-
-    font-size:1rem;
-
-    line-height:1.8;
-
-}
-
 .card{
-
-    background:var(--card);
 
     padding:28px;
 
@@ -294,8 +209,6 @@ header h2{
 
 .card:hover{
 
-    border-color:var(--primary);
-
     transform:translateY(-5px);
 
 }
@@ -304,7 +217,7 @@ header h2{
 
     margin-bottom:18px;
 
-    color:var(--white);
+    color:var(--primary);
 
 }
 
@@ -329,7 +242,7 @@ header h2{
 
     font-weight:600;
 
-    color:var(--text)
+    color:var(--primary)
 
 }
 
@@ -339,7 +252,7 @@ header h2{
 
     height:15px;
 
-    background:#2F3A59;
+    background:#898d98;
 
     border-radius:50px;
 
@@ -359,40 +272,50 @@ header h2{
 
 .html{
 
-    background:#ff5722;
+    background:#ffffff;
 
 }
 
 .css{
 
-    background:#2196f3;
+    background:#ffffff;
 
 }
 
 .js{
 
-    background:#ffd600;
+    background:#ffffff;
 
 }
 
 .java{
 
-    background:#e53935;
+    background:#ffffff;
 
 }
 
 .mysql{
 
-    background:#00acc1;
+    background:#ffffff;
+
+}
+
+.python{
+
+    background:#ffffff;
 
 }
 
 .projetos h2{
 
-    color:var(--white);
+    color:var(--primary);
 
     margin-bottom:20px;
 
+}
+
+.projetos h2{
+    text-align: center;
 }
 
 .cards{
@@ -431,8 +354,6 @@ header h2{
 
     transform:translateY(-8px);
 
-    border:2px solid var(--primary);
-
 }
 
 .project-card img{
@@ -451,7 +372,7 @@ header h2{
 
 .project-card h3{
 
-    color:var(--white);
+    color:var(--primary);
 
 }
 
@@ -471,7 +392,7 @@ header h2{
 
     text-align:center;
 
-    color:var(--);
+    color:var(--primary);
 
     margin-bottom:40px;
 
@@ -509,8 +430,6 @@ header h2{
 
 .qr-card:hover{
 
-    border-color:var(--primary);
-
     transform:translateY(-8px);
 
 }
@@ -531,7 +450,7 @@ header h2{
 
 .qr-card h3{
 
-    color:var(--white);
+    color:var(--primary);
 
     margin-bottom:10px;
 
@@ -617,13 +536,15 @@ header h2{
 
 .caixaDialogo{
 
-    background:#000;
+    background:var(--card);
 
     border:3px solid var(--primary);
 
     border-radius:15px;
 
     padding:20px;
+
+    color: var(--white)
 
 }
 
@@ -633,7 +554,7 @@ header h2{
 
     inset:0;
 
-    background:#101522;
+    background:var(--background);
 
     display:flex;
 
@@ -655,7 +576,7 @@ header h2{
 
     margin-bottom:25px;
 
-    color:var(--white);
+    color:var(--primary);
 
 }
 
@@ -663,7 +584,7 @@ header h2{
 
     height:18px;
 
-    background:#2F3A59;
+    background:#898d98;
 
     border-radius:20px;
 
@@ -697,7 +618,12 @@ header h2{
 
 ::-webkit-scrollbar-track{
 
-    background:#101522;
+    background:#898d98;
 
+}
+
+footer{
+    color: var(--primary);
+    text-align: center;
 }
 
