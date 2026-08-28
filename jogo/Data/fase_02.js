@@ -11,7 +11,7 @@ const Fase02 = {
   "height": 64,
   "player": {
     "velocidade": 4,
-    "x": 1400,
+    "x": 880,
     "y": 250,
     "img": "../Imagem/personagens/clara.png"
   },
@@ -3201,7 +3201,952 @@ const Fase02 = {
       "height": 64,
       "img": "../Imagem/editor_uploads/fase_02/1787755420063_mesacomcadeirasdteste1.png",
       "efeito": false
-    }
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 476,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 476,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 476,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 930,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 944,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 976,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 990,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1022,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1036,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1068,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1082,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1114,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1128,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 256,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 324,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 340,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 238,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 220,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 202,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 356,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 374,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 356,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 494,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1160,
+      "y": 476,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
+    {
+      "id": "tile_1216_192",
+      "x": 1174,
+      "y": 476,
+      "width": 64,
+      "height": 64,
+      "img": "../Imagem/editor_uploads/fase_02/1787237713770_livros1armario.png",
+      "efeito": false
+    },
   ],
   "paredes": [
     {
@@ -4430,9 +5375,9 @@ const Fase02 = {
     },
     {
       "id": "parede_1280_64",
-      "x": 1320,
-      "y": 64,
-      "width": 38,
+      "x": 1290,
+      "y": 50,
+      "width": 64,
       "height": 64,
       "img": ""
     },
@@ -4502,10 +5447,10 @@ const Fase02 = {
     },
     {
       "id": "parede_1280_128",
-      "x": 1320,
-      "y": 128,
-      "width": 38,
-      "height": 10,
+      "x": 1330,
+      "y": 70,
+      "width": 20,
+      "height": 64,
       "img": ""
     },
     {
@@ -5174,32 +6119,128 @@ const Fase02 = {
     },
     {
       "id": "parede_1472_320",
-      "x": 1472,
-      "y": 350,
+      "x": 1500,
+      "y": 330,
       "width": 64,
-      "height": 64,
+      "height": 30,
       "img": ""
     },
     {
       "id": "parede_1536_320",
       "x": 1536,
-      "y": 350,
-      "width": 64,
-      "height": 64,
+      "y": 330,
+      "width": 20,
+      "height": 30,
       "img": ""
     },
     {
       "id": "parede_1664_320",
-      "x": 1664,
-      "y": 320,
+      "x": 1674,
+      "y": 330,
       "width": 64,
-      "height": 64,
+      "height": 30,
       "img": ""
     },
     {
       "id": "parede_1728_320",
       "x": 1728,
-      "y": 320,
+      "y": 330,
+      "width": 10,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1472_448",
+      "x": 1500,
+      "y": 428,
+      "width": 64,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1536_448",
+      "x": 1536,
+      "y": 428,
+      "width": 20,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1664_448",
+      "x": 1674,
+      "y": 428,
+      "width": 64,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_1728_448",
+      "x": 1728,
+      "y": 428,
+      "width": 10,
+      "height": 30,
+      "img": ""
+    },
+    {
+      "id": "parede_128_192",
+      "x": 194,
+      "y": 140,
+      "width": 1,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_512_192",
+      "x": 576,
+      "y": 140,
+      "width": 1,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_896_64",
+      "x": 966,
+      "y": 44,
+      "width": 1,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_960_64",
+      "x": 932,
+      "y": 30,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1024_64",
+      "x": 1062,
+      "y": 30,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1088_64",
+      "x": 1088,
+      "y": 30,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1152_64",
+      "x": 1152,
+      "y": 30,
+      "width": 64,
+      "height": 64,
+      "img": ""
+    },
+    {
+      "id": "parede_1216_64",
+      "x": 1216,
+      "y": 30,
       "width": 64,
       "height": 64,
       "img": ""
