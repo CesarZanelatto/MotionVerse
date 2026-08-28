@@ -411,19 +411,19 @@ export function iniciarFase(fase, opcoes = {}) {
   function desenharGrid() {
     ctx.strokeStyle = "rgba(255,255,255,0.3)";
 
-    for (let x = 0; x <= sceneWidth; x += tileSize) {
-      ctx.beginPath();
-      ctx.moveTo(x, 0);
-      ctx.lineTo(x, sceneHeight);
-      ctx.stroke();
-    }
+    // for (let x = 0; x <= sceneWidth; x += tileSize) {
+    //   ctx.beginPath();
+    //   ctx.moveTo(x, 0);
+    //   ctx.lineTo(x, sceneHeight);
+    //   ctx.stroke();
+    // }
 
-    for (let y = 0; y <= sceneHeight; y += tileSize) {
-      ctx.beginPath();
-      ctx.moveTo(0, y);
-      ctx.lineTo(sceneWidth, y);
-      ctx.stroke();
-    }
+    // for (let y = 0; y <= sceneHeight; y += tileSize) {
+    //   ctx.beginPath();
+    //   ctx.moveTo(0, y);
+    //   ctx.lineTo(sceneWidth, y);
+    //   ctx.stroke();
+    // }
   }
 
   function atualizarElementosAnimados(deltaTime) {
