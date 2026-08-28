@@ -109,7 +109,7 @@ function carregarRanking(){
 
         td.colSpan = 9;
 
-        td.className="vazio";
+        td.clName="vazio";
 
         td.textContent =
         "Nenhuma equipe cadastrada.";
