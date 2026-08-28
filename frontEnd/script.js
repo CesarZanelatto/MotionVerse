@@ -5,14 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   try {
-    document.querySelectorAll('.mechanic-img').forEach(img => {
-      img.addEventListener('error', () => {
-        img.style.display = 'none';
-      });
-    });
-  } catch (err) {}
-
-  try {
     const revealTargets = document.querySelectorAll('.reveal, .reveal-zoom');
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -119,35 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {}
 
   try {
-    const trailerFrame = document.getElementById('trailerFrame');
-    const trailerModal = document.getElementById('trailerModal');
-    const modalClose = document.getElementById('modalClose');
-
-    if (trailerFrame && trailerModal && modalClose) {
-      function openModal() {
-        trailerModal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal() {
-        trailerModal.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      trailerFrame.addEventListener('click', openModal);
-      trailerFrame.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); }
-      });
-      modalClose.addEventListener('click', closeModal);
-      trailerModal.addEventListener('click', (e) => {
-        if (e.target === trailerModal) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-      });
-    }
-  } catch (err) {}
-
-  try {
     const roster = Array.from(document.querySelectorAll('.roster-item'));
     const fighterModel = document.getElementById('fighterModel');
     const fighterModelWrap = document.getElementById('fighterModelWrap');
@@ -162,6 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (roster.length && fighterModel && fighterModelWrap && fighterFallback && fighterName && fighterRole && fighterIndex && fighterBadge && fighterEnter) {
       let currentIndex = 0;
 
+      // Só um avatar pequeno gira por vez (o selecionado, ou o que está sob
+      // o mouse/foco) — girar os 14 ao mesmo tempo o tempo todo é o que
+      // deixava a seção pesada. Parado, ele continua sempre no ângulo certo
+      // (nunca de cabeça para baixo) graças ao min/max-camera-orbit.
+      function setSpin(item, on) {
+        const mv = item.querySelector('.roster-thumb model-viewer');
+        if (mv) mv.toggleAttribute('auto-rotate', on);
+      }
+
       function selectFighter(index, { focus = false, scroll = true } = {}) {
         const item = roster[index];
         if (!item) return;
@@ -170,9 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roster.forEach(r => {
           r.classList.remove('is-active');
           r.setAttribute('aria-selected', 'false');
+          setSpin(r, false);
         });
         item.classList.add('is-active');
         item.setAttribute('aria-selected', 'true');
+        setSpin(item, true);
         if (scroll) {
           item.scrollIntoView({
             behavior: 'smooth',
@@ -205,8 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (badge) {
           fighterBadge.textContent = badge;
           fighterBadge.hidden = false;
+          const badgeLower = badge.toLowerCase();
+          const badgeType = badgeLower.includes('mestre')
+            ? 'mestre'
+            : (badgeLower.includes('back') ? 'back' : 'front');
+          fighterBadge.setAttribute('data-type', badgeType);
         } else {
           fighterBadge.hidden = true;
+          fighterBadge.removeAttribute('data-type');
         }
       }
 
@@ -214,6 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add('tts-trigger');
         item.setAttribute('data-tts', `${item.dataset.name}. ${item.dataset.role}${item.dataset.badge ? '. ' + item.dataset.badge : ''}.`);
         item.addEventListener('click', () => selectFighter(i));
+        item.addEventListener('mouseenter', () => setSpin(item, true));
+        item.addEventListener('mouseleave', () => setSpin(item, item.classList.contains('is-active')));
+        item.addEventListener('focus', () => setSpin(item, true));
+        item.addEventListener('blur', () => setSpin(item, item.classList.contains('is-active')));
 
         const thumbViewer = item.querySelector('model-viewer');
         const thumbWrap = item.querySelector('.roster-thumb');
@@ -251,6 +235,40 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {}
 
   try {
+    const lazyModels = Array.from(document.querySelectorAll('.roster-thumb model-viewer[data-src]'));
+
+    if (lazyModels.length) {
+      if ('IntersectionObserver' in window) {
+        const STAGGER_MS = 120;
+        let queued = 0;
+
+        // Só busca o .glb de cada avatar quando ele realmente se aproxima da
+        // tela, e ainda assim em fila (um pouco espaçado no tempo) — em vez
+        // de disparar os 14 modelos ao mesmo tempo e travar a página.
+        const loadObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            const mv = entry.target;
+            if (entry.isIntersecting && !mv.src) {
+              const delay = queued * STAGGER_MS;
+              queued += 1;
+              setTimeout(() => {
+                if (!mv.src) mv.src = mv.dataset.src;
+              }, delay);
+              loadObserver.unobserve(mv);
+            }
+          });
+        }, { rootMargin: '200px 0px', threshold: 0.01 });
+
+        lazyModels.forEach(mv => {
+          loadObserver.observe(mv);
+        });
+      } else {
+        lazyModels.forEach(mv => { mv.src = mv.dataset.src; });
+      }
+    }
+  } catch (err) {}
+
+  try {
     let vozAtivada = false;
     const sintetizador = window.speechSynthesis;
     let vozPortugues = null;
@@ -281,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const btnAcessibilidade = document.getElementById('btn-acessibilidade');
+      const a11yStatus = document.getElementById('a11yStatus');
 
       if (btnAcessibilidade) {
         function alternarVoz() {
@@ -288,6 +307,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
           btnAcessibilidade.classList.toggle('is-active', vozAtivada);
           btnAcessibilidade.setAttribute('aria-pressed', String(vozAtivada));
+          btnAcessibilidade.setAttribute(
+            'aria-label',
+            vozAtivada ? 'Desativar leitura por voz' : 'Ativar leitura por voz'
+          );
+
+          if (a11yStatus) {
+            a11yStatus.textContent = vozAtivada
+              ? 'Leitura por voz ativada.'
+              : 'Leitura por voz desativada.';
+          }
 
           if (vozAtivada) {
             falar('Acessibilidade ativada. Passe o mouse pelos elementos para ouvir a descrição.');
@@ -305,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('mouseover', (event) => {
           const elemento = event.target.closest('.tts-trigger');
-          if (!elemento) return;
+          if (!elemento || !vozAtivada) return;
           if (elemento._ttsHover) return;
           elemento._ttsHover = true;
           falar(elemento.getAttribute('data-tts'));
